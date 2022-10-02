@@ -97,6 +97,11 @@ namespace WinBooster
                 {
                     Reg reg = new Reg();
                     removed += reg.Work();
+                    if (guna2ComboBox1.SelectedIndex == 1)
+                    {
+                        RegUnsafe regUnsafe = new RegUnsafe();
+                        removed += regUnsafe.Work();
+                    }
                 }
             });
 
