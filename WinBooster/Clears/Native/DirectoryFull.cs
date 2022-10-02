@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WinBooster.Clears
 {
-    public class DirectoryFull : WorkInterface
+    public class DirectoryFull : WorkingI
     {
         public string dir;
         public DirectoryFull(string dir)

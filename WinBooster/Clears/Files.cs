@@ -9,7 +9,7 @@ namespace WinBooster.Clears
 {
     public class Files
     {
-        public List<WorkInterface> logs = new List<WorkInterface>()
+        public List<WorkingI> logs = new List<WorkingI>()
         {
             #region Windows
             new DirectoryFull("C:\\Windows\\Logs"),
@@ -281,7 +281,7 @@ namespace WinBooster.Clears
             #endregion
         };
 
-        public List<WorkInterface> images = new List<WorkInterface>()
+        public List<WorkingI> images = new List<WorkingI>()
         {
             #region iTop Screen Recorder
             new DirectoryFull("C:\\Users\\%username%\\AppData\\LocalLow\\iTop Screen Recorder\\Outputs"),
@@ -292,7 +292,7 @@ namespace WinBooster.Clears
             #endregion
         };
 
-        public List<WorkInterface> media = new List<WorkInterface>()
+        public List<WorkingI> media = new List<WorkingI>()
         {
             #region Bandicam
             new DirectoryFull("C:\\Users\\%username%\\Documents\\Bandicam"),
@@ -303,7 +303,7 @@ namespace WinBooster.Clears
             #endregion
         };
 
-        public List<WorkInterface> cache = new List<WorkInterface>()
+        public List<WorkingI> cache = new List<WorkingI>()
         {
             new DirectoryFull("C:\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
             new DirectoryFull("C:\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
@@ -357,7 +357,7 @@ namespace WinBooster.Clears
             #endregion
         };
 
-        public List<WorkInterface> cheats = new List<WorkInterface>()
+        public List<WorkingI> cheats = new List<WorkingI>()
         {
             #region NeverLose
             new DirectoryPatern("C:\\", "NeverBSOD.log"),
@@ -372,7 +372,7 @@ namespace WinBooster.Clears
             #endregion
         };
 
-        public List<WorkInterface> lastactivity_unsafe = new List<WorkInterface>()
+        public List<WorkingI> lastactivity_unsafe = new List<WorkingI>()
         {
 
             new DirectoryUnsafeFileNames("C:\\Windows\\Prefetch", new List<string>()
@@ -399,7 +399,7 @@ namespace WinBooster.Clears
             }),
         };
 
-        public List<WorkInterface> lastactivity_full = new List<WorkInterface>()
+        public List<WorkingI> lastactivity_full = new List<WorkingI>()
         {
 
             new DirectoryPatern("C:\\Windows\\Prefetch", "*.pf")

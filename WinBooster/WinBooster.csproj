@@ -67,6 +67,7 @@
     <Compile Include="Clears\Native\DirectoryPatern.cs" />
     <Compile Include="Clears\Native\DirectoryUnsafeFileNames.cs" />
     <Compile Include="Clears\Files.cs" />
+    <Compile Include="Clears\Reg.cs" />
     <Compile Include="Clears\WorkInterface.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

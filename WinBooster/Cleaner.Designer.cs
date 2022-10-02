@@ -39,6 +39,7 @@
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2CheckBox5 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -75,7 +76,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(9, 148);
+            this.guna2Button1.Location = new System.Drawing.Point(9, 173);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(121, 23);
@@ -123,6 +124,7 @@
             // 
             // guna2GroupBox1
             // 
+            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox5);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox2);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox4);
             this.guna2GroupBox1.Controls.Add(this.guna2Button1);
@@ -133,7 +135,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(144, 187);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(144, 210);
             this.guna2GroupBox1.TabIndex = 8;
             this.guna2GroupBox1.Text = "Очистка";
             // 
@@ -214,11 +216,30 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Режим LastActivity";
             // 
+            // guna2CheckBox5
+            // 
+            this.guna2CheckBox5.AutoSize = true;
+            this.guna2CheckBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox5.CheckedState.BorderRadius = 2;
+            this.guna2CheckBox5.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox5.Location = new System.Drawing.Point(9, 148);
+            this.guna2CheckBox5.Name = "guna2CheckBox5";
+            this.guna2CheckBox5.Size = new System.Drawing.Size(68, 19);
+            this.guna2CheckBox5.TabIndex = 9;
+            this.guna2CheckBox5.Text = "Registry";
+            this.guna2CheckBox5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox5.UncheckedState.BorderRadius = 2;
+            this.guna2CheckBox5.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox5.UseVisualStyleBackColor = false;
+            // 
             // Cleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 210);
+            this.ClientSize = new System.Drawing.Size(432, 232);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "Cleaner";
@@ -244,5 +265,6 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox5;
     }
 }

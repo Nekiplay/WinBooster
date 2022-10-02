@@ -28,7 +28,7 @@ namespace WinBooster
             {
                 if (guna2CheckBox1.Checked)
                 {
-                    foreach (WorkInterface log in files.logs)
+                    foreach (WorkingI log in files.logs)
                     {
                         removed += log.Work();
                     }
@@ -42,7 +42,7 @@ namespace WinBooster
             {
                 if (guna2CheckBox3.Checked)
                 {
-                    foreach (WorkInterface log in files.cache)
+                    foreach (WorkingI log in files.cache)
                     {
                         removed += log.Work();
                     }
@@ -56,7 +56,7 @@ namespace WinBooster
             {
                 if (guna2CheckBox4.Checked)
                 {
-                    foreach (WorkInterface log in files.cheats)
+                    foreach (WorkingI log in files.cheats)
                     {
                         removed += log.Work();
                     }
@@ -73,14 +73,14 @@ namespace WinBooster
                     Console.WriteLine(guna2ComboBox1.SelectedIndex);
                     if (guna2ComboBox1.SelectedIndex == 0)
                     {
-                        foreach (WorkInterface log in files.lastactivity_unsafe)
+                        foreach (WorkingI log in files.lastactivity_unsafe)
                         {
                             removed += log.Work();
                         }
                     }
                     else if (guna2ComboBox1.SelectedIndex == 1)
                     {
-                        foreach (WorkInterface log in files.lastactivity_full)
+                        foreach (WorkingI log in files.lastactivity_full)
                         {
                             removed += log.Work();
                         }
@@ -91,35 +91,33 @@ namespace WinBooster
                     }));
                 }
             });
+            Task t5 = Task.Factory.StartNew(() =>
+            {
+                if (guna2CheckBox5.Checked)
+                {
+                    Reg reg = new Reg();
+                    removed += reg.Work();
+                }
+            });
 
             await t1;
             await t2;
             await t3;
+            await t4;
+            await t5;
             var item = toastNotificationsManager1.YieldArray().First();
             var item2 = item.Notifications.First();
             item2.Header = "Очистка";
-            item2.Body = "Удалено: " + getSize(removed);
+            item2.Body = "Удалено: " + Utils.GetStringSize(removed);
             toastNotificationsManager1.ShowNotification(item2.ID);
         }
-
-        static string getSize(long lenght)
-        {
-            string[] sizes = { "B", "KB", "MB", "GB", "TB" };
-            double len = lenght;
-            int order = 0;
-            while (len >= 1024 && order < sizes.Length - 1)
-            {
-                order++;
-                len = len / 1024;
-            }
-
-            string result = String.Format("{0:0.##} {1}", len, sizes[order]);
-            return result;
-        }
-
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             guna2GroupBox2.Visible = guna2CheckBox2.Checked;
+            if (guna2CheckBox2.Checked)
+            {
+                guna2CheckBox5.Checked = true;
+            }
         }
     }
 }

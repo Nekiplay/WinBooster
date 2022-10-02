@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WinBooster.Clears
 {
-    public class DirectoryPatern : WorkInterface
+    public class DirectoryPatern : WorkingI
     {
         public string dir;
         public List<string> dirs = null;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinBooster.Clears
 {
-    public interface WorkInterface
+    public interface WorkingI
     {
         long Work();
     }

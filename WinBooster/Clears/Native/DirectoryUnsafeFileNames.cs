@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WinBooster.Clears
 {
-    public class DirectoryUnsafeFileNames : WorkInterface
+    public class DirectoryUnsafeFileNames : WorkingI
     {
         public string dir;
         public List<string> safenames;
