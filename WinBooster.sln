@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBooster", "WinBooster\WinBooster.csproj", "{474B231C-374A-42D2-9AD3-3372562A65E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{474B231C-374A-42D2-9AD3-3372562A65E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474B231C-374A-42D2-9AD3-3372562A65E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474B231C-374A-42D2-9AD3-3372562A65E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474B231C-374A-42D2-9AD3-3372562A65E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {222BFA60-2F92-41BA-9302-7BC466212014}
+	EndGlobalSection
+EndGlobal
