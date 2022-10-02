@@ -194,7 +194,7 @@
             this.guna2ComboBox1.IntegralHeight = false;
             this.guna2ComboBox1.ItemHeight = 25;
             this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Безопастная",
+            "Безопасная",
             "Полная"});
             this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
             this.guna2ComboBox1.Location = new System.Drawing.Point(117, 44);
