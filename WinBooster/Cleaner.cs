@@ -118,11 +118,34 @@ namespace WinBooster
         }
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            guna2GroupBox2.Visible = guna2CheckBox2.Checked;
+            if (!guna2CheckBox5.Checked && !guna2CheckBox2.Checked)
+                guna2GroupBox2.Visible = guna2CheckBox2.Checked;
             if (guna2CheckBox2.Checked)
             {
                 guna2CheckBox5.Checked = true;
             }
+        }
+
+        private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2CheckBox4.Checked)
+            {
+                guna2CheckBox5.Checked = true;
+                guna2GroupBox2.Visible = true;
+                guna2CheckBox2.Checked = true;
+            }
+        }
+
+        private void guna2CheckBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2CheckBox5.Checked)
+                guna2CheckBox2.Checked = true;
+            if (guna2CheckBox5.Checked)
+            {
+                guna2GroupBox2.Visible = true;
+            }
+            if (!guna2CheckBox5.Checked && !guna2CheckBox2.Checked)
+                guna2GroupBox2.Visible = guna2CheckBox2.Checked;
         }
     }
 }

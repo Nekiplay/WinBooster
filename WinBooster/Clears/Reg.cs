@@ -82,6 +82,15 @@ namespace WinBooster.Clears
             catch { }
             #endregion
 
+            #region NeverLose
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+                CurrentUserSoftware.DeleteSubKeyTree("neverlose");
+            }
+            catch { }
+            #endregion
+
             return removed;
         }
     }

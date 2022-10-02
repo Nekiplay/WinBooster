@@ -121,6 +121,7 @@
             this.guna2CheckBox4.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2CheckBox4.UseVisualStyleBackColor = false;
+            this.guna2CheckBox4.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
             // 
             // guna2GroupBox1
             // 
@@ -234,6 +235,7 @@
             this.guna2CheckBox5.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2CheckBox5.UseVisualStyleBackColor = false;
+            this.guna2CheckBox5.CheckedChanged += new System.EventHandler(this.guna2CheckBox5_CheckedChanged);
             // 
             // Cleaner
             // 
