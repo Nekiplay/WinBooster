@@ -39,7 +39,10 @@ namespace WinBooster.Clears
             #region BlueStacks 5
             new DirectoryPatern("C:\\Program Files\\BlueStacks_nxt", "*.html"),
             new DirectoryPatern("C:\\Program Files\\BlueStacks_nxt", "*.rtf"),
+            new DirectoryPatern("D:\\Program Files\\BlueStacks_nxt", "*.html"),
+            new DirectoryPatern("D:\\Program Files\\BlueStacks_nxt", "*.rtf"),
             new DirectoryFull("C:\\ProgramData\\BlueStacks_nxt\\Logs"),
+            new DirectoryFull("D:\\ProgramData\\BlueStacks_nxt\\Logs"),
             #endregion
 
             #region Java
@@ -263,6 +266,8 @@ namespace WinBooster.Clears
 
             #region Notepad++
             new DirectoryPatern("C:\\Program Files\\Notepad++", "*.log"),
+            new DirectoryPatern("C:\\Program Files\\Notepad++", "readme.txt"),
+            new DirectoryPatern("C:\\Program Files\\Notepad++", "LICENSE"),
             #endregion
 
             #region iTop Screen Recorder
