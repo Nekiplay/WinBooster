@@ -45,6 +45,12 @@ namespace WinBooster.Clears
             new DirectoryFull("D:\\ProgramData\\BlueStacks_nxt\\Logs"),
             #endregion
 
+            #region Nox
+            new DirectoryPatern("C:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
+            new DirectoryPatern("D:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
+            new DirectoryFull("C:\\Users\\%username%\\vmlogs"),
+            #endregion
+
             #region Java
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "*.txt"),
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "*.html"),
