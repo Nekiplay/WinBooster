@@ -36,6 +36,12 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Program Files\\TxGameAssistant\\ui", "*.log"),
             #endregion
 
+            #region BlueStacks 5
+            new DirectoryPatern("C:\\Program Files\\BlueStacks_nxt", "*.html"),
+            new DirectoryPatern("C:\\Program Files\\BlueStacks_nxt", "*.rtf"),
+            new DirectoryFull("C:\\ProgramData\\BlueStacks_nxt\\Logs"),
+            #endregion
+
             #region Java
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "*.txt"),
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "*.html"),
