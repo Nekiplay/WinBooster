@@ -68,6 +68,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("D:\\Program Files\\BlueStacks_nxt", "*.rtf"),
             new DirectoryFull("C:\\ProgramData\\BlueStacks_nxt\\Logs"),
             new DirectoryFull("D:\\ProgramData\\BlueStacks_nxt\\Logs"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Bluestacks", "*.log"),
             #endregion
 
             #region Nox
