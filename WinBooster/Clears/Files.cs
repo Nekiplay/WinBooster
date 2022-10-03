@@ -18,38 +18,46 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Windows", "*.log"),
             new DirectoryPatern("C:\\Windows\\debug", "*.log"),
             new DirectoryPatern("C:\\Windows\\debug\\WIA", "*.log"),
+            new DirectoryPatern("C:\\Windows\\SoftwareDistribution", "*.log"),
+            new DirectoryPatern("C:\\Windows\\SoftwareDistribution\\DataStore\\Logs", "*.log"),
+            new DirectoryPatern("C:\\Windows\\Performance\\WinSAT", "*.log"),
+            new DirectoryPatern("C:\\Windows\\Panther", "*.log"),
+            new DirectoryPatern("C:\\Windows\\Panther\\UnattendGC", "*.log"),
 
             new DirectoryPatern("C:\\Windows\\System32\\winevt\\Logs", "*.evtx"),
 
             new DirectoryPatern("C:\\Games\\%unknowfolder%", "readme.txt"),
             new DirectoryPatern("C:\\Games\\%unknowfolder%", "*.log"),
             new DirectoryPatern("C:\\Games\\%unknowfolder%", "*.url"),
+
             #endregion
 
             #region Discord
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\IndexedDB\\%unknowfolder%", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Local Storage\\leveldb", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\module_data\\discord_hook", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Session Storage", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db\\metadata", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\IndexedDB\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Local Storage\\leveldb", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\module_data\\discord_hook", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Session Storage", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db\\metadata", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Discord", "*.log"),
+
             #endregion
 
             #region Photoshop
-            new DirectoryPatern("C:\\Program Files\\Adobe\\%unknowfolder%\\Legal\\en_GB", "*.html"),
-            new DirectoryPatern("C:\\Program Files\\Adobe\\%unknowfolder%\\Legal\\ru_RU", "*.html"),
-            new DirectoryPatern("C:\\Program Files\\Adobe\\%unknowfolder%\\OBLRes\\en_GB", "*.html"),
-            new DirectoryPatern("C:\\Program Files\\Adobe\\%unknowfolder%\\OBLRes\\ru_RU", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Adobe\\%unknowfolder%\\Legal\\en_GB", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Adobe\\%unknowfolder%\\Legal\\ru_RU", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Adobe\\%unknowfolder%\\OBLRes\\en_GB", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Adobe\\%unknowfolder%\\OBLRes\\ru_RU", "*.html"),
             #endregion
 
             #region Visual Studio
-            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.html"),
-            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.txt"),
-            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.md"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.md"),
 
-            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.html"),
-            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.txt"),
-            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.md"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.md"),
             #endregion
 
             #region Gameloop
@@ -80,87 +88,87 @@ namespace WinBooster.Clears
             #endregion
 
             #region Java
-            new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "*.html"),
-            new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "COPYRIGHT"),
-            new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "LICENSE"),
-            new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "release"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "COPYRIGHT"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "release"),
 
-            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "ASSEMBLY_EXCEPTION"),
-            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "LICENSE"),
-            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "readme.txt"),
-            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "THIRD_PARTY_README"),
-            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%\\sample", "README"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "ASSEMBLY_EXCEPTION"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "readme.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "THIRD_PARTY_README"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%\\sample", "README"),
             #endregion
 
             #region Minecraft
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\logs", "*.log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\logs", "*.log*"),
 
-            new DirectoryPatern("C:\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\logs", "*.log"),
+            new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\logs", "*.log"),
 
-            new DirectoryPatern("C:\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\logs", "*.log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\logs", "*.log*"),
             #endregion
 
             #region JetBrains
-            new DirectoryPatern("C:\\Program Files\\JetBrains\\%unknowfolder%", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\JetBrains\\%unknowfolder%\\license", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\JetBrains\\%unknowfolder%\\license", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\JetBrains\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\JetBrains\\%unknowfolder%\\license", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\JetBrains\\%unknowfolder%\\license", "*.html"),
             #endregion
 
             #region Git
-            new DirectoryPatern("C:\\Program Files\\Git", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\Git\\etc", "*.txt"),
-            new DirectoryFull("C:\\Program Files\\Git\\mingw64\\doc"),
-            new DirectoryFull("C:\\Program Files\\Git\\mingw64\\share\\doc"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Git", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Git\\etc", "*.txt"),
+            new DirectoryFull("%cycdrive%\\Program Files\\Git\\mingw64\\doc"),
+            new DirectoryFull("%cycdrive%\\Program Files\\Git\\mingw64\\share\\doc"),
             #endregion
 
             #region USOShared
-            new DirectoryFull("C:\\ProgramData\\USOShared\\Logs"),
+            new DirectoryFull("%cycdrive%\\ProgramData\\USOShared\\Logs"),
             #endregion
 
             #region NVIDIA
-            new DirectoryPatern("C:\\Program Files\\NVIDIA Corporation", "license.txt"),
-            new DirectoryPatern("C:\\Program Files\\NVIDIA Corporation\\NVSMI", "*.pdf"),
-            new DirectoryPatern("C:\\Program Files\\NVIDIA Corporation\\Ansel\\Tools", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\NVIDIA Corporation", "license.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\NVIDIA Corporation\\NVSMI", "*.pdf"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\NVIDIA Corporation\\Ansel\\Tools", "*.txt"),
 
-            new DirectoryPatern("C:\\ProgramData\\NVIDIA", "*.log"),
-            new DirectoryPatern("C:\\ProgramData\\NVIDIA Corporation\\nvstapisvr", "*.log"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\NVIDIA", "*.log"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\NVIDIA Corporation\\nvstapisvr", "*.log"),
             #endregion
 
             #region Radmin VPN
-            new DirectoryPatern("C:\\ProgramData\\Famatech\\Radmin VPN", "*.log"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Famatech\\Radmin VPN", "*.log"),
             #endregion
 
             #region Driver Booster
-            new DirectoryPatern("C:\\ProgramData\\IObit\\Driver Booster\\Downloader", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Install", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Main", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Scan", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Scheduler", "*.log"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\IObit\\Driver Booster\\Downloader", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Install", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Main", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Scan", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Scheduler", "*.log"),
             #endregion
 
             #region PCHealthCheck
-            new DirectoryPatern("C:\\Program Files\\PCHealthCheck", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\PCHealthCheck", "*.txt"),
             #endregion
 
             #region Process Hacker 2
-            new DirectoryPatern("C:\\Program Files\\Process Hacker 2", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Process Hacker 2", "*.txt"),
             #endregion
 
             #region NeverLose
-            new DirectoryPatern("C:\\", "NeverBSOD.log"),
+            new DirectoryPatern("%cycdrive%\\", "NeverBSOD.log"),
             #endregion
 
             #region ShareX
-            new DirectoryPatern("C:\\Users\\%username%\\Documents\\ShareX\\Logs", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\ShareX\\Licenses", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\Documents\\ShareX\\Logs", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\ShareX\\Licenses", "*.txt"),
             #endregion
 
             #region EasyAntiCheat
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat\\497", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat\\497", "*.log"),
             #endregion
 
             #region OBS Studio
@@ -169,45 +177,41 @@ namespace WinBooster.Clears
             #endregion
 
             #region GitHub Desktop
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\GitHub Desktop\\logs", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\GitHubDesktop", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\GitHub Desktop\\logs", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GitHubDesktop", "*.log"),
             #endregion
 
             #region Overwolf
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.txt"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.html"),
-            new DirectoryPatern("C:\\ProgramData\\Overwolf\\Log", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Overwolf\\Log", "*.log"),
             /* Achievement Rewards */
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Achievement Rewards", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Achievement Rewards", "*.log"),
             /* CurseForge */
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\CurseForge", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\CurseForge\\CurseClient", "*.json"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\CurseForge", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\CurseForge\\CurseClient", "*.json"),
             /* Overwolf General GameEvents Provider */
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Overwolf General GameEvents Provider", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Overwolf General GameEvents Provider", "*.log"),
             /* Overwolf notifications */
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Overwolf notifications", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Overwolf notifications", "*.log"),
             /* Overwolf Remote Configurations */
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Overwolf Remote Configurations", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Overwolf Remote Configurations", "*.log"),
             #endregion
 
             #region LGHUB
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\LGHUB\\Session Storage", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\LGHUB\\Local Storage\\leveldb", "*.log"),
-            #endregion
-
-            #region Discord
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Discord", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\LGHUB\\Session Storage", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\LGHUB\\Local Storage\\leveldb", "*.log"),
             #endregion
 
             #region Steam
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\Local Storage\\leveldb", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\Service Worker\\Database", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\Session Storage", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\shared_proto_db\\metadata", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\VideoDecodeStats", "*.log"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Common Files\\Steam", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\Local Storage\\leveldb", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\Service Worker\\Database", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\Session Storage", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\shared_proto_db\\metadata", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Steam\\htmlcache\\VideoDecodeStats", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Common Files\\Steam", "*.txt"),
             new DirectoryPatern("%steam%\\logs", "*.txt"),
             new DirectoryPatern("%steam%", "*.log"),
             new DirectoryPatern("%steam%", "*.html"),
@@ -254,100 +258,102 @@ namespace WinBooster.Clears
             #endregion
 
             #region DevExpress
-            new DirectoryPatern("C:\\Program Files (x86)\\DevExpress 21.2\\Components", "*.log"),
-            new DirectoryPatern("C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Support", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\DevExpress 21.2\\Components", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\DevExpress 21.2\\Components\\Support", "*.log"),
             #endregion
 
             #region DotNET
-            new DirectoryPatern("C:\\Program Files (x86)\\dotnet\\shared", "*.rtf"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\dotnet\\shared", "*.rtf"),
             #endregion
 
             #region Unity
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\UnityHub\\logs", "*.json"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Unity", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Unity\\Editor", "*.log"),
-            new DirectoryPatern("C:\\Program Files\\Unity Hub", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\Unity Hub\\resources", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\UnityHub\\logs", "*.json"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Unity", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Unity\\Editor", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Unity Hub", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Unity Hub\\resources", "*.txt"),
             #endregion
 
             #region WindowsDefender
-            new DirectoryPatern("C:\\Program Files\\Windows Defender", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\Windows Defender Advanced Threat Protection\\Classification", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Windows Defender", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Windows Defender Advanced Threat Protection\\Classification", "*.txt"),
             #endregion
 
             #region WinRAR
-            new DirectoryPatern("C:\\Program Files\\WinRAR", "*.txt"),
-            new DirectoryPatern("C:\\Program Files\\WinRAR", "*.htm"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\WinRAR", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\WinRAR", "*.htm"),
             #endregion
 
             #region Xamarin
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\18.0", "*.log"),
-            new DirectoryPatern("C:\\Users\\%%username%%\\AppData\\Local\\Xamarin\\Logs\\17.0", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\16.0", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\15.0", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\18.0", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%%username%%\\AppData\\Local\\Xamarin\\Logs\\17.0", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\16.0", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\15.0", "*.log"),
             #endregion
 
             #region Android
-            new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\build-tools\\32.0.0", "*.txt"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\cmdline-tools\\7.0", "*.txt"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\platforms\\android-31\\skins", "*.txt"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\platforms\\android-31\\templates", "*.txt"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Android\\android-sdk\\build-tools\\32.0.0", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Android\\android-sdk\\cmdline-tools\\7.0", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Android\\android-sdk\\platforms\\android-31\\skins", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Android\\android-sdk\\platforms\\android-31\\templates", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Android\\android-sdk\\platform-tools", "*.txt"),
 
-            new DirectoryPatern("C:\\Microsoft\\AndroidNDK\\%unknowfolder%", "*.md"),
+            new DirectoryPatern("%cycdrive%\\Microsoft\\AndroidNDK\\%unknowfolder%", "*.md"),
             #endregion
 
             #region Enigma Virtual Box
-            new DirectoryPatern("C:\\Program Files (x86)\\Enigma Virtual Box", "*.txt"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Enigma Virtual Box", "*.url"),
-            new DirectoryPatern("C:\\Program Files (x86)\\Enigma Virtual Box", "*.chm"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Enigma Virtual Box", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Enigma Virtual Box", "*.url"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Enigma Virtual Box", "*.chm"),
             #endregion
 
             #region Everything
-            new DirectoryPatern("C:\\Program Files (x86)\\Everything", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Everything", "*.txt"),
             #endregion
 
             #region Picasa3
-            new DirectoryPatern("C:\\Program Files (x86)\\Google\\Picasa3\\licenses", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Google\\Picasa3\\licenses", "*.txt"),
             #endregion
 
             #region Microsoft Web Deploy V3
-            new DirectoryPatern("C:\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\IIS\\Microsoft Web Deploy V3", "*.txt"),
             #endregion
 
             #region IIS Express
-            new DirectoryPatern("C:\\Program Files (x86)\\IIS Express", "*.txt"),
-            new DirectoryPatern("C:\\Program Files (x86)\\IIS Express", "*.url"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\IIS Express", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\IIS Express", "*.url"),
             #endregion
 
             #region BitTorrentHelper
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\BitTorrentHelper", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\BitTorrentHelper", "*.log"),
             #endregion
 
             #region Notepad++
-            new DirectoryPatern("C:\\Program Files\\Notepad++", "*.log"),
-            new DirectoryPatern("C:\\Program Files\\Notepad++", "readme.txt"),
-            new DirectoryPatern("C:\\Program Files\\Notepad++", "LICENSE"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\Notepad++", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++", "readme.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Notepad++", "*.log"),
             #endregion
 
             #region iTop Screen Recorder
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\iTop Screen Recorder\\Logs", "*.log")
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\iTop Screen Recorder\\Logs", "*.log")
             #endregion
         };
 
         public List<WorkingI> images = new List<WorkingI>()
         {
             #region iTop Screen Recorder
-            new DirectoryFull("C:\\Users\\%username%\\AppData\\LocalLow\\iTop Screen Recorder\\Outputs"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\iTop Screen Recorder\\Outputs"),
             #endregion
 
             #region ShareX
-            new DirectoryFull("C:\\Users\\%username%\\Documents\\ShareX\\Screenshots"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\Documents\\ShareX\\Screenshots"),
             #endregion
 
             #region Minecraft
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\screenshots", "*.png*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\screenshots", "*.png*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\screenshots", "*.png*"),
+            new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\screenshots", "*.png"),
             #endregion
         };
 
@@ -360,25 +366,25 @@ namespace WinBooster.Clears
 
         public List<WorkingI> cache = new List<WorkingI>()
         {
-            new DirectoryFull("C:\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
-            new DirectoryFull("C:\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
 
             #region Driver Booster
-            new DirectoryPatern("C:\\ProgramData\\IObit\\Driver Booster\\Download", "*.dbo*"),
-            new DirectoryPatern("C:\\ProgramData\\IObit\\Driver Booster\\Download", "*.dbx*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\IObit\\Driver Booster\\Download", "*.dbo*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\IObit\\Driver Booster\\Download", "*.dbx*"),
             #endregion
 
             #region LGHUB
-            new DirectoryPatern("C:\\ProgramData\\LGHUB\\cache", "*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\LGHUB\\cache", "*"),
             #endregion
 
             #region Discord
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Cache", "*"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js", "*"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js\\index-dir", "*"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\wasm", "*"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\wasm\\index-dir", "*"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Service Worker\\CacheStorage\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Cache", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js\\index-dir", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\wasm", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\wasm\\index-dir", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Service Worker\\CacheStorage\\%unknowfolder%", "*.txt"),
             #endregion
 
             #region Steam
@@ -424,19 +430,31 @@ namespace WinBooster.Clears
         public List<WorkingI> cheats = new List<WorkingI>()
         {
             #region NeverLose
-            new DirectoryPatern("C:\\", "NeverBSOD.log"),
+            new DirectoryPatern("%cycdrive%\\", "NeverBSOD.log"),
             new DirectoryFull("%steam%\\steamapps\\common\\Counter-Strike Global Offensive\\nl"),
             new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\nl"),
             new DirectoryPatern("%steam%\\steamapps\\common\\Counter-Strike Global Offensive", "*.signatures"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive", "*.signatures"),
             #endregion
 
+            #region rebornhack
+            new DirectoryFull("%cycdrive%\\rebornhack"),
+            #endregion
+
+            #region NixWare
+            new DirectoryFull("%cycdrive%\\nixware"),
+            #endregion
+
+            #region AOSHack
+            new DirectoryFull("%cycdrive%\\aoshax"),
+            #endregion
+
             #region ExecHack
-            new DirectoryFull("C:\\exechack"),
+            new DirectoryFull("%cycdrive%\\exechack"),
             #endregion
 
             #region Akrien
-            new DirectoryFull("C:\\AkrienAntiLeak"),
+            new DirectoryFull("%cycdrive%\\AkrienAntiLeak"),
             #endregion
         };
 

@@ -18,6 +18,8 @@ namespace WinBooster.Clears
         {
             if (dir.Contains("%username%"))
                 dir = dir.Replace("%username%", Environment.UserName);
+            if (dir.Contains("%cycdrive%"))
+                dir = dir.Replace("%cycdrive%", Utils.GetSysDrive());
             if (dir.Contains("%steam%"))
             {
                 var steam = Utils.FindSteamDirectory();

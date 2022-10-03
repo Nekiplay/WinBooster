@@ -9,11 +9,28 @@ namespace WinBooster
 {
     internal class Utils
     {
+        public static string GetSysDrive()
+        {
+            string system = Environment.GetFolderPath(Environment.SpecialFolder.System);
+            string path = Path.GetPathRoot(system);
+            int x1 = path.Length - 1;
+            path = path.Remove(x1);
+            Console.WriteLine(path);
+            return path;
+        }
         public static DirectoryInfo FindSteamDirectory()
         {
             if (Directory.Exists("C:\\Program Files (x86)\\Steam"))
             {
                 return new DirectoryInfo("C:\\Program Files (x86)\\Steam");
+            }
+            else if (Directory.Exists("D:\\Program Files (x86)\\Steam"))
+            {
+                return new DirectoryInfo("D:\\Program Files (x86)\\Steam");
+            }
+            else if (Directory.Exists("E:\\Program Files (x86)\\Steam"))
+            {
+                return new DirectoryInfo("E:\\Program Files (x86)\\Steam");
             }
             return null;
         }
