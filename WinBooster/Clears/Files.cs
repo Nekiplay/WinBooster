@@ -360,7 +360,7 @@ namespace WinBooster.Clears
         public List<WorkingI> media = new List<WorkingI>()
         {
             #region Bandicam
-            new DirectoryFull("C:\\Users\\%username%\\Documents\\Bandicam"),
+            new DirectoryFull("\"%cycdrive%\\Users\\%username%\\Documents\\Bandicam"),
             #endregion
         };
 
@@ -460,13 +460,13 @@ namespace WinBooster.Clears
 
         public List<WorkingI> lastactivity_unsafe = new List<WorkingI>()
         {
-            new DirectoryUnsafeFileNames("C:\\Windows\\Prefetch", new SafeNames().names)
+            new DirectoryUnsafeFileNames("%cycdrive%\\Windows\\Prefetch", new SafeNames().names)
         };
 
         public List<WorkingI> lastactivity_full = new List<WorkingI>()
         {
 
-            new DirectoryPatern("C:\\Windows\\Prefetch", "*.pf")
+            new DirectoryPatern("%cycdrive%\\Windows\\Prefetch", "*.pf")
         };
     }
 }
