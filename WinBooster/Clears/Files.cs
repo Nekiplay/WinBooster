@@ -218,6 +218,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("%steam%\\logs", "*.txt"),
             new DirectoryPatern("%steam%", "*.log"),
             new DirectoryPatern("%steam%", "*.html"),
+            new DirectoryPatern("%steam%\\steamui", "licenses.txt"),
 
             /* Ironsight_wpg */
             new DirectoryPatern("%steam%\\steamapps\\common\\Ironsight_wpg", "*.txt"),
