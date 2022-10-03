@@ -24,7 +24,76 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.log"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.url"),
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "steam_appid.txt"),
+            #endregion
 
+            #region Opera GX
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\CertificateRevocation\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Crash Reports\\reports", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Extension Rules", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Extension Scripts", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Extension State", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\GCM Store", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\IndexedDB\\%unknowfolder%", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Local Extension Setting\\%unknowfolder%", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Local Storage\\leveldb", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Session Storage", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\shared_proto_db", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Site Characteristics Database", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Storage\\ext\\sync-login\\def\\Local Storage\\leveldb", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Storage\\ext\\sync-login\\def\\Session Storage", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Sync Data\\LevelDB", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Sync Extension Settings\\%unknowfolder%", "*log*"),
+            #endregion
+
+            #region Google Chrome
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\CertificateRevocation\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Crash Reports\\reports", "*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Extension Rules", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Extension Scripts", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Extension State", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\GCM Store", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\IndexedDB\\%unknowfolder%", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Local Extension Setting\\%unknowfolder%", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Local Storage\\leveldb", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Session Storage", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\shared_proto_db", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Site Characteristics Database", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Storage\\ext\\sync-login\\def\\Local Storage\\leveldb", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Storage\\ext\\sync-login\\def\\Session Storage", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Sync Data\\LevelDB", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\Sync Extension Settings\\%unknowfolder%", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Google\\Chrome\\%unknowfolder%\\WidevineCdm", "LICENSE"),
+            #endregion
+
+            #region Yandex Browser
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\coupon_db", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Extension Scripts", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Extension State", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Local Storage\\leveldb", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Platform Notifications", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Session Storage", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\shared_proto_db", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Site Characteristics Database", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Sync Data\\LevelDB", "*log*"),
+            #endregion
+
+            #region ozProtect
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "release"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "COPYRIGHT"),
+            #endregion
+
+            #region Razer
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Razer\\Services\\Logs", "*.log"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Razer\\RazerCortexManifestRepair\\Logs", "*.log"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Razer\\BigDataSDK\\Logs", "*.log"),
             #endregion
 
             #region SandBoxie Plus
@@ -87,6 +156,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("D:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryFull("C:\\Users\\%username%\\vmlogs"),
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Bignox\\BigNoxVM\\vcredist", "*.txt"),
             #endregion
 
             #region Java
@@ -263,6 +333,20 @@ namespace WinBooster.Clears
             /* Idle Research */
             new DirectoryPatern("%steam%\\steamapps\\common\\Idle Research", "*.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Research", "*.txt"),
+
+            /* Dota 2 */
+            new DirectoryPatern("%steam%\\steamapps\\common\\dota 2 beta\\game", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\dota 2 beta\\game", "*.txt"),
+
+            /* Unturned */
+            new DirectoryPatern("%steam%\\steamapps\\common\\Unturned", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Unturned", "*.txt"),
+            new DirectoryPatern("%steam%\\steamapps\\common\\Unturned\\BattlEye", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Unturned\\BattlEye", "*.txt"),
+            new DirectoryPatern("%steam%\\steamapps\\common\\Unturned\\BattlEye\\Privacy", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Unturned\\BattlEye\\Privacy", "*.txt"),
+            new DirectoryFull("%steam%\\steamapps\\common\\Unturned\\Logs"),
+            new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Unturned\\Logs"),
             #endregion
 
             #region DevExpress
@@ -325,6 +409,7 @@ namespace WinBooster.Clears
 
             #region Picasa3
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Google\\Picasa3\\licenses", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Google\\Picasa3\\cdautorun", "*.url"),
             #endregion
 
             #region Microsoft Web Deploy V3
@@ -380,6 +465,26 @@ namespace WinBooster.Clears
         {
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
+
+            #region Windows
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%\\htmlcache", "*"),
+            #endregion
+
+            #region Opera GX
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Code Cache\\js", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable", "*.tmp"),
+            #endregion
+
+            #region Yandex Browser
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\%unknowfolder%\\ntp\\NativeCacheStorage\\web_ntp_cache", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Cache\\Cache_Data", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Code Cache\\js", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Code Cache\\wasm", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\GPUCache", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\TurboAppCache\\Nativecache\\%unknowfolder%", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\GrShaderCache\\GPUCache", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\ShaderCache\\GPUCache", "*"),
+            #endregion
 
             #region Driver Booster
             new DirectoryPatern("%cycdrive%\\ProgramData\\IObit\\Driver Booster\\Download", "*.dbo*"),
