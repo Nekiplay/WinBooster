@@ -20,6 +20,19 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Windows\\debug\\WIA", "*.log"),
 
             new DirectoryPatern("C:\\Windows\\System32\\winevt\\Logs", "*.evtx"),
+
+            new DirectoryPatern("C:\\Games\\%unknowfolder%", "readme.txt"),
+            new DirectoryPatern("C:\\Games\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("C:\\Games\\%unknowfolder%", "*.url"),
+            #endregion
+
+            #region Discord
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\IndexedDB\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Local Storage\\leveldb", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\module_data\\discord_hook", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Session Storage", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db\\metadata", "*.log"),
             #endregion
 
             #region Photoshop
@@ -58,6 +71,7 @@ namespace WinBooster.Clears
             #endregion
 
             #region Nox
+            new DirectoryPatern("C:\\Users\\%username%\\.BigNox", "*.log*"),
             new DirectoryPatern("C:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryPatern("D:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryFull("C:\\Users\\%username%\\vmlogs"),
@@ -69,6 +83,12 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "COPYRIGHT"),
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "LICENSE"),
             new DirectoryPatern("C:\\Program Files\\Java\\%unknowfolder%", "release"),
+
+            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "ASSEMBLY_EXCEPTION"),
+            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "readme.txt"),
+            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%", "THIRD_PARTY_README"),
+            new DirectoryPatern("C:\\Users\\%username%\\.jdks\\%unknowfolder%\\sample", "README"),
             #endregion
 
             #region Minecraft
@@ -77,6 +97,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\logs", "*.log*"),
 
             new DirectoryPatern("C:\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\logs", "*.log"),
+
+            new DirectoryPatern("C:\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\logs", "*.log*"),
             #endregion
 
             #region JetBrains
@@ -213,6 +235,14 @@ namespace WinBooster.Clears
             /* Team Fortress 2 */
             new DirectoryPatern("%steam%\\steamapps\\common\\Team Fortress 2", "*.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Team Fortress 2", "*.txt"),
+
+            /* World of Tanks */
+            new DirectoryPatern("%steam%\\steamapps\\common\\World of Tanks\\ru", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\World of Tanks\\ru", "*.txt"),
+
+            /* Among Us */
+            new DirectoryPatern("%steam%\\steamapps\\common\\Among Us\\Among Us_Data\\Plugins", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Among Us\\Among Us_Data\\Plugins", "*.txt"),
             #endregion
 
             #region DevExpress
@@ -255,6 +285,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\platforms\\android-31\\skins", "*.txt"),
             new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\platforms\\android-31\\templates", "*.txt"),
             new DirectoryPatern("C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools", "*.txt"),
+
+            new DirectoryPatern("C:\\Microsoft\\AndroidNDK\\%unknowfolder%", "*.md"),
             #endregion
 
             #region Enigma Virtual Box
@@ -304,16 +336,16 @@ namespace WinBooster.Clears
             #region ShareX
             new DirectoryFull("C:\\Users\\%username%\\Documents\\ShareX\\Screenshots"),
             #endregion
+
+            #region Minecraft
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\screenshots", "*.png*"),
+            #endregion
         };
 
         public List<WorkingI> media = new List<WorkingI>()
         {
             #region Bandicam
             new DirectoryFull("C:\\Users\\%username%\\Documents\\Bandicam"),
-            #endregion
-
-            #region Minecraft
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\screenshots", "*.png*"),
             #endregion
         };
 
@@ -329,6 +361,15 @@ namespace WinBooster.Clears
 
             #region LGHUB
             new DirectoryPatern("C:\\ProgramData\\LGHUB\\cache", "*"),
+            #endregion
+
+            #region Discord
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Cache", "*"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js", "*"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js\\index-dir", "*"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\wasm", "*"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\wasm\\index-dir", "*"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\discord\\Service Worker\\CacheStorage\\%unknowfolder%", "*.txt"),
             #endregion
 
             #region Steam
