@@ -15,7 +15,6 @@ namespace WinBooster
             string path = Path.GetPathRoot(system);
             int x1 = path.Length - 1;
             path = path.Remove(x1);
-            Console.WriteLine(path);
             return path;
         }
         public static DirectoryInfo FindSteamDirectory()
