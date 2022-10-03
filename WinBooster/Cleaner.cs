@@ -102,6 +102,10 @@ namespace WinBooster
                         RegUnsafe regUnsafe = new RegUnsafe();
                         removed += regUnsafe.Work();
                     }
+                    guna2CheckBox5.Invoke(new MethodInvoker(() =>
+                    {
+                        guna2CheckBox5.Checked = false;
+                    }));
                 }
             });
 

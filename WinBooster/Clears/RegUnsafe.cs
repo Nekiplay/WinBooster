@@ -1,9 +1,4 @@
 ﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinBooster.Clears
 {
@@ -25,6 +20,17 @@ namespace WinBooster.Clears
                 try
                 {
                     CurrentUserSoftware.DeleteSubKeyTree("Bags");
+                }
+                catch { }
+            }
+            catch { }
+
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage", true);
+                try
+                {
+                    CurrentUserSoftware.DeleteSubKeyTree("AppSwitchedl");
                 }
                 catch { }
             }

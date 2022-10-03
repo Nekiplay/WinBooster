@@ -91,6 +91,15 @@ namespace WinBooster.Clears
             catch { }
             #endregion
 
+            #region Akrien
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications", true);
+                CurrentUserSoftware.DeleteSubKeyTree("AkrienPremiumLoader.exe");
+            }
+            catch { }
+            #endregion
+
             return removed;
         }
     }

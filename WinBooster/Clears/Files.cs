@@ -63,6 +63,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC", "*.log"),
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft", "*.log"),
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\logs", "*.log*"),
+
+            new DirectoryPatern("C:\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\logs", "*.log"),
             #endregion
 
             #region JetBrains
@@ -370,33 +372,15 @@ namespace WinBooster.Clears
             #region ExecHack
             new DirectoryFull("C:\\exechack"),
             #endregion
+
+            #region Akrien
+            new DirectoryFull("C:\\AkrienAntiLeak"),
+            #endregion
         };
 
         public List<WorkingI> lastactivity_unsafe = new List<WorkingI>()
         {
-
-            new DirectoryUnsafeFileNames("C:\\Windows\\Prefetch", new List<string>()
-            {
-                "HL2.EXE",
-                "JAVAW.EXE",
-                "JAVA.EXE",
-                "OPERA_AUTOUPDATE.EXE",
-                "OPERA.EXE",
-                "PICASA3.EXE",
-                "STEAM.EXE",
-                "STEAMSERVICE.EXE",
-                "STEAMWEBHELPER.EXE",
-                "DISCORD.EXE",
-                "CMD.EXE",
-                "CONHOST.EXE",
-                "SVCHOST.EXE",
-                "TASKMGR.EXE",
-                "TASKHOSTW.EXE",
-                "SYSTRAY.EXE",
-                "SYSTEMSETTINGSBROKER.EXE",
-                "TEXTINPUTHOST.EXE",
-                "TIWORKER.EXE",
-            }),
+            new DirectoryUnsafeFileNames("C:\\Windows\\Prefetch", new SafeNames().names)
         };
 
         public List<WorkingI> lastactivity_full = new List<WorkingI>()
