@@ -82,6 +82,30 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Sync Data\\LevelDB", "*log*"),
             #endregion
 
+            #region Brave Browser
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\CertificateRevocation\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\AutofillStrikeDatabase", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\BudgetDatabase", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\commerce_subscription_db", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\coupon_db", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Download Service\\EntryDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extension Scripts", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Extension State", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Feature Engagement Tracker\\AvailabilityDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Feature Engagement Tracker\\EventDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\GCM Store\\Encryption", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Local Storage\\leveldbn", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Segmentation Platform\\SegmentInfoDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Segmentation Platform\\SignalDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Segmentation Platform\\SignalStorageConfigDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Session Storage", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\shared_proto_db", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Site Characteristics Database", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Sync Data\\LevelDB", "*log*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default", "LOG"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default", "README"),
+            #endregion
+
             #region ozProtect
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\ozProtect\\jre", "*.html"),
@@ -484,6 +508,14 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\TurboAppCache\\Nativecache\\%unknowfolder%", "*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\GrShaderCache\\GPUCache", "*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\ShaderCache\\GPUCache", "*"),
+            #endregion
+
+            #region Brave Browser
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Cache\\Cache_Data", "*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Code Cache\\js", "*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Code Cache\\wasm", "*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\DawnCache", "*"),
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\GPUCache", "*"),
             #endregion
 
             #region Driver Booster
