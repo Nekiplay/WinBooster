@@ -104,6 +104,17 @@ namespace WinBooster.Clears
                 }
             }
             catch { }
+            try
+            {
+                var usersReg = Registry.CurrentUser;
+                var k = usersReg.OpenSubKey("SOFTWARE\\WinRAR\\ArcHistory", true);
+                foreach (var v in k.GetValueNames())
+                {
+                    removed += k.GetValue(v).ToString().Length;
+                    k.DeleteValue(v);
+                }
+            }
+            catch { }
             #endregion
 
             #region NeverLose
