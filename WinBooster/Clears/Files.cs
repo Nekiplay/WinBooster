@@ -399,7 +399,6 @@ namespace WinBooster.Clears
             #endregion
 
             #region Steam
-            new DirectoryFull("%steam%\\userdata"),
             new DirectoryPatern("%steam%\\appcache\\stats", "*.bin"),
             new DirectoryPatern("%steam%\\appcache\\librarycache", "*.jpg"),
             new DirectoryPatern("%steam%\\appcache\\librarycache", "*.png"),
