@@ -12,23 +12,23 @@ namespace WinBooster.Clears
         public List<WorkingI> logs = new List<WorkingI>()
         {
             #region Windows
-            new DirectoryFull("C:\\Windows\\Logs"),
-            new DirectoryFull("C:\\Windows\\Temp"),
-            new DirectoryFull("C:\\Users\\%username%\\AppData\\Local\\Temp"),
-            new DirectoryPatern("C:\\Windows", "*.log"),
-            new DirectoryPatern("C:\\Windows\\debug", "*.log"),
-            new DirectoryPatern("C:\\Windows\\debug\\WIA", "*.log"),
-            new DirectoryPatern("C:\\Windows\\SoftwareDistribution", "*.log"),
-            new DirectoryPatern("C:\\Windows\\SoftwareDistribution\\DataStore\\Logs", "*.log"),
-            new DirectoryPatern("C:\\Windows\\Performance\\WinSAT", "*.log"),
-            new DirectoryPatern("C:\\Windows\\Panther", "*.log"),
-            new DirectoryPatern("C:\\Windows\\Panther\\UnattendGC", "*.log"),
+            new DirectoryFull("%cycdrive%\\Windows\\Logs"),
+            new DirectoryFull("%cycdrive%\\Windows\\Temp"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Local\\Temp"),
+            new DirectoryPatern("%cycdrive%\\Windows", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\debug", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\debug\\WIA", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\SoftwareDistribution", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\SoftwareDistribution\\DataStore\\Logs", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\Performance\\WinSAT", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\Panther", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Windows\\Panther\\UnattendGC", "*.log"),
 
-            new DirectoryPatern("C:\\Windows\\System32\\winevt\\Logs", "*.evtx"),
+            new DirectoryPatern("%cycdrive%\\Windows\\System32\\winevt\\Logs", "*.evtx"),
 
-            new DirectoryPatern("C:\\Games\\%unknowfolder%", "readme.txt"),
-            new DirectoryPatern("C:\\Games\\%unknowfolder%", "*.log"),
-            new DirectoryPatern("C:\\Games\\%unknowfolder%", "*.url"),
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "readme.txt"),
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.url"),
 
             #endregion
 
