@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -139,6 +140,67 @@ namespace WinBooster.Clears
                     }
                 }
                 catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage\\AppSwitched", true);
+                    var values = c1.GetValueNames();
+                    foreach (var value in values)
+                    {
+                        if (File.Exists(value))
+                        {
+                            FileInfo f = new FileInfo(value);
+                            if (!new SafeNames().names.Contains(f.Name))
+                            {
+                                var b = c1.GetValue(value).ToString().Length;
+                                removed += b;
+                                c1.DeleteValue(value);
+                            }
+                        }
+                        else
+                        {
+                            if (!new SafeNames().names.Contains(value))
+                            {
+                                var b = c1.GetValue(value).ToString().Length;
+                                removed += b;
+                                c1.DeleteValue(value);
+                            }
+                        }
+                    }
+                }
+                catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
+                    var values = c1.GetSubKeyNames();
+                    foreach (var value in values)
+                    {
+                        var c2 = c1.OpenSubKey(value, true);
+                        foreach (var value2 in c2.GetValueNames())
+                        {
+                            if (int.TryParse(value2, out int i))
+                            {
+                                var b = (byte[])c2.GetValue(value2);
+                                removed += b.Length;
+                                c2.DeleteValue(value2);
+                            }
+                        }
+                    }
+                }
+                catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
+                    foreach (var value2 in c1.GetValueNames())
+                    {
+                        if (int.TryParse(value2, out int i))
+                        {
+                            var b = (byte[])c1.GetValue(value2);
+                            removed += b.Length;
+                            c1.DeleteValue(value2);
+                        }
+                    }
+                }
+                catch { }
             }
             catch { }
             #endregion
@@ -192,6 +254,25 @@ namespace WinBooster.Clears
             {
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications", true);
                 CurrentUserSoftware.DeleteSubKeyTree("AkrienPremiumLoader.exe");
+            }
+            catch { }
+            #endregion
+
+            #region Notepad
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Notepad", true);
+                CurrentUserSoftware.SetValue("searchString", "");
+                CurrentUserSoftware.SetValue("replaceString", "");
+            }
+            catch { }
+            #endregion
+
+            #region RadminVPN
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Famatech\\Radmin VPN\\ui\\JoinWindow", true);
+                CurrentUserSoftware.SetValue("Search", "");
             }
             catch { }
             #endregion

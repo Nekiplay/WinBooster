@@ -37,6 +37,8 @@ namespace WinBooster.Clears
             "rundll32.exe",
             "conhost.exe",
             "explorer.exe",
+            "notepad++.exe",
+            "opera.exe",
         };
         public SafeNames()
         {

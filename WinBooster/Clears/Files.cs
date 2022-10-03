@@ -258,6 +258,10 @@ namespace WinBooster.Clears
             /* Among Us */
             new DirectoryPatern("%steam%\\steamapps\\common\\Among Us\\Among Us_Data\\Plugins", "*.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Among Us\\Among Us_Data\\Plugins", "*.txt"),
+
+            /* Idle Research */
+            new DirectoryPatern("%steam%\\steamapps\\common\\Idle Research", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Research", "*.txt"),
             #endregion
 
             #region DevExpress
