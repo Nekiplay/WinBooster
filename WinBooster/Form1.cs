@@ -48,6 +48,7 @@ namespace WinBooster
         }
 
         Cleaner cleaner = new Cleaner();
+        OptimizeForm optimize = new OptimizeForm();
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
@@ -72,6 +73,11 @@ namespace WinBooster
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Process.GetCurrentProcess().Kill();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(optimize, false);
         }
     }
 }

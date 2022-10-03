@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace WinBooster.Clears
 {
@@ -32,6 +27,14 @@ namespace WinBooster.Clears
 
             #endregion
 
+            #region SandBoxie Plus
+            new DirectoryPatern("%cycdrive%\\Program Files\\Sandboxie-Plus", "*.txt"),
+            #endregion
+
+            #region X7 Oscar Keyboard Editor
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\X7 Oscar Keyboard Editor", "*.log"),
+            #endregion
+
             #region Discord
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\IndexedDB\\%unknowfolder%", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Local Storage\\leveldb", "*.log"),
@@ -40,7 +43,6 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\shared_proto_db\\metadata", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Discord", "*.log"),
-
             #endregion
 
             #region Photoshop
@@ -88,6 +90,7 @@ namespace WinBooster.Clears
             #endregion
 
             #region Java
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Oracle\\Java\\.oracle_jre_usage", "*.timestamp"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "*.html"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "COPYRIGHT"),
@@ -277,6 +280,10 @@ namespace WinBooster.Clears
             #region WindowsDefender
             new DirectoryPatern("%cycdrive%\\Program Files\\Windows Defender", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Windows Defender Advanced Threat Protection\\Classification", "*.txt"),
+            #endregion
+
+            #region 7-Zip
+            new DirectoryPatern("%cycdrive%\\Program Files\\7-Zip", "*.txt"),
             #endregion
 
             #region WinRAR
