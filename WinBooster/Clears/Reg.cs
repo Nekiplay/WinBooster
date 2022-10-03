@@ -82,6 +82,30 @@ namespace WinBooster.Clears
             catch { }
             #endregion
 
+            #region WinRAR
+            try
+            {
+                var usersReg = Registry.Users;
+                var users = usersReg.GetSubKeyNames();
+                foreach (var user in users)
+                {
+                    try
+                    {
+                        var k = usersReg.OpenSubKey(user + "\\SOFTWARE\\WinRAR\\DialogEditHistory\\ArcName", true);
+                        foreach (string value in k.GetValueNames())
+                        {
+                            k.DeleteValue(value);
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            }
+            catch { }
+            #endregion
+
             #region NeverLose
             try
             {
