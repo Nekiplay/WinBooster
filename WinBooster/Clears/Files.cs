@@ -18,6 +18,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Windows", "*.log"),
             new DirectoryPatern("C:\\Windows\\debug", "*.log"),
             new DirectoryPatern("C:\\Windows\\debug\\WIA", "*.log"),
+
+            new DirectoryPatern("C:\\Windows\\System32\\winevt\\Logs", "*.evtx"),
             #endregion
 
             #region Photoshop

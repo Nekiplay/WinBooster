@@ -47,7 +47,68 @@ namespace WinBooster.Clears
                             c1.DeleteValue(value);
                         }
                     }
-                } catch { }
+                } 
+                catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\exe", true);
+                    var values = c1.GetValueNames();
+                    foreach (var value in values)
+                    {
+                        if (int.TryParse(value, out int i))
+                        {
+                            var b = (byte[])c1.GetValue(value);
+                            removed += b.Length;
+                            c1.DeleteValue(value);
+                        }
+                    }
+                }
+                catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\*", true);
+                    var values = c1.GetValueNames();
+                    foreach (var value in values)
+                    {
+                        if (int.TryParse(value, out int i))
+                        {
+                            var b = (byte[])c1.GetValue(value);
+                            removed += b.Length;
+                            c1.DeleteValue(value);
+                        }
+                    }
+                }
+                catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\rar", true);
+                    var values = c1.GetValueNames();
+                    foreach (var value in values)
+                    {
+                        if (int.TryParse(value, out int i))
+                        {
+                            var b = (byte[])c1.GetValue(value);
+                            removed += b.Length;
+                            c1.DeleteValue(value);
+                        }
+                    }
+                }
+                catch { }
+                try
+                {
+                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\zip", true);
+                    var values = c1.GetValueNames();
+                    foreach (var value in values)
+                    {
+                        if (int.TryParse(value, out int i))
+                        {
+                            var b = (byte[])c1.GetValue(value);
+                            removed += b.Length;
+                            c1.DeleteValue(value);
+                        }
+                    }
+                }
+                catch { }
                 try
                 {
                     var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRU", true);

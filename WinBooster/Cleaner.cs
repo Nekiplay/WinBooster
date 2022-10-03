@@ -70,7 +70,6 @@ namespace WinBooster
             {
                 if (guna2CheckBox2.Checked)
                 {
-                    Console.WriteLine(guna2ComboBox1.SelectedIndex);
                     if (guna2ComboBox1.SelectedIndex == 0)
                     {
                         foreach (WorkingI log in files.lastactivity_unsafe)
@@ -114,6 +113,9 @@ namespace WinBooster
             await t3;
             await t4;
             await t5;
+
+            chartControl1.Series.ToArray().First().Points.Add(new DevExpress.XtraCharts.SeriesPoint(chartControl1.Series.ToArray().First().Points.Count, removed));
+
             var item = toastNotificationsManager1.YieldArray().First();
             var item2 = item.Notifications.First();
             item2.Header = "Очистка";
@@ -150,6 +152,11 @@ namespace WinBooster
             }
             if (!guna2CheckBox5.Checked && !guna2CheckBox2.Checked)
                 guna2GroupBox2.Visible = guna2CheckBox2.Checked;
+        }
+
+        private void Cleaner_Load(object sender, EventArgs e)
+        {
+            chartControl1.Series.ToArray().First().Points.Clear();
         }
     }
 }
