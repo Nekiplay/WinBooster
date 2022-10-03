@@ -75,6 +75,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryPatern("D:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryFull("C:\\Users\\%username%\\vmlogs"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "*.log"),
             #endregion
 
             #region Java
@@ -133,6 +134,10 @@ namespace WinBooster.Clears
 
             #region Driver Booster
             new DirectoryPatern("C:\\ProgramData\\IObit\\Driver Booster\\Downloader", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Install", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Main", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Scan", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\IObit\\Driver Booster\\Logs\\Scheduler", "*.log"),
             #endregion
 
             #region PCHealthCheck
@@ -159,6 +164,7 @@ namespace WinBooster.Clears
 
             #region OBS Studio
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\obs-studio\\logs", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\obs-studio\\logs", "*.txt"),
             #endregion
 
             #region GitHub Desktop
@@ -168,6 +174,7 @@ namespace WinBooster.Clears
 
             #region Overwolf
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.txt"),
             new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.html"),
             new DirectoryPatern("C:\\ProgramData\\Overwolf\\Log", "*.log"),
             /* Achievement Rewards */
@@ -320,6 +327,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Program Files\\Notepad++", "*.log"),
             new DirectoryPatern("C:\\Program Files\\Notepad++", "readme.txt"),
             new DirectoryPatern("C:\\Program Files\\Notepad++", "LICENSE"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Roaming\\Notepad++", "*.log"),
             #endregion
 
             #region iTop Screen Recorder
