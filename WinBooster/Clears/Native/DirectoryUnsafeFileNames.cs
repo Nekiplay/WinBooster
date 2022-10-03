@@ -14,6 +14,10 @@ namespace WinBooster.Clears
         public List<string> safenames;
         public DirectoryUnsafeFileNames(string dir, List<string> safenames)
         {
+            if (dir.Contains("%username%"))
+                dir = dir.Replace("%username%", Environment.UserName);
+            if (dir.Contains("%cycdrive%"))
+                dir = dir.Replace("%cycdrive%", Utils.GetSysDrive());
             this.dir = dir;
             this.safenames = safenames;
         }

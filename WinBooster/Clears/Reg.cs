@@ -32,11 +32,9 @@ namespace WinBooster.Clears
             #endregion
 
             #region LastActivity
-            try
-            {
-                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
                 try
                 {
+                    var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
                     var c1 = CurrentUserSoftware.OpenSubKey("CIDSizeMRU", true);
                     var values = c1.GetValueNames();
                     foreach (var value in values)
@@ -112,6 +110,7 @@ namespace WinBooster.Clears
                 catch { }
                 try
                 {
+                    var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
                     var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRU", true);
                     var values = c1.GetValueNames();
                     foreach (var value in values)
@@ -127,6 +126,7 @@ namespace WinBooster.Clears
                 catch { }
                 try
                 {
+                    var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
                     var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRULegacy", true);
                     var values = c1.GetValueNames();
                     foreach (var value in values)
@@ -201,8 +201,6 @@ namespace WinBooster.Clears
                     }
                 }
                 catch { }
-            }
-            catch { }
             #endregion
 
             #region WinRAR
