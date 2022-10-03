@@ -27,6 +27,16 @@ namespace WinBooster.Clears
             new DirectoryPatern("C:\\Program Files\\Adobe\\%unknowfolder%\\OBLRes\\ru_RU", "*.html"),
             #endregion
 
+            #region Visual Studio
+            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.md"),
+
+            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("C:\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.md"),
+            #endregion
+
             #region Gameloop
             new DirectoryPatern("D:\\Program Files\\TxGameAssistant\\AppMarket", "*.log"),
             new DirectoryPatern("C:\\Program Files\\TxGameAssistant\\AppMarket", "*.log"),
