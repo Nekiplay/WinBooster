@@ -20,11 +20,60 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Windows\\Panther\\UnattendGC", "*.log"),
 
             new DirectoryPatern("%cycdrive%\\Windows\\System32\\winevt\\Logs", "*.evtx"),
+            /* CrashLogs */
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\CrashDumps", "*.dmp"),
 
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.log"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.url"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "steam_appid.txt"),
+            #endregion
+
+            #region Counter-Strike 1.6
+            new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "readme.txt"),
+            new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "*.url"),
+            new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "steam_appid.txt"),
+            #endregion
+
+            #region Stalker Anomaly
+            new DirectoryPatern("%cycdrive%\\Stalker\\Anomaly 1.5.1\\appdata\\logs", "*.log"),
+            #endregion
+
+            #region VK Play Game Center
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\File System\\Origins", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\IndexedDB\\%unknowfolder%", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\Local Storage\\leveldb", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\Session Storage", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\shared_proto_db", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\VideoDecodeStats", "*log*"),
+
+            /*Cross Fire */
+            new DirectoryPatern("D:\\GameCenter\\Cross Fire\\x64", "*.log"),
+            new DirectoryPatern("C:\\GameCenter\\Cross Fire\\x64", "*.log"),
+            new DirectoryPatern("C:\\GameCenter\\Cross Fire\\Log", "*"),
+            new DirectoryPatern("D:\\GameCenter\\Cross Fire\\Log", "*"),
+
+            /* StalCraft */
+            new DirectoryPatern("C:\\GameCenter\\Stalcraft\\-gup-", "*.log"),
+            new DirectoryPatern("D:\\GameCenter\\Stalcraft\\-gup-", "*.log"),
+            new DirectoryPatern("C:\\GameCenter\\Stalcraft\\logs", "*.log"),
+            new DirectoryPatern("D:\\GameCenter\\Stalcraft\\logs", "*.log"),
+            #endregion
+
+            #region Origin
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Origin", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Origin\\SelfUpdate\\Staged", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Origin\\SelfUpdate\\Staged\\support\\Privacy and Cookie Policy", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Origin\\SelfUpdate\\Staged\\support\\User Agreement", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Origin\\SelfUpdate", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Origin\\Logs", "*.data"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Origin\\Logs", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Origin\\ThinSetup", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Origin\\ThinSetup\\%unknowfolder%", "*.txt"),
             #endregion
 
             #region Opera GX
@@ -80,6 +129,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\shared_proto_db", "*log*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Site Characteristics Database", "*log*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Yandex\\YandexBrowser\\User Data\\Default\\Sync Data\\LevelDB", "*log*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Yandex\\YandexBrowser", "*log*"),
             #endregion
 
             #region Brave Browser
@@ -150,9 +200,9 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.txt"),
             new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\EdgeAdapter\\%unknowfolder%", "*.md"),
 
-            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.html"),
-            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.txt"),
-            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\\\ChromeAdapter\\%unknowfolder%", "*.md"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\ChromeAdapter\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\ChromeAdapter\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Microsoft\\VisualStudio\\ChromeAdapter\\%unknowfolder%", "*.md"),
             #endregion
 
             #region Gameloop
@@ -265,7 +315,7 @@ namespace WinBooster.Clears
 
             #region EasyAntiCheat
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat", "*.log"),
-            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat\\497", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\EasyAntiCheat\\%unknowfolder%", "*.log"),
             #endregion
 
             #region OBS Studio
@@ -353,10 +403,12 @@ namespace WinBooster.Clears
             /* Among Us */
             new DirectoryPatern("%steam%\\steamapps\\common\\Among Us\\Among Us_Data\\Plugins", "*.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Among Us\\Among Us_Data\\Plugins", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Innersloth\\Among Us", "*.log"),
 
             /* Idle Research */
             new DirectoryPatern("%steam%\\steamapps\\common\\Idle Research", "*.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Research", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\CryptoGrounds\\Idle Research", "*.log"),
 
             /* Dota 2 */
             new DirectoryPatern("%steam%\\steamapps\\common\\dota 2 beta\\game", "*.txt"),
@@ -489,6 +541,16 @@ namespace WinBooster.Clears
         {
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
+
+            #region Stalker Anomaly
+            new DirectoryFull("%cycdrive%\\Stalker\\Anomaly 1.5.1\\appdata\\shaders_cache\\r4"),
+            #endregion
+
+            #region VK Play Game Center
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\Code Cache\\js", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\Cache\\Cache_Data", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GameCenter\\Cache\\Chrome\\GPUCache", "*"),
+            #endregion
 
             #region Windows
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%\\htmlcache", "*"),

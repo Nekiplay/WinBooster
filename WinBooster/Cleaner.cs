@@ -58,7 +58,7 @@ namespace WinBooster
 
         private void Cleaner_Load(object sender, EventArgs e)
         {
-            chartControl1.Series.ToArray().First().Points.Clear();
+            
         }
 
         private async void guna2Button1_MouseClick(object sender, MouseEventArgs e)
@@ -164,8 +164,6 @@ namespace WinBooster
                 await t3;
                 await t4;
                 await t5;
-
-                chartControl1.Series.ToArray().First().Points.Add(new DevExpress.XtraCharts.SeriesPoint(chartControl1.Series.ToArray().First().Points.Count, removed));
 
                 var item = toastNotificationsManager1.YieldArray().First();
                 var item2 = item.Notifications.First();

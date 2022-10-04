@@ -49,6 +49,7 @@ namespace WinBooster
 
         Cleaner cleaner = new Cleaner();
         OptimizeForm optimize = new OptimizeForm();
+        SettingsForm settings = new SettingsForm();
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
@@ -78,6 +79,11 @@ namespace WinBooster
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             OpenChildForm(optimize, false);
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(settings, false);
         }
     }
 }
