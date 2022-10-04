@@ -109,11 +109,20 @@
     <Compile Include="FakeForms\SMS Bomber.Designer.cs">
       <DependentUpon>SMS Bomber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="GameOptimizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GameOptimizeForm.Designer.cs">
+      <DependentUpon>GameOptimizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameOptimize\GameList.cs" />
+    <Compile Include="GameOptimize\GameOptimizeI.cs" />
+    <Compile Include="GameOptimize\Games\Minecraft.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="OptimizeForm.cs">
       <SubType>Form</SubType>
@@ -140,8 +149,11 @@
     <EmbeddedResource Include="FakeForms\SMS Bomber.resx">
       <DependentUpon>SMS Bomber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GameOptimizeForm.resx">
+      <DependentUpon>GameOptimizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptimizeForm.resx">
       <DependentUpon>OptimizeForm.cs</DependentUpon>

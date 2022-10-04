@@ -10,5 +10,6 @@ namespace WinBooster
     {
         public int FakeMenu = 0;
         public string Password = "";
+        public bool DarkTheme = true;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,13 +18,18 @@ namespace WinBooster.FakeForms
             InitializeComponent();
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (guna2TextBox1.Text == Program.settings.Password)
             {
                 this.Hide();
                 Program.form.Show();
             }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

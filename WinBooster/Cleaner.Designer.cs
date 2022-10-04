@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cleaner));
             this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -52,7 +53,7 @@
             this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox1.CheckedState.BorderRadius = 2;
             this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Black;
             this.guna2CheckBox1.Location = new System.Drawing.Point(9, 73);
             this.guna2CheckBox1.Name = "guna2CheckBox1";
             this.guna2CheckBox1.Size = new System.Drawing.Size(53, 19);
@@ -72,10 +73,11 @@
             this.guna2Button1.BorderThickness = 1;
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.White;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.guna2Button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
             this.guna2Button1.Location = new System.Drawing.Point(9, 173);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
@@ -92,7 +94,7 @@
             this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox3.CheckedState.BorderRadius = 2;
             this.guna2CheckBox3.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.Black;
             this.guna2CheckBox3.Location = new System.Drawing.Point(9, 98);
             this.guna2CheckBox3.Name = "guna2CheckBox3";
             this.guna2CheckBox3.Size = new System.Drawing.Size(50, 19);
@@ -111,7 +113,7 @@
             this.guna2CheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox4.CheckedState.BorderRadius = 2;
             this.guna2CheckBox4.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.Black;
             this.guna2CheckBox4.Location = new System.Drawing.Point(9, 48);
             this.guna2CheckBox4.Name = "guna2CheckBox4";
             this.guna2CheckBox4.Size = new System.Drawing.Size(121, 19);
@@ -126,12 +128,15 @@
             // 
             // guna2GroupBox1
             // 
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox5);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox2);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox4);
             this.guna2GroupBox1.Controls.Add(this.guna2Button1);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox1);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox3);
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Black;
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
@@ -148,7 +153,7 @@
             this.guna2CheckBox5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox5.CheckedState.BorderRadius = 2;
             this.guna2CheckBox5.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox5.CheckedState.FillColor = System.Drawing.Color.Black;
             this.guna2CheckBox5.Location = new System.Drawing.Point(9, 148);
             this.guna2CheckBox5.Name = "guna2CheckBox5";
             this.guna2CheckBox5.Size = new System.Drawing.Size(68, 19);
@@ -168,7 +173,7 @@
             this.guna2CheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2CheckBox2.CheckedState.BorderRadius = 2;
             this.guna2CheckBox2.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.Black;
             this.guna2CheckBox2.Location = new System.Drawing.Point(9, 123);
             this.guna2CheckBox2.Name = "guna2CheckBox2";
             this.guna2CheckBox2.Size = new System.Drawing.Size(87, 19);
@@ -192,8 +197,11 @@
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.Controls.Add(this.guna2ComboBox1);
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Black;
+            this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(162, 12);
@@ -207,7 +215,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.label1.Location = new System.Drawing.Point(6, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 15);
@@ -219,6 +227,7 @@
             this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
             this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
             this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -242,6 +251,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(432, 322);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);

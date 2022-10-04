@@ -73,6 +73,15 @@ namespace WinBooster
             }
             else if (e.Button == MouseButtons.Left)
             {
+                guna2Button1.Invoke(new MethodInvoker(() =>
+                {
+                    guna2Button1.Enabled = false;
+                    guna2CheckBox1.Enabled = false;
+                    guna2CheckBox2.Enabled = false;
+                    guna2CheckBox3.Enabled = false;
+                    guna2CheckBox4.Enabled = false;
+                    guna2CheckBox5.Enabled = false;
+                }));
                 long removed = 0;
                 Files files = new Files();
                 Task t1 = Task.Factory.StartNew(() =>
@@ -164,7 +173,15 @@ namespace WinBooster
                 await t3;
                 await t4;
                 await t5;
-
+                guna2Button1.Invoke(new MethodInvoker(() =>
+                {
+                    guna2Button1.Enabled = true;
+                    guna2CheckBox1.Enabled = true;
+                    guna2CheckBox2.Enabled = true;
+                    guna2CheckBox3.Enabled = true;
+                    guna2CheckBox4.Enabled = true;
+                    guna2CheckBox5.Enabled = true;
+                }));
                 var item = toastNotificationsManager1.YieldArray().First();
                 var item2 = item.Notifications.First();
                 item2.Header = "Очистка";
