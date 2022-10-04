@@ -1,17 +1,8 @@
-﻿using DevExpress.Utils.Design;
-using DevExpress.Utils.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static DevExpress.XtraBars.Controls.CustomLinksControl;
 
 namespace WinBooster
 {
@@ -21,6 +12,14 @@ namespace WinBooster
         {
             InitializeComponent();
         }
+
+        public StatisticForm statistic = new StatisticForm();
+        public Cleaner cleaner = new Cleaner();
+        public OptimizeForm optimize = new OptimizeForm();
+        public SettingsForm settings = new SettingsForm();
+        public GameOptimizeForm gameOptimize = new GameOptimizeForm();
+        public FixerForm fixer = new FixerForm();
+
         private Form currentChildForm;
         private string currentChildFormname;
         public void OpenChildForm(Form childForm, bool newform = false)
@@ -49,11 +48,6 @@ namespace WinBooster
                 childForm.Show();
             }
         }
-
-        Cleaner cleaner = new Cleaner();
-        OptimizeForm optimize = new OptimizeForm();
-        SettingsForm settings = new SettingsForm();
-        GameOptimizeForm gameOptimize = new GameOptimizeForm();
 
         private void guna2Button1_Click_1(object sender, EventArgs e)
         {
@@ -109,6 +103,11 @@ namespace WinBooster
         {
             Program.settings.DarkTheme = !Program.settings.DarkTheme;
             Program.settings.Save();
+        }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            label2.Text = "Win Booster v" + Program.version;
         }
 
         #region Открытие очистки
@@ -176,5 +175,46 @@ namespace WinBooster
             OpenMenu(gameOptimize);
         }
         #endregion
+
+        #region Открытие статистики
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            OpenMenu(statistic);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            OpenMenu(statistic);
+        }
+
+        private void guna2Panel6_Click(object sender, EventArgs e)
+        {
+            OpenMenu(statistic);
+        }
+        #endregion
+
+        #region Открытие исравления ошибок
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            OpenMenu(fixer);
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            OpenMenu(fixer);
+        }
+
+        private void guna2Panel7_Click(object sender, EventArgs e)
+        {
+            OpenMenu(fixer);
+        }
+        #endregion
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

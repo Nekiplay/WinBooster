@@ -89,10 +89,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="Cleaner.cs">
+    <Compile Include="Fixer\FixerData.cs" />
+    <Compile Include="Fixer\Fixes\NoClose.cs" />
+    <Compile Include="Fixer\Fixes\Regedit.cs" />
+    <Compile Include="Fixer\Fixes\TaskManager.cs" />
+    <Compile Include="Fixer\Fixes\ViewContextMenu.cs" />
+    <Compile Include="Forms\FixerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cleaner.Designer.cs">
+    <Compile Include="Forms\FixerForm.Designer.cs">
+      <DependentUpon>FixerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fixer\FixerI.cs" />
+    <Compile Include="Forms\Cleaner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cleaner.Designer.cs">
       <DependentUpon>Cleaner.cs</DependentUpon>
     </Compile>
     <Compile Include="Clears\Native\DirectoryFull.cs" />
@@ -109,10 +121,10 @@
     <Compile Include="FakeForms\SMS Bomber.Designer.cs">
       <DependentUpon>SMS Bomber.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameOptimizeForm.cs">
+    <Compile Include="Forms\GameOptimizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameOptimizeForm.Designer.cs">
+    <Compile Include="Forms\GameOptimizeForm.Designer.cs">
       <DependentUpon>GameOptimizeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GameOptimize\GameList.cs" />
@@ -124,10 +136,10 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptimizeForm.cs">
+    <Compile Include="Forms\OptimizeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptimizeForm.Designer.cs">
+    <Compile Include="Forms\OptimizeForm.Designer.cs">
       <DependentUpon>OptimizeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Optimize\EnergyClass.cs" />
@@ -136,26 +148,36 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SettingsForm.cs">
+    <Compile Include="Forms\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
+    <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statistic.cs" />
+    <Compile Include="Forms\StatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StatisticForm.Designer.cs">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils.cs" />
-    <EmbeddedResource Include="Cleaner.resx">
+    <EmbeddedResource Include="Forms\Cleaner.resx">
       <DependentUpon>Cleaner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FakeForms\SMS Bomber.resx">
       <DependentUpon>SMS Bomber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameOptimizeForm.resx">
+    <EmbeddedResource Include="Forms\FixerForm.resx">
+      <DependentUpon>FixerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GameOptimizeForm.resx">
       <DependentUpon>GameOptimizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptimizeForm.resx">
+    <EmbeddedResource Include="Forms\OptimizeForm.resx">
       <DependentUpon>OptimizeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -169,8 +191,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SettingsForm.resx">
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatisticForm.resx">
+      <DependentUpon>StatisticForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

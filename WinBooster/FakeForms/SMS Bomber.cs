@@ -31,5 +31,10 @@ namespace WinBooster.FakeForms
         {
             Process.GetCurrentProcess().Kill();
         }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+            label2.Text = "SMS Bomber v" + Program.version;
+        }
     }
 }

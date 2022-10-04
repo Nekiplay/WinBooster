@@ -22,6 +22,7 @@ namespace WinBooster.Clears
                     CurrentUserSoftware.DeleteSubKeyTree("Bags");
                 }
                 catch { }
+                CurrentUserSoftware.Close();
             }
             catch { }
 
@@ -33,6 +34,7 @@ namespace WinBooster.Clears
                     CurrentUserSoftware.DeleteSubKeyTree("AppSwitchedl");
                 }
                 catch { }
+                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion

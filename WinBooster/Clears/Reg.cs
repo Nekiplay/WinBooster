@@ -22,180 +22,193 @@ namespace WinBooster.Clears
                 }
                 catch { }
                 CurrentUserSoftware.DeleteSubKeyTree("Enigma Virtual Box");
+                CurrentUserSoftware.Close();
+                enigma_virtual_box.Close();
             }
             catch { }
             #endregion
 
             #region LastActivity
-                try
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
+                var c1 = CurrentUserSoftware.OpenSubKey("CIDSizeMRU", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
                 {
-                    var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
-                    var c1 = CurrentUserSoftware.OpenSubKey("CIDSizeMRU", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
+                    if (int.TryParse(value, out int i))
                     {
-                        if (int.TryParse(value, out int i))
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                CurrentUserSoftware.Close();
+                c1.Close();
+            } 
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\exe", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (int.TryParse(value, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\*", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (int.TryParse(value, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\rar", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (int.TryParse(value, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\zip", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (int.TryParse(value, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
+                var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRU", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (int.TryParse(value, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
+                var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRULegacy", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (int.TryParse(value, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value);
+                        removed += b.Length;
+                        c1.DeleteValue(value);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage\\AppSwitched", true);
+                var values = c1.GetValueNames();
+                foreach (var value in values)
+                {
+                    if (File.Exists(value))
+                    {
+                        FileInfo f = new FileInfo(value);
+                        if (!new SafeNames().names.Contains(f.Name))
                         {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
+                            var b = c1.GetValue(value).ToString().Length;
+                            removed += b;
                             c1.DeleteValue(value);
                         }
                     }
-                } 
-                catch { }
-                try
-                {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\exe", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
+                    else
                     {
-                        if (int.TryParse(value, out int i))
+                        if (!new SafeNames().names.Contains(value))
                         {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
+                            var b = c1.GetValue(value).ToString().Length;
+                            removed += b;
                             c1.DeleteValue(value);
                         }
                     }
                 }
-                catch { }
-                try
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
+                var values = c1.GetSubKeyNames();
+                foreach (var value in values)
                 {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\*", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
-                    {
-                        if (int.TryParse(value, out int i))
-                        {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
-                            c1.DeleteValue(value);
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\rar", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
-                    {
-                        if (int.TryParse(value, out int i))
-                        {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
-                            c1.DeleteValue(value);
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU\\zip", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
-                    {
-                        if (int.TryParse(value, out int i))
-                        {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
-                            c1.DeleteValue(value);
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
-                    var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRU", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
-                    {
-                        if (int.TryParse(value, out int i))
-                        {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
-                            c1.DeleteValue(value);
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
-                    var c1 = CurrentUserSoftware.OpenSubKey("LastVisitedPidlMRULegacy", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
-                    {
-                        if (int.TryParse(value, out int i))
-                        {
-                            var b = (byte[])c1.GetValue(value);
-                            removed += b.Length;
-                            c1.DeleteValue(value);
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage\\AppSwitched", true);
-                    var values = c1.GetValueNames();
-                    foreach (var value in values)
-                    {
-                        if (File.Exists(value))
-                        {
-                            FileInfo f = new FileInfo(value);
-                            if (!new SafeNames().names.Contains(f.Name))
-                            {
-                                var b = c1.GetValue(value).ToString().Length;
-                                removed += b;
-                                c1.DeleteValue(value);
-                            }
-                        }
-                        else
-                        {
-                            if (!new SafeNames().names.Contains(value))
-                            {
-                                var b = c1.GetValue(value).ToString().Length;
-                                removed += b;
-                                c1.DeleteValue(value);
-                            }
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
-                    var values = c1.GetSubKeyNames();
-                    foreach (var value in values)
-                    {
-                        var c2 = c1.OpenSubKey(value, true);
-                        foreach (var value2 in c2.GetValueNames())
-                        {
-                            if (int.TryParse(value2, out int i))
-                            {
-                                var b = (byte[])c2.GetValue(value2);
-                                removed += b.Length;
-                                c2.DeleteValue(value2);
-                            }
-                        }
-                    }
-                }
-                catch { }
-                try
-                {
-                    var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
-                    foreach (var value2 in c1.GetValueNames())
+                    var c2 = c1.OpenSubKey(value, true);
+                    foreach (var value2 in c2.GetValueNames())
                     {
                         if (int.TryParse(value2, out int i))
                         {
-                            var b = (byte[])c1.GetValue(value2);
+                            var b = (byte[])c2.GetValue(value2);
                             removed += b.Length;
-                            c1.DeleteValue(value2);
+                            c2.DeleteValue(value2);
                         }
                     }
                 }
-                catch { }
+                c1.Close();
+            }
+            catch { }
+            try
+            {
+                var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
+                foreach (var value2 in c1.GetValueNames())
+                {
+                    if (int.TryParse(value2, out int i))
+                    {
+                        var b = (byte[])c1.GetValue(value2);
+                        removed += b.Length;
+                        c1.DeleteValue(value2);
+                    }
+                }
+                c1.Close();
+            }
+            catch { }
             #endregion
 
             #region WinRAR
@@ -212,12 +225,14 @@ namespace WinBooster.Clears
                         {
                             k.DeleteValue(value);
                         }
+                        k.Close();
                     }
                     catch
                     {
 
                     }
                 }
+                usersReg.Close();
             }
             catch { }
             try
@@ -229,6 +244,7 @@ namespace WinBooster.Clears
                     removed += k.GetValue(v).ToString().Length;
                     k.DeleteValue(v);
                 }
+                usersReg.Close();
             }
             catch { }
             #endregion
@@ -238,6 +254,7 @@ namespace WinBooster.Clears
             {
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
                 CurrentUserSoftware.DeleteSubKeyTree("neverlose");
+                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion
@@ -247,6 +264,7 @@ namespace WinBooster.Clears
             {
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications", true);
                 CurrentUserSoftware.DeleteSubKeyTree("AkrienPremiumLoader.exe");
+                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion
@@ -257,6 +275,7 @@ namespace WinBooster.Clears
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Notepad", true);
                 CurrentUserSoftware.SetValue("searchString", "");
                 CurrentUserSoftware.SetValue("replaceString", "");
+                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion
@@ -266,6 +285,7 @@ namespace WinBooster.Clears
             {
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Famatech\\Radmin VPN\\ui\\JoinWindow", true);
                 CurrentUserSoftware.SetValue("Search", "");
+                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion

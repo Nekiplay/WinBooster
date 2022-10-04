@@ -182,6 +182,16 @@ namespace WinBooster
                     guna2CheckBox4.Enabled = true;
                     guna2CheckBox5.Enabled = true;
                 }));
+
+                if (removed > 0)
+                {
+                    Program.statistic.TotalGodClears++;
+                }
+                Program.statistic.TotalSizeClear += removed;
+                Console.WriteLine(Program.statistic.TotalSizeClear);
+                Program.statistic.Save(Program.statistic_path);
+                Program.form.statistic.UpdateUI();
+
                 var item = toastNotificationsManager1.YieldArray().First();
                 var item2 = item.Notifications.First();
                 item2.Header = "Очистка";

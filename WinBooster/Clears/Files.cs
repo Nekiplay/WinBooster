@@ -18,6 +18,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Windows\\Performance\\WinSAT", "*.log"),
             new DirectoryPatern("%cycdrive%\\Windows\\Panther", "*.log"),
             new DirectoryPatern("%cycdrive%\\Windows\\Panther\\UnattendGC", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\Documents\\WebView\\Cache", "*log*"),
 
             new DirectoryPatern("%cycdrive%\\Windows\\System32\\winevt\\Logs", "*.evtx"),
             /* CrashLogs */
@@ -26,7 +27,6 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.log"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.url"),
-            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "steam_appid.txt"),
             #endregion
 
             #region Counter-Strike 1.6
@@ -371,8 +371,6 @@ namespace WinBooster.Clears
             /* Terraria */
             new DirectoryPatern("%steam%\\steamapps\\common\\Terraria", "changelog.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Terraria", "changelog.txt"),
-            new DirectoryPatern("%steam%\\steamapps\\common\\Terraria", "steam_appid.txt"),
-            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Terraria", "steam_appid.txt"),
 
             /* Counter-Strike Global Offensive */
             new DirectoryPatern("%steam%\\steamapps\\common\\Counter-Strike Global Offensive", "*.log"),
@@ -423,6 +421,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Unturned\\BattlEye\\Privacy", "*.txt"),
             new DirectoryFull("%steam%\\steamapps\\common\\Unturned\\Logs"),
             new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Unturned\\Logs"),
+            new DirectoryPatern("%steam%\\steamapps\\common\\Unturned\\Extras\\Rocket.Unturned", "*.md"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Unturned\\Extras\\Rocket.Unturned", "*.md"),
             #endregion
 
             #region DevExpress
