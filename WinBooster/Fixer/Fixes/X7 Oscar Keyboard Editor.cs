@@ -1309,7 +1309,7 @@ namespace WinBooster.Fixer.Fixes
                     if (!File.Exists(standartFile_dir + "\\" + NullScript + ".ASC"))
                     {
                         File.Create(standartFile_dir + "\\" + NullScript + ".ASC").Close();
-                        File.WriteAllText(standartFile_dir + "\\" + NullScript + ".ASC", amc_data);
+                        File.WriteAllText(standartFile_dir + "\\" + NullScript + ".ASC", asc_data);
                     }
                     if (!File.Exists(standartFile_dir + "\\" + NullMacro + ".amc"))
                     {
