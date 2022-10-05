@@ -370,7 +370,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(298, 22);
+            this.label2.Size = new System.Drawing.Size(346, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Win Booster";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

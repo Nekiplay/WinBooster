@@ -5,7 +5,7 @@ namespace WinBooster
 {
     public class UpdateChecker
     {
-        public bool CheckUpdate()
+        public Tuple<bool, string> CheckUpdate()
         {
             try
             {
@@ -14,12 +14,12 @@ namespace WinBooster
                     string ver = wc.DownloadString("https://github.com/Nekiplay/Temp/raw/main/WinBoosterVersion.txt");
                     if (Program.version != ver)
                     {
-                        return true;
+                        return new Tuple<bool, string>(true, ver);
                     }
                 }
             }
             catch { }
-            return false;
+            return new Tuple<bool, string>(false, "");
         }
     }
 }

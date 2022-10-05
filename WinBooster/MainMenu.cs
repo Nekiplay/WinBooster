@@ -108,9 +108,10 @@ namespace WinBooster
         private void MainMenu_Load(object sender, EventArgs e)
         {
             label2.Text = "Win Booster v" + Program.version;
-            if (Program.NeedUpdate)
+            if (Program.NeedUpdate.Item1)
             {
-                label2.Text += " (New update available)";
+                Console.WriteLine("А");
+                label2.Text += " (New update " + Program.NeedUpdate.Item2.Trim() + ")";
             }
         }
 

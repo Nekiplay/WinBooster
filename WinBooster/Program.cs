@@ -16,7 +16,7 @@ namespace WinBooster
         public static string settings_path = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Settings.json";
         public static string statistic_path = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Statistic.json";
 
-        public static bool NeedUpdate = false;
+        public static Tuple<bool, string> NeedUpdate;
         public static UpdateChecker updateChecker = new UpdateChecker();
 
         public static MainMenu form;
