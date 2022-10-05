@@ -90,7 +90,7 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in files.logs)
                         {
-                            removed += log.Work();
+                            try { removed += log.Work(); } catch { }
                         }
                         guna2CheckBox1.Invoke(new MethodInvoker(() =>
                         {
@@ -104,7 +104,7 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in files.cache)
                         {
-                            removed += log.Work();
+                            try { removed += log.Work(); } catch { }
                         }
                         guna2CheckBox3.Invoke(new MethodInvoker(() =>
                         {
@@ -118,7 +118,7 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in files.cheats)
                         {
-                            removed += log.Work();
+                            try { removed += log.Work(); } catch { }
                         }
                         guna2CheckBox4.Invoke(new MethodInvoker(() =>
                         {
@@ -134,14 +134,14 @@ namespace WinBooster
                         {
                             foreach (WorkingI log in files.lastactivity_unsafe)
                             {
-                                removed += log.Work();
+                                try { removed += log.Work(); } catch { }
                             }
                         }
                         else if (guna2ComboBox1.SelectedIndex == 1)
                         {
                             foreach (WorkingI log in files.lastactivity_full)
                             {
-                                removed += log.Work();
+                                try { removed += log.Work(); } catch { }
                             }
                         }
                         guna2CheckBox2.Invoke(new MethodInvoker(() =>

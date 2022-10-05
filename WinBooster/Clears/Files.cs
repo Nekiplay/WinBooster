@@ -7,6 +7,7 @@ namespace WinBooster.Clears
         public List<WorkingI> logs = new List<WorkingI>()
         {
             #region Windows
+            new DirectoryFull("%cycdrive%\\Windows\\System32\\config"),
             new DirectoryFull("%cycdrive%\\Windows\\Logs"),
             new DirectoryFull("%cycdrive%\\Windows\\Temp"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Local\\Temp"),
@@ -19,11 +20,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Windows\\Panther", "*.log"),
             new DirectoryPatern("%cycdrive%\\Windows\\Panther\\UnattendGC", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\Documents\\WebView\\Cache", "*log*"),
-
             new DirectoryPatern("%cycdrive%\\Windows\\System32\\winevt\\Logs", "*.evtx"),
-            /* CrashLogs */
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\CrashDumps", "*.dmp"),
-
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.log"),
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.url"),
@@ -467,6 +465,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Users\\%%username%%\\AppData\\Local\\Xamarin\\Logs\\17.0", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\16.0", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Xamarin\\Logs\\15.0", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Xamarin\\Simulator", "*.rtf"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Xamarin\\Simulator", "*.txt"),
             #endregion
 
             #region Android
@@ -512,6 +512,8 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++", "LICENSE"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Notepad++", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++\\updater", "*.md"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Notepad++\\updater", "LICENSE"),
             #endregion
 
             #region iTop Screen Recorder

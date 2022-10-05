@@ -1302,20 +1302,17 @@ namespace WinBooster.Fixer.Fixes
         private readonly string standartFile_dir = Utils.GetSysDrive() + "\\Program Files (x86)\\X7 Oscar Keyboard Editor\\ScriptsMacros\\Russian\\StandardFile";
         public void Fix()
         {
-            if (Directory.Exists(standartFile_dir))
+            if (Directory.Exists(config_dir) && Directory.Exists(standartFile_dir))
             {
-                if (Directory.Exists(config_dir) && Directory.Exists(standartFile_dir))
+                if (!File.Exists(standartFile_dir + "\\" + NullScript + ".ASC"))
                 {
-                    if (!File.Exists(standartFile_dir + "\\" + NullScript + ".ASC"))
-                    {
-                        File.Create(standartFile_dir + "\\" + NullScript + ".ASC").Close();
-                        File.WriteAllText(standartFile_dir + "\\" + NullScript + ".ASC", asc_data);
-                    }
-                    if (!File.Exists(standartFile_dir + "\\" + NullMacro + ".amc"))
-                    {
-                        File.Create(standartFile_dir + "\\" + NullMacro + ".amc").Close();
-                        File.WriteAllText(standartFile_dir + "\\" + NullMacro + ".amc", amc_data);
-                    }
+                    File.Create(standartFile_dir + "\\" + NullScript + ".ASC").Close();
+                    File.WriteAllText(standartFile_dir + "\\" + NullScript + ".ASC", asc_data);
+                }
+                if (!File.Exists(standartFile_dir + "\\" + NullMacro + ".amc"))
+                {
+                    File.Create(standartFile_dir + "\\" + NullMacro + ".amc").Close();
+                    File.WriteAllText(standartFile_dir + "\\" + NullMacro + ".amc", amc_data);
                 }
             }
         }
@@ -1345,8 +1342,6 @@ namespace WinBooster.Fixer.Fixes
                     }
                 }
             }
-            Console.WriteLine(NullScript);
-            Console.WriteLine(NullMacro);
             if (Directory.Exists(config_dir) && Directory.Exists(standartFile_dir))
             {
                 if (!File.Exists(standartFile_dir + "\\" + NullScript + ".ASC"))

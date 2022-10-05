@@ -108,6 +108,10 @@ namespace WinBooster
         private void MainMenu_Load(object sender, EventArgs e)
         {
             label2.Text = "Win Booster v" + Program.version;
+            if (Program.NeedUpdate)
+            {
+                label2.Text += " (New update available)";
+            }
         }
 
         #region Открытие очистки
