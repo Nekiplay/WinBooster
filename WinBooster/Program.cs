@@ -7,7 +7,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.3.9";
+        public static string version = "1.0.4.0";
         public static Settings settings = new Settings();
         public static Statistic statistic = new Statistic();
         public static string settings_path = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Settings.json";
