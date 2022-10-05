@@ -655,12 +655,21 @@ namespace WinBooster.Clears
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive", "*.signatures"),
             #endregion
 
+            #region OTCv2
+            new DirectoryPatern("%steam%\\steamapps\\common\\Counter-Strike Global Offensive", "*.cfg"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive", "*.cfg"),
+            #endregion
+
             #region rebornhack
             new DirectoryFull("%cycdrive%\\rebornhack"),
             #endregion
 
             #region NixWare
             new DirectoryFull("%cycdrive%\\nixware"),
+            #endregion
+
+            #region Rawetrip
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\rawetripp"),
             #endregion
 
             #region AOSHack

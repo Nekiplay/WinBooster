@@ -12,9 +12,9 @@ namespace WinBooster
                 using (WebClient wc = new WebClient())
                 {
                     string ver = wc.DownloadString("https://github.com/Nekiplay/Temp/raw/main/WinBoosterVersion.txt");
-                    if (Program.version != ver)
+                    if (Program.version != ver.Trim())
                     {
-                        return new Tuple<bool, string>(true, ver);
+                        return new Tuple<bool, string>(true, ver.Trim());
                     }
                 }
             }
