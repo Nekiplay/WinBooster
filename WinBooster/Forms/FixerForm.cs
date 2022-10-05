@@ -27,6 +27,7 @@ namespace WinBooster
             {
                 if (fixer.NeedFix())
                 {
+                    Console.WriteLine(fixer.ToString());
                     fixer.Fix();
                     fixes++;
                 }

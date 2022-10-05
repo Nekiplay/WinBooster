@@ -10,7 +10,7 @@ namespace WinBooster.Fixer.Fixes
             string subKey = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System";
             try
             {
-                regkey = Registry.CurrentUser.CreateSubKey(subKey);
+                regkey = Registry.CurrentUser.OpenSubKey(subKey, true);
                 regkey.DeleteValue("DisableRegistryTools");
                 regkey.Close();
             }
@@ -23,7 +23,7 @@ namespace WinBooster.Fixer.Fixes
             string subKey = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\System";
             try
             {
-                regkey = Registry.CurrentUser.CreateSubKey(subKey);
+                regkey = Registry.CurrentUser.OpenSubKey(subKey, true);
                 var value = regkey.GetValue("DisableRegistryTools");
                 if (value.GetType() == typeof(int))
                 {

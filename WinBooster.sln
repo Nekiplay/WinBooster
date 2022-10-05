@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBooster", "WinBooster\WinBooster.csproj", "{474B231C-374A-42D2-9AD3-3372562A65E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTool", "DevTool\DevTool.csproj", "{FE2E2BD4-78BA-4AC7-8A59-54315D178BDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{474B231C-374A-42D2-9AD3-3372562A65E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{474B231C-374A-42D2-9AD3-3372562A65E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{474B231C-374A-42D2-9AD3-3372562A65E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2E2BD4-78BA-4AC7-8A59-54315D178BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2E2BD4-78BA-4AC7-8A59-54315D178BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2E2BD4-78BA-4AC7-8A59-54315D178BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2E2BD4-78BA-4AC7-8A59-54315D178BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

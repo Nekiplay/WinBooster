@@ -423,6 +423,12 @@ namespace WinBooster.Clears
             new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Unturned\\Logs"),
             new DirectoryPatern("%steam%\\steamapps\\common\\Unturned\\Extras\\Rocket.Unturned", "*.md"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Unturned\\Extras\\Rocket.Unturned", "*.md"),
+
+            /* Warframe */
+            new DirectoryPatern("%steam%\\steamapps\\common\\Warframe\\Tools\\OpenSSL\\x64", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\OpenSSL\\x64", "*.txt"),
+            new DirectoryPatern("%steam%\\steamapps\\common\\Warframe\\Tools\\ZStandard", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\ZStandard", "*.txt"),
             #endregion
 
             #region DevExpress

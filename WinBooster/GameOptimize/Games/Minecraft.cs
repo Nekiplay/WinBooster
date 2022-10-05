@@ -106,7 +106,7 @@ namespace WinBooster.GameOptimize.Games
             foreach (string line in lines.ToArray())
             {
                 string[] key_and_value = line.Split(':');
-                if (key_and_value[0] == key)
+                if (key_and_value.Length > 0 && key_and_value[0] == key)
                 {
                     lines[index] = key_and_value[0] + ":" + value;
                 }

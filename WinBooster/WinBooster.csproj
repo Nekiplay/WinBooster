@@ -94,6 +94,7 @@
     <Compile Include="Fixer\Fixes\Regedit.cs" />
     <Compile Include="Fixer\Fixes\TaskManager.cs" />
     <Compile Include="Fixer\Fixes\ViewContextMenu.cs" />
+    <Compile Include="Fixer\Fixes\X7 Oscar Keyboard Editor.cs" />
     <Compile Include="Forms\FixerForm.cs">
       <SubType>Form</SubType>
     </Compile>
