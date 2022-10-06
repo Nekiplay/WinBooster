@@ -102,6 +102,7 @@
   <ItemGroup>
     <Compile Include="Data\Native\AppSettings.cs" />
     <Compile Include="Fixer\FixerData.cs" />
+    <Compile Include="Fixer\Fixes\AutoRun.cs" />
     <Compile Include="Fixer\Fixes\NoClose.cs" />
     <Compile Include="Fixer\Fixes\Regedit.cs" />
     <Compile Include="Fixer\Fixes\TaskManager.cs" />

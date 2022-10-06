@@ -6,6 +6,7 @@ namespace WinBooster.Fixer
     {
         public List<FixerI> fixers = new List<FixerI>()
         {
+            new Fixes.AutoRun(),
             new Fixes.X7_Oscar_Keyboard_Editor(),
             new Fixes.TaskManager(),
             new Fixes.Regedit(),

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinBooster
@@ -108,11 +109,24 @@ namespace WinBooster
         private void MainMenu_Load(object sender, EventArgs e)
         {
             label2.Text = "Win Booster v" + Program.version;
-            if (Program.NeedUpdate.Item1)
+            if (Program.UpdateChecked && Program.NeedUpdate.Item1)
             {
-                Console.WriteLine("А");
-                label2.Text += " (New update " + Program.NeedUpdate.Item2.Trim() + ")";
+                label2.Text += " (Last update " + Program.NeedUpdate.Item2.Trim() + ")";
             }
+            Task.Factory.StartNew(() =>
+            {
+                while (!Program.UpdateChecked)
+                {
+                    label2.Invoke(new MethodInvoker(() =>
+                    {
+                        if (Program.UpdateChecked && Program.NeedUpdate.Item1)
+                        {
+                            label2.Text += " (Last update " + Program.NeedUpdate.Item2.Trim() + ")";
+                        }
+                    }));
+                    Task.Delay(25);
+                }
+            });
         }
 
         #region Открытие очистки

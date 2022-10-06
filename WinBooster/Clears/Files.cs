@@ -27,6 +27,15 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "*.url"),
             #endregion
 
+            #region VintageStory
+            new DirectoryPatern("%cycdrive%\\VintageStory", "*.url"),
+            new DirectoryPatern("D:\\VintageStory", "*.url"),
+            new DirectoryPatern("%cycdrive%\\VintageStory", "*.xml"),
+            new DirectoryPatern("D:\\VintageStory", "*.xml"),
+            new DirectoryPatern("%cycdrive%\\VintageStory", "*.txt"),
+            new DirectoryPatern("D:\\VintageStory", "*.txt"),
+            #endregion
+
             #region Counter-Strike 1.6
             new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "*.log"),
@@ -359,6 +368,7 @@ namespace WinBooster.Clears
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Common Files\\Steam", "*.txt"),
             new DirectoryPatern("%steam%\\logs", "*.txt"),
             new DirectoryPatern("%steam%", "*.log"),
+            new DirectoryPatern("%steam%", "*.crash"),
             new DirectoryPatern("%steam%", "*.html"),
             new DirectoryPatern("%steam%\\steamui", "licenses.txt"),
 
@@ -427,6 +437,12 @@ namespace WinBooster.Clears
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\OpenSSL\\x64", "*.txt"),
             new DirectoryPatern("%steam%\\steamapps\\common\\Warframe\\Tools\\ZStandard", "*.txt"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Warframe\\Tools\\ZStandard", "*.txt"),
+
+            /* Idle Skilling */
+            new DirectoryPatern("%steam%\\steamapps\\common\\Idle Skilling", "*.txt"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Skilling", "*.txt"),
+            new DirectoryPatern("%steam%\\steamapps\\common\\Idle Skilling", "*.html"),
+            new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Skilling", "*.html"),
             #endregion
 
             #region DevExpress
@@ -547,8 +563,10 @@ namespace WinBooster.Clears
 
         public List<WorkingI> cache = new List<WorkingI>()
         {
-            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
-            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
+            #region VintageStory
+            new DirectoryPatern("%cycdrive%\\VintageStory\\Mods", "*.pdb"),
+            new DirectoryPatern("D:\\VintageStory\\Mods", "*.pdb"),
+            #endregion
 
             #region Stalker Anomaly
             new DirectoryFull("%cycdrive%\\Stalker\\Anomaly 1.5.1\\appdata\\shaders_cache\\r4"),
@@ -562,6 +580,8 @@ namespace WinBooster.Clears
 
             #region Windows
             new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%\\htmlcache", "*"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\Content"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Microsoft\\CryptnetUrlCache\\MetaData"),
             #endregion
 
             #region Opera GX
@@ -607,6 +627,7 @@ namespace WinBooster.Clears
             #endregion
 
             #region Steam
+            new DirectoryPatern("%steam%\\config\avatarcache", "*.png"),   
             new DirectoryPatern("%steam%\\appcache\\stats", "*.bin"),
             new DirectoryPatern("%steam%\\appcache\\librarycache", "*.jpg"),
             new DirectoryPatern("%steam%\\appcache\\librarycache", "*.png"),
@@ -657,7 +678,12 @@ namespace WinBooster.Clears
 
             #region OTCv2
             new DirectoryPatern("%steam%\\steamapps\\common\\Counter-Strike Global Offensive", "*.cfg"),
+            new DirectoryPatern("%steam%\\steamapps\\common\\Counter-Strike Global Offensive", "*.ini"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive", "*.cfg"),
+            #endregion
+
+            #region Weave
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\weave"),
             #endregion
 
             #region rebornhack

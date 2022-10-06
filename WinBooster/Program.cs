@@ -8,7 +8,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.1";
+        public static string version = "1.0.4.2";
 
         public static Settings settings = new Settings();
         public static Statistic statistic = new Statistic();
@@ -16,7 +16,9 @@ namespace WinBooster
         public static string settings_path = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Settings.json";
         public static string statistic_path = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Statistic.json";
 
-        public static Tuple<bool, string> NeedUpdate;
+        public static Tuple<bool, string> NeedUpdate = new Tuple<bool, string>(false, "");
+        public static bool UpdateChecked = false;
+
         public static UpdateChecker updateChecker = new UpdateChecker();
 
         public static MainMenu form;
@@ -25,7 +27,11 @@ namespace WinBooster
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            NeedUpdate = updateChecker.CheckUpdate();
+            Task.Factory.StartNew(() =>
+            {
+                NeedUpdate = updateChecker.CheckUpdate();
+                UpdateChecked = true;
+            });
             if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster"))
             {
                 Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster");
