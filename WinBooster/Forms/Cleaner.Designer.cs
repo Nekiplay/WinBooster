@@ -41,6 +41,8 @@
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2CheckBox6 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2CheckBox7 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -78,7 +80,7 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.Location = new System.Drawing.Point(9, 173);
+            this.guna2Button1.Location = new System.Drawing.Point(9, 223);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(121, 23);
@@ -129,6 +131,8 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Black;
+            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox6);
+            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox7);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox5);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox2);
             this.guna2GroupBox1.Controls.Add(this.guna2CheckBox4);
@@ -142,7 +146,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(144, 208);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(144, 256);
             this.guna2GroupBox1.TabIndex = 8;
             this.guna2GroupBox1.Text = "Очистка";
             // 
@@ -247,12 +251,50 @@
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.TabIndex = 0;
             // 
+            // guna2CheckBox6
+            // 
+            this.guna2CheckBox6.AutoSize = true;
+            this.guna2CheckBox6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox6.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox6.CheckedState.BorderRadius = 2;
+            this.guna2CheckBox6.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox6.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.guna2CheckBox6.Location = new System.Drawing.Point(9, 173);
+            this.guna2CheckBox6.Name = "guna2CheckBox6";
+            this.guna2CheckBox6.Size = new System.Drawing.Size(95, 19);
+            this.guna2CheckBox6.TabIndex = 11;
+            this.guna2CheckBox6.Text = "Фотографий";
+            this.guna2CheckBox6.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox6.UncheckedState.BorderRadius = 2;
+            this.guna2CheckBox6.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox6.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox6.UseVisualStyleBackColor = false;
+            // 
+            // guna2CheckBox7
+            // 
+            this.guna2CheckBox7.AutoSize = true;
+            this.guna2CheckBox7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CheckBox7.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox7.CheckedState.BorderRadius = 2;
+            this.guna2CheckBox7.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox7.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.guna2CheckBox7.Location = new System.Drawing.Point(9, 198);
+            this.guna2CheckBox7.Name = "guna2CheckBox7";
+            this.guna2CheckBox7.Size = new System.Drawing.Size(59, 19);
+            this.guna2CheckBox7.TabIndex = 10;
+            this.guna2CheckBox7.Text = "Видео";
+            this.guna2CheckBox7.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox7.UncheckedState.BorderRadius = 2;
+            this.guna2CheckBox7.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox7.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox7.UseVisualStyleBackColor = false;
+            // 
             // Cleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
-            this.ClientSize = new System.Drawing.Size(432, 234);
+            this.ClientSize = new System.Drawing.Size(432, 283);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -281,5 +323,7 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox5;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox6;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox7;
     }
 }

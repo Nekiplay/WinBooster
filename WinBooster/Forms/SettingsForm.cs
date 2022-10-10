@@ -34,5 +34,10 @@ namespace WinBooster
             Program.settings.FakeMenu = guna2ComboBox1.SelectedIndex;
             Program.settings.Save(Program.settings_path);
         }
+
+        private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

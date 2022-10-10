@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinBoosterScripts;
 
 namespace WinBooster
 {
@@ -127,6 +129,19 @@ namespace WinBooster
                     Task.Delay(25);
                 }
             });
+
+            #region Загрузка скриптов
+            LuaManager luaManager = new LuaManager();
+            if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts"))
+            {
+                Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts");
+            }
+            string[] files = Directory.GetFiles(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts", "*.lua");
+            foreach (string file in files)
+            {
+                var l = luaManager.RunLua(new System.IO.FileInfo(file));
+            }
+            #endregion
         }
 
         #region Открытие очистки

@@ -8,14 +8,14 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>WinBooster</RootNamespace>
     <AssemblyName>WinBooster</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,6 +44,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Rocket-256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -101,34 +104,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Native\AppSettings.cs" />
-    <Compile Include="Fixer\FixerData.cs" />
-    <Compile Include="Fixer\Fixes\AutoRun.cs" />
-    <Compile Include="Fixer\Fixes\NoClose.cs" />
-    <Compile Include="Fixer\Fixes\Regedit.cs" />
-    <Compile Include="Fixer\Fixes\TaskManager.cs" />
-    <Compile Include="Fixer\Fixes\ViewContextMenu.cs" />
-    <Compile Include="Fixer\Fixes\X7 Oscar Keyboard Editor.cs" />
     <Compile Include="Forms\FixerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FixerForm.Designer.cs">
       <DependentUpon>FixerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Fixer\FixerI.cs" />
     <Compile Include="Forms\Cleaner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Cleaner.Designer.cs">
       <DependentUpon>Cleaner.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clears\Native\DirectoryFull.cs" />
-    <Compile Include="Clears\Native\DirectoryPatern.cs" />
-    <Compile Include="Clears\Native\DirectoryUnsafeFileNames.cs" />
-    <Compile Include="Clears\Files.cs" />
-    <Compile Include="Clears\Reg.cs" />
-    <Compile Include="Clears\RegUnsafe.cs" />
-    <Compile Include="Clears\SafeNames.cs" />
-    <Compile Include="Clears\WorkInterface.cs" />
     <Compile Include="FakeForms\SMS Bomber.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,9 +128,6 @@
     <Compile Include="Forms\GameOptimizeForm.Designer.cs">
       <DependentUpon>GameOptimizeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameOptimize\GameList.cs" />
-    <Compile Include="GameOptimize\GameOptimizeI.cs" />
-    <Compile Include="GameOptimize\Games\Minecraft.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +212,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\WinBoosterDataBase\WinBoosterDataBase.csproj">
+      <Project>{b31eafcb-d902-4228-bfb8-86be20a1cc87}</Project>
+      <Name>WinBoosterDataBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinBoosterNative\WinBoosterNative.csproj">
+      <Project>{686c07b1-98f7-4eff-8be5-e8c5e0a5f614}</Project>
+      <Name>WinBoosterNative</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinBoosterScripts\WinBoosterScripts.csproj">
+      <Project>{08c67dfe-a6b7-4643-b0a4-b9d805227d18}</Project>
+      <Name>WinBoosterScripts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rocket-256.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -137,7 +137,7 @@
             this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.Controls.Add(this.pictureBox8);
             this.guna2Panel6.Controls.Add(this.label6);
-            this.guna2Panel6.Location = new System.Drawing.Point(439, 97);
+            this.guna2Panel6.Location = new System.Drawing.Point(439, 183);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
             this.guna2Panel6.Size = new System.Drawing.Size(80, 80);

@@ -1,15 +1,10 @@
 ﻿using DevExpress.Utils.Extensions;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinBooster.Clears;
+using WinBooster.Native;
+using WinBoosterDataBase;
 
 namespace WinBooster
 {
@@ -70,6 +65,8 @@ namespace WinBooster
                 guna2CheckBox3.Checked = true;
                 guna2CheckBox4.Checked = true;
                 guna2CheckBox5.Checked = true;
+                guna2CheckBox6.Checked = true;
+                guna2CheckBox7.Checked = true;
             }
             else if (e.Button == MouseButtons.Left)
             {
@@ -81,14 +78,15 @@ namespace WinBooster
                     guna2CheckBox3.Enabled = false;
                     guna2CheckBox4.Enabled = false;
                     guna2CheckBox5.Enabled = false;
+                    guna2CheckBox6.Enabled = false;
+                    guna2CheckBox7.Enabled = false;
                 }));
                 long removed = 0;
-                Files files = new Files();
                 Task t1 = Task.Factory.StartNew(() =>
                 {
                     if (guna2CheckBox1.Checked)
                     {
-                        foreach (WorkingI log in files.logs)
+                        foreach (WorkingI log in Files.logs)
                         {
                             try { removed += log.Work(); } catch { }
                         }
@@ -102,7 +100,7 @@ namespace WinBooster
                 {
                     if (guna2CheckBox3.Checked)
                     {
-                        foreach (WorkingI log in files.cache)
+                        foreach (WorkingI log in Files.cache)
                         {
                             try { removed += log.Work(); } catch { }
                         }
@@ -116,7 +114,7 @@ namespace WinBooster
                 {
                     if (guna2CheckBox4.Checked)
                     {
-                        foreach (WorkingI log in files.cheats)
+                        foreach (WorkingI log in Files.cheats)
                         {
                             try { removed += log.Work(); } catch { }
                         }
@@ -132,14 +130,14 @@ namespace WinBooster
                     {
                         if (guna2ComboBox1.SelectedIndex == 0)
                         {
-                            foreach (WorkingI log in files.lastactivity_unsafe)
+                            foreach (WorkingI log in Files.lastactivity_safe)
                             {
                                 try { removed += log.Work(); } catch { }
                             }
                         }
                         else if (guna2ComboBox1.SelectedIndex == 1)
                         {
-                            foreach (WorkingI log in files.lastactivity_full)
+                            foreach (WorkingI log in Files.lastactivity_full)
                             {
                                 try { removed += log.Work(); } catch { }
                             }
@@ -167,12 +165,43 @@ namespace WinBooster
                         }));
                     }
                 });
+                Task t6 = Task.Factory.StartNew(() =>
+                {
+                    if (guna2CheckBox6.Checked)
+                    {
+                        foreach (WorkingI log in Files.images)
+                        {
+                            try { removed += log.Work(); } catch { }
+                        }
+                        guna2CheckBox6.Invoke(new MethodInvoker(() =>
+                        {
+                            guna2CheckBox6.Checked = false;
+                        }));
+                    }
+                });
+                Task t7 = Task.Factory.StartNew(() =>
+                {
+                    if (guna2CheckBox7.Checked)
+                    {
+                        foreach (WorkingI log in Files.media)
+                        {
+                            try { removed += log.Work(); } catch { }
+                        }
+                        guna2CheckBox7.Invoke(new MethodInvoker(() =>
+                        {
+                            guna2CheckBox7.Checked = false;
+                        }));
+                    }
+                });
+
 
                 await t1;
                 await t2;
                 await t3;
                 await t4;
                 await t5;
+                await t6;
+                await t7;
                 guna2Button1.Invoke(new MethodInvoker(() =>
                 {
                     guna2Button1.Enabled = true;
@@ -181,6 +210,8 @@ namespace WinBooster
                     guna2CheckBox3.Enabled = true;
                     guna2CheckBox4.Enabled = true;
                     guna2CheckBox5.Enabled = true;
+                    guna2CheckBox6.Enabled = true;
+                    guna2CheckBox7.Enabled = true;
                 }));
 
                 if (removed > 0)
@@ -188,7 +219,6 @@ namespace WinBooster
                     Program.statistic.TotalGodClears++;
                 }
                 Program.statistic.TotalSizeClear += removed;
-                Console.WriteLine(Program.statistic.TotalSizeClear);
                 Program.statistic.Save(Program.statistic_path);
                 Program.form.statistic.UpdateUI();
 
