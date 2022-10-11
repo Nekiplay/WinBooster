@@ -5,7 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinBoosterScripts;
+using WinBoosterCharpScripts;
 
 namespace WinBooster
 {
@@ -22,6 +22,9 @@ namespace WinBooster
         public SettingsForm settings = new SettingsForm();
         public GameOptimizeForm gameOptimize = new GameOptimizeForm();
         public FixerForm fixer = new FixerForm();
+
+        public static CharpUpdater charpUpdater = new CharpUpdater();
+        public static CharpManager charpManager = new CharpManager(charpUpdater);
 
         private Form currentChildForm;
         private string currentChildFormname;
@@ -131,15 +134,18 @@ namespace WinBooster
             });
 
             #region Загрузка скриптов
-            LuaManager luaManager = new LuaManager();
             if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts"))
             {
                 Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts");
             }
-            string[] files = Directory.GetFiles(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts", "*.lua");
+            string[] files = Directory.GetFiles(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts");
             foreach (string file in files)
             {
-                var l = luaManager.RunLua(new System.IO.FileInfo(file));
+                FileInfo fileInfo = new FileInfo(file);
+                if (fileInfo.Extension == ".cs")
+                {
+                    charpManager.ScriptLoad(new WinBoosterCharpScripts.File(file));
+                }
             }
             #endregion
         }

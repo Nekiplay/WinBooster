@@ -7,8 +7,8 @@
     <ProjectGuid>{08C67DFE-A6B7-4643-B0A4-B9D805227D18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinBoosterScripts</RootNamespace>
-    <AssemblyName>WinBoosterScripts</AssemblyName>
+    <RootNamespace>WinBoosterLuaScripts</RootNamespace>
+    <AssemblyName>WinBoosterLuaScripts</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -38,7 +38,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>WinBoosterScripts.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>WinBoosterLuaScripts.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="KeraLua, Version=1.3.1.0, Culture=neutral, PublicKeyToken=6a194c04b9c89217, processorArchitecture=MSIL">
@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="WinBoosterLuaScripts.pfx" />
     <None Include="WinBoosterScripts.pfx" />
   </ItemGroup>
   <ItemGroup>

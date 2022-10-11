@@ -15,7 +15,6 @@ namespace WinBoosterScripts
         {
             if (file.Exists)
             {
-
                 using (Lua lua = new Lua())
                 {
                     lua.State.Encoding = Encoding.UTF8;

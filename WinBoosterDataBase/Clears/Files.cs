@@ -275,11 +275,18 @@ namespace WinBoosterDataBase
 
             #region Java
             new DirectoryPatern("%cycdrive%\\ProgramData\\Oracle\\Java\\.oracle_jre_usage", "*.timestamp"),
+
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "*.html"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "COPYRIGHT"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "LICENSE"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Java\\%unknowfolder%", "release"),
+
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Java\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Java\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Java\\%unknowfolder%", "COPYRIGHT"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Java\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Java\\%unknowfolder%", "release"),
 
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "ASSEMBLY_EXCEPTION"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "LICENSE"),

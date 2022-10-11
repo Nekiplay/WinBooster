@@ -30,42 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cleaner));
-            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.logsCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.cacheCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.cheatsCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2CheckBox5 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.photoCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.videoCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.registryCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.lastactivityCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2CheckBox6 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2CheckBox7 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2CheckBox1
+            // logsCheckbox
             // 
-            this.guna2CheckBox1.AutoSize = true;
-            this.guna2CheckBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox1.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox1.Location = new System.Drawing.Point(9, 73);
-            this.guna2CheckBox1.Name = "guna2CheckBox1";
-            this.guna2CheckBox1.Size = new System.Drawing.Size(53, 19);
-            this.guna2CheckBox1.TabIndex = 0;
-            this.guna2CheckBox1.Text = "Логи";
-            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox1.UseVisualStyleBackColor = false;
+            this.logsCheckbox.AutoSize = true;
+            this.logsCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.logsCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.logsCheckbox.CheckedState.BorderRadius = 2;
+            this.logsCheckbox.CheckedState.BorderThickness = 0;
+            this.logsCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.logsCheckbox.Location = new System.Drawing.Point(9, 73);
+            this.logsCheckbox.Name = "logsCheckbox";
+            this.logsCheckbox.Size = new System.Drawing.Size(53, 19);
+            this.logsCheckbox.TabIndex = 0;
+            this.logsCheckbox.Text = "Логи";
+            this.logsCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.logsCheckbox.UncheckedState.BorderRadius = 2;
+            this.logsCheckbox.UncheckedState.BorderThickness = 0;
+            this.logsCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.logsCheckbox.UseVisualStyleBackColor = false;
             // 
             // guna2Button1
             // 
@@ -89,56 +89,56 @@
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             this.guna2Button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.guna2Button1_MouseClick);
             // 
-            // guna2CheckBox3
+            // cacheCheckbox
             // 
-            this.guna2CheckBox3.AutoSize = true;
-            this.guna2CheckBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox3.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox3.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox3.Location = new System.Drawing.Point(9, 98);
-            this.guna2CheckBox3.Name = "guna2CheckBox3";
-            this.guna2CheckBox3.Size = new System.Drawing.Size(50, 19);
-            this.guna2CheckBox3.TabIndex = 6;
-            this.guna2CheckBox3.Text = "Кеш";
-            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox3.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox3.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox3.UseVisualStyleBackColor = false;
+            this.cacheCheckbox.AutoSize = true;
+            this.cacheCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.cacheCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cacheCheckbox.CheckedState.BorderRadius = 2;
+            this.cacheCheckbox.CheckedState.BorderThickness = 0;
+            this.cacheCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.cacheCheckbox.Location = new System.Drawing.Point(9, 98);
+            this.cacheCheckbox.Name = "cacheCheckbox";
+            this.cacheCheckbox.Size = new System.Drawing.Size(50, 19);
+            this.cacheCheckbox.TabIndex = 6;
+            this.cacheCheckbox.Text = "Кеш";
+            this.cacheCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cacheCheckbox.UncheckedState.BorderRadius = 2;
+            this.cacheCheckbox.UncheckedState.BorderThickness = 0;
+            this.cacheCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cacheCheckbox.UseVisualStyleBackColor = false;
             // 
-            // guna2CheckBox4
+            // cheatsCheckbox
             // 
-            this.guna2CheckBox4.AutoSize = true;
-            this.guna2CheckBox4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox4.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox4.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox4.Location = new System.Drawing.Point(9, 48);
-            this.guna2CheckBox4.Name = "guna2CheckBox4";
-            this.guna2CheckBox4.Size = new System.Drawing.Size(121, 19);
-            this.guna2CheckBox4.TabIndex = 7;
-            this.guna2CheckBox4.Text = "Настройки читов";
-            this.guna2CheckBox4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox4.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox4.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox4.UseVisualStyleBackColor = false;
-            this.guna2CheckBox4.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            this.cheatsCheckbox.AutoSize = true;
+            this.cheatsCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.cheatsCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cheatsCheckbox.CheckedState.BorderRadius = 2;
+            this.cheatsCheckbox.CheckedState.BorderThickness = 0;
+            this.cheatsCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.cheatsCheckbox.Location = new System.Drawing.Point(9, 48);
+            this.cheatsCheckbox.Name = "cheatsCheckbox";
+            this.cheatsCheckbox.Size = new System.Drawing.Size(121, 19);
+            this.cheatsCheckbox.TabIndex = 7;
+            this.cheatsCheckbox.Text = "Настройки читов";
+            this.cheatsCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cheatsCheckbox.UncheckedState.BorderRadius = 2;
+            this.cheatsCheckbox.UncheckedState.BorderThickness = 0;
+            this.cheatsCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cheatsCheckbox.UseVisualStyleBackColor = false;
+            this.cheatsCheckbox.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox6);
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox7);
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox5);
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox2);
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox4);
+            this.guna2GroupBox1.Controls.Add(this.photoCheckbox);
+            this.guna2GroupBox1.Controls.Add(this.videoCheckbox);
+            this.guna2GroupBox1.Controls.Add(this.registryCheckbox);
+            this.guna2GroupBox1.Controls.Add(this.lastactivityCheckbox);
+            this.guna2GroupBox1.Controls.Add(this.cheatsCheckbox);
             this.guna2GroupBox1.Controls.Add(this.guna2Button1);
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox1);
-            this.guna2GroupBox1.Controls.Add(this.guna2CheckBox3);
+            this.guna2GroupBox1.Controls.Add(this.logsCheckbox);
+            this.guna2GroupBox1.Controls.Add(this.cacheCheckbox);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -150,45 +150,83 @@
             this.guna2GroupBox1.TabIndex = 8;
             this.guna2GroupBox1.Text = "Очистка";
             // 
-            // guna2CheckBox5
+            // photoCheckbox
             // 
-            this.guna2CheckBox5.AutoSize = true;
-            this.guna2CheckBox5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox5.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox5.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox5.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox5.Location = new System.Drawing.Point(9, 148);
-            this.guna2CheckBox5.Name = "guna2CheckBox5";
-            this.guna2CheckBox5.Size = new System.Drawing.Size(68, 19);
-            this.guna2CheckBox5.TabIndex = 9;
-            this.guna2CheckBox5.Text = "Registry";
-            this.guna2CheckBox5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox5.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox5.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox5.UseVisualStyleBackColor = false;
-            this.guna2CheckBox5.CheckedChanged += new System.EventHandler(this.guna2CheckBox5_CheckedChanged);
+            this.photoCheckbox.AutoSize = true;
+            this.photoCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.photoCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.photoCheckbox.CheckedState.BorderRadius = 2;
+            this.photoCheckbox.CheckedState.BorderThickness = 0;
+            this.photoCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.photoCheckbox.Location = new System.Drawing.Point(9, 173);
+            this.photoCheckbox.Name = "photoCheckbox";
+            this.photoCheckbox.Size = new System.Drawing.Size(95, 19);
+            this.photoCheckbox.TabIndex = 11;
+            this.photoCheckbox.Text = "Фотографий";
+            this.photoCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.photoCheckbox.UncheckedState.BorderRadius = 2;
+            this.photoCheckbox.UncheckedState.BorderThickness = 0;
+            this.photoCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.photoCheckbox.UseVisualStyleBackColor = false;
             // 
-            // guna2CheckBox2
+            // videoCheckbox
             // 
-            this.guna2CheckBox2.AutoSize = true;
-            this.guna2CheckBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox2.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox2.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox2.Location = new System.Drawing.Point(9, 123);
-            this.guna2CheckBox2.Name = "guna2CheckBox2";
-            this.guna2CheckBox2.Size = new System.Drawing.Size(87, 19);
-            this.guna2CheckBox2.TabIndex = 8;
-            this.guna2CheckBox2.Text = "LastActivity";
-            this.guna2CheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox2.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox2.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox2.UseVisualStyleBackColor = false;
-            this.guna2CheckBox2.CheckedChanged += new System.EventHandler(this.guna2CheckBox2_CheckedChanged);
+            this.videoCheckbox.AutoSize = true;
+            this.videoCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.videoCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.videoCheckbox.CheckedState.BorderRadius = 2;
+            this.videoCheckbox.CheckedState.BorderThickness = 0;
+            this.videoCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.videoCheckbox.Location = new System.Drawing.Point(9, 198);
+            this.videoCheckbox.Name = "videoCheckbox";
+            this.videoCheckbox.Size = new System.Drawing.Size(59, 19);
+            this.videoCheckbox.TabIndex = 10;
+            this.videoCheckbox.Text = "Видео";
+            this.videoCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.videoCheckbox.UncheckedState.BorderRadius = 2;
+            this.videoCheckbox.UncheckedState.BorderThickness = 0;
+            this.videoCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.videoCheckbox.UseVisualStyleBackColor = false;
+            // 
+            // registryCheckbox
+            // 
+            this.registryCheckbox.AutoSize = true;
+            this.registryCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.registryCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.registryCheckbox.CheckedState.BorderRadius = 2;
+            this.registryCheckbox.CheckedState.BorderThickness = 0;
+            this.registryCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.registryCheckbox.Location = new System.Drawing.Point(9, 148);
+            this.registryCheckbox.Name = "registryCheckbox";
+            this.registryCheckbox.Size = new System.Drawing.Size(68, 19);
+            this.registryCheckbox.TabIndex = 9;
+            this.registryCheckbox.Text = "Registry";
+            this.registryCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.registryCheckbox.UncheckedState.BorderRadius = 2;
+            this.registryCheckbox.UncheckedState.BorderThickness = 0;
+            this.registryCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.registryCheckbox.UseVisualStyleBackColor = false;
+            this.registryCheckbox.CheckedChanged += new System.EventHandler(this.guna2CheckBox5_CheckedChanged);
+            // 
+            // lastactivityCheckbox
+            // 
+            this.lastactivityCheckbox.AutoSize = true;
+            this.lastactivityCheckbox.BackColor = System.Drawing.Color.Transparent;
+            this.lastactivityCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lastactivityCheckbox.CheckedState.BorderRadius = 2;
+            this.lastactivityCheckbox.CheckedState.BorderThickness = 0;
+            this.lastactivityCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.lastactivityCheckbox.Location = new System.Drawing.Point(9, 123);
+            this.lastactivityCheckbox.Name = "lastactivityCheckbox";
+            this.lastactivityCheckbox.Size = new System.Drawing.Size(87, 19);
+            this.lastactivityCheckbox.TabIndex = 8;
+            this.lastactivityCheckbox.Text = "LastActivity";
+            this.lastactivityCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.lastactivityCheckbox.UncheckedState.BorderRadius = 2;
+            this.lastactivityCheckbox.UncheckedState.BorderThickness = 0;
+            this.lastactivityCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.lastactivityCheckbox.UseVisualStyleBackColor = false;
+            this.lastactivityCheckbox.CheckedChanged += new System.EventHandler(this.guna2CheckBox2_CheckedChanged);
             // 
             // toastNotificationsManager1
             // 
@@ -251,44 +289,6 @@
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.TabIndex = 0;
             // 
-            // guna2CheckBox6
-            // 
-            this.guna2CheckBox6.AutoSize = true;
-            this.guna2CheckBox6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox6.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox6.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox6.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox6.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox6.Location = new System.Drawing.Point(9, 173);
-            this.guna2CheckBox6.Name = "guna2CheckBox6";
-            this.guna2CheckBox6.Size = new System.Drawing.Size(95, 19);
-            this.guna2CheckBox6.TabIndex = 11;
-            this.guna2CheckBox6.Text = "Фотографий";
-            this.guna2CheckBox6.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox6.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox6.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox6.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox6.UseVisualStyleBackColor = false;
-            // 
-            // guna2CheckBox7
-            // 
-            this.guna2CheckBox7.AutoSize = true;
-            this.guna2CheckBox7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CheckBox7.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CheckBox7.CheckedState.BorderRadius = 2;
-            this.guna2CheckBox7.CheckedState.BorderThickness = 0;
-            this.guna2CheckBox7.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.guna2CheckBox7.Location = new System.Drawing.Point(9, 198);
-            this.guna2CheckBox7.Name = "guna2CheckBox7";
-            this.guna2CheckBox7.Size = new System.Drawing.Size(59, 19);
-            this.guna2CheckBox7.TabIndex = 10;
-            this.guna2CheckBox7.Text = "Видео";
-            this.guna2CheckBox7.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox7.UncheckedState.BorderRadius = 2;
-            this.guna2CheckBox7.UncheckedState.BorderThickness = 0;
-            this.guna2CheckBox7.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CheckBox7.UseVisualStyleBackColor = false;
-            // 
             // Cleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,18 +312,18 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private Guna.UI2.WinForms.Guna2CheckBox logsCheckbox;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
+        private Guna.UI2.WinForms.Guna2CheckBox cacheCheckbox;
+        private Guna.UI2.WinForms.Guna2CheckBox cheatsCheckbox;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
+        private Guna.UI2.WinForms.Guna2CheckBox lastactivityCheckbox;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox5;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox6;
-        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox7;
+        private Guna.UI2.WinForms.Guna2CheckBox registryCheckbox;
+        private Guna.UI2.WinForms.Guna2CheckBox photoCheckbox;
+        private Guna.UI2.WinForms.Guna2CheckBox videoCheckbox;
     }
 }
