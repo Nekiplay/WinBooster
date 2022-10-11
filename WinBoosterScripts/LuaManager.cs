@@ -1,13 +1,11 @@
 ﻿using NLua;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using WinBoosterScripts.Classes;
 using Console = WinBoosterScripts.Classes.Console;
+using Directory = WinBoosterScripts.Classes.Directory;
+using File = WinBoosterScripts.Classes.File;
+using Random = WinBoosterScripts.Classes.Random;
 
 namespace WinBoosterScripts
 {
@@ -21,6 +19,9 @@ namespace WinBoosterScripts
                 using (Lua lua = new Lua())
                 {
                     lua.State.Encoding = Encoding.UTF8;
+                    lua["Randon"] = new Random();
+                    lua["File"] = new File();
+                    lua["Directory"] = new Directory();
                     lua["Console"] = new Console();
                     lua["Cleaner"] = new Cleaner();
                     var luaObject = lua.DoFile(file.FullName);

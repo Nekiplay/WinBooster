@@ -21,6 +21,10 @@ namespace WinBoosterScripts.Classes
         {
             System.Console.Write(obj);
         }
+        public string ReadLine()
+        {
+            return System.Console.ReadLine();
+        }
 
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]

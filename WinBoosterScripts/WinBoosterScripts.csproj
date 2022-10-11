@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -58,6 +59,9 @@
   <ItemGroup>
     <Compile Include="Classes\Cleaner.cs" />
     <Compile Include="Classes\Console.cs" />
+    <Compile Include="Classes\Directory.cs" />
+    <Compile Include="Classes\File.cs" />
+    <Compile Include="Classes\Random.cs" />
     <Compile Include="LuaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

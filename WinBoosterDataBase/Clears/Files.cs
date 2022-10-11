@@ -7,6 +7,11 @@ namespace WinBoosterDataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Genshin Impact
+            new DirectoryPatern("%cycdrive%\\Program Files\\Genshin Impact\\logs", "*.log"),
+            new DirectoryPatern("D:\\Program Files\\Genshin Impact\\logs", "*.log"),
+            #endregion
+
             #region Borderless Gaming
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Borderless Gaming", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Borderless Gaming", "*.pdb"),
@@ -99,6 +104,7 @@ namespace WinBoosterDataBase
             #endregion
 
             #region Origin
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Origin", "*.log"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Origin", "*.html"),
             new DirectoryPatern("%cycdrive%\\ProgramData\\Origin\\SelfUpdate\\Staged", "*.html"),
             new DirectoryPatern("%cycdrive%\\ProgramData\\Origin\\SelfUpdate\\Staged\\support\\Privacy and Cookie Policy", "*.html"),

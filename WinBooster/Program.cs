@@ -8,7 +8,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.3";
+        public static string version = "1.0.4.4";
 
         public static Settings settings = new Settings();
         public static Statistic statistic = new Statistic();
