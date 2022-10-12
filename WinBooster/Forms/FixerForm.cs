@@ -3,13 +3,12 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using WinBooster.Native;
-using WinBoosterDataBase;
+using WinBooster.DataBase;
 
 namespace WinBooster
 {
     public partial class FixerForm : Form
     {
-        public FixerData fixerData = new FixerData();
         public FixerForm()
         {
             InitializeComponent();
@@ -18,11 +17,10 @@ namespace WinBooster
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             int fixes = 0;
-            foreach (FixerI fixer in fixerData.fixers)
+            foreach (FixerI fixer in FixerData.fixers)
             {
                 if (fixer.NeedFix())
                 {
-                    Console.WriteLine(fixer.ToString());
                     fixer.Fix();
                     fixes++;
                 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using WinBooster.Native;
 
-namespace WinBoosterDataBase
+namespace WinBooster.DataBase
 {
     public class Files
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.Native;
-using WinBoosterDataBase;
+using WinBooster.DataBase;
 
 namespace WinBooster
 {

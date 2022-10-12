@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.Native;
-using WinBoosterDataBase;
+using WinBooster.DataBase;
 
 namespace WinBooster
 {
@@ -12,10 +12,9 @@ namespace WinBooster
         {
             InitializeComponent();
         }
-        private GameList games = new GameList();
         private void GameOptimizeForm_Load(object sender, EventArgs e)
         {
-            foreach (GameOptimizeI game in games.games)
+            foreach (GameOptimizeI game in GameList.games)
             {
                 if (game.GameInstalled())
                 {
@@ -34,7 +33,7 @@ namespace WinBooster
                 }));
                 if (guna2ComboBox1.SelectedItem != null)
                 {
-                    foreach (GameOptimizeI game in games.games)
+                    foreach (GameOptimizeI game in GameList.games)
                     {
                         if (game.GameName() == guna2ComboBox1.SelectedItem.ToString())
                         {

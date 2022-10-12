@@ -31,7 +31,8 @@ namespace WinBooster.Native
                 long pre = Utils.DirSize(info);
                 try { Directory.Delete(dir, true); } catch { }
                 DirectoryInfo info2 = new DirectoryInfo(dir);
-                pre -= Utils.DirSize(info2);
+                long done = Utils.DirSize(info2);
+                pre -= done;
                 return pre;
             }
             return 0;

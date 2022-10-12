@@ -1,7 +1,7 @@
 ﻿using Microsoft.Win32;
 using WinBooster.Native;
 
-namespace WinBoosterDataBase
+namespace WinBooster.DataBase
 {
     public class NoClose : FixerI
     {

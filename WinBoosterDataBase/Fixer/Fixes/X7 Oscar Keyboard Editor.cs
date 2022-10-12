@@ -2,7 +2,7 @@
 using System.IO;
 using WinBooster.Native;
 
-namespace WinBoosterDataBase
+namespace WinBooster.DataBase
 {
     public class X7_Oscar_Keyboard_Editor : FixerI
     {

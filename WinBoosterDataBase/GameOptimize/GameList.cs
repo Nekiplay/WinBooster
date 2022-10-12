@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using WinBooster.Native;
 
-namespace WinBoosterDataBase
+namespace WinBooster.DataBase
 {
     public class GameList
     {
-        public List<GameOptimizeI> games = new List<GameOptimizeI>()
+        public static List<GameOptimizeI> games = new List<GameOptimizeI>()
         {
             new Minecraft()
         };

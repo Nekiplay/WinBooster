@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using WinBooster.Native;
 
-namespace WinBoosterDataBase
+namespace WinBooster.DataBase
 {
     public class Minecraft : GameOptimizeI
     {
@@ -22,13 +22,16 @@ namespace WinBoosterDataBase
             #endregion
             #region PolyMC
             string polymc_path = Utils.GetSysDrive() + "\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\PolyMC\\instances";
-            string[] instances = Directory.GetDirectories(polymc_path);
-            foreach (string instance in instances)
+            if (Directory.Exists(polymc_path))
             {
-                string mc = instance + "\\.minecraft";
-                if (Directory.Exists(mc))
+                string[] instances = Directory.GetDirectories(polymc_path);
+                foreach (string instance in instances)
                 {
-                    found = true;
+                    string mc = instance + "\\.minecraft";
+                    if (Directory.Exists(mc))
+                    {
+                        found = true;
+                    }
                 }
             }
             #endregion
@@ -64,13 +67,16 @@ namespace WinBoosterDataBase
                 foreach (string instance in instances)
                 {
                     string mc = instance + "\\.minecraft";
-                    if (File.Exists(mc + "\\options.txt"))
+                    if (Directory.Exists(mc))
                     {
-                        SetOptimalSettings(mc + "\\options.txt");
-                    }
-                    if (File.Exists(mc + "\\optionsof.txt"))
-                    {
-                        SetOptimalSettingsOf(mc + "\\optionsof.txt");
+                        if (File.Exists(mc + "\\options.txt"))
+                        {
+                            SetOptimalSettings(mc + "\\options.txt");
+                        }
+                        if (File.Exists(mc + "\\optionsof.txt"))
+                        {
+                            SetOptimalSettingsOf(mc + "\\optionsof.txt");
+                        }
                     }
                 }
             }

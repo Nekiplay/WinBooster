@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using WinBooster.Native;
 
-namespace WinBoosterDataBase
+namespace WinBooster.DataBase
 {
     public class FixerData
     {
-        public List<FixerI> fixers = new List<FixerI>()
+        public static List<FixerI> fixers = new List<FixerI>()
         {
             new AutoRun(),
             new X7_Oscar_Keyboard_Editor(),
