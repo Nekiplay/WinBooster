@@ -7,6 +7,11 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Epic Game
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services\\sites\\ui-helper", "ThirdPartyNotice.html"),
+            #endregion
+
             #region Genshin Impact
             new DirectoryPatern("%cycdrive%\\Program Files\\Genshin Impact\\logs", "*.log"),
             new DirectoryPatern("D:\\Program Files\\Genshin Impact\\logs", "*.log"),
