@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace WinBooster.Native
 {
     public class DirectoryFull : WorkingI
     {
-        public string dir;
+        public string directory;
         public DirectoryFull(string dir)
         {
             if (dir.Contains("%username%"))
@@ -20,17 +21,31 @@ namespace WinBooster.Native
                     dir = dir.Replace("%steam%", steam.FullName);
                 }
             }
-            this.dir = dir;
+            directory = dir;
+        }
+
+        public string GetDirectory()
+        {
+            return directory;
+        }
+
+        public string GetPattern()
+        {
+            return "";
+        }
+        public List<string> GetSafeNames()
+        {
+            return new List<string>();
         }
 
         public long Work()
         {
-            if (Directory.Exists(dir))
+            if (Directory.Exists(directory))
             {
-                DirectoryInfo info = new DirectoryInfo(dir);
+                DirectoryInfo info = new DirectoryInfo(directory);
                 long pre = Utils.DirSize(info);
-                try { Directory.Delete(dir, true); } catch { }
-                DirectoryInfo info2 = new DirectoryInfo(dir);
+                try { Directory.Delete(directory, true); } catch { }
+                DirectoryInfo info2 = new DirectoryInfo(directory);
                 long done = Utils.DirSize(info2);
                 pre -= done;
                 return pre;

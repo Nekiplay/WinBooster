@@ -7,7 +7,7 @@ namespace WinBooster.Native
 {
     public class DirectoryUnsafeFileNames : WorkingI
     {
-        public string dir;
+        public string directory;
         public List<string> safenames;
         public DirectoryUnsafeFileNames(string dir, List<string> safenames)
         {
@@ -15,16 +15,16 @@ namespace WinBooster.Native
                 dir = dir.Replace("%username%", Environment.UserName);
             if (dir.Contains("%cycdrive%"))
                 dir = dir.Replace("%cycdrive%", Utils.GetSysDrive());
-            this.dir = dir;
+            this.directory = dir;
             this.safenames = safenames;
         }
 
         public long Work()
         {
             long deleted = 0;
-            if (Directory.Exists(dir))
+            if (Directory.Exists(directory))
             {
-                var files = Directory.GetFiles(dir);
+                var files = Directory.GetFiles(directory);
                 foreach (string file in files)
                 {
                     FileInfo fi = new FileInfo(file);
@@ -46,6 +46,19 @@ namespace WinBooster.Native
                 }
             }
             return deleted;
+        }
+        public string GetDirectory()
+        {
+            return directory;
+        }
+
+        public string GetPattern()
+        {
+            return "";
+        }
+        public List<string> GetSafeNames()
+        {
+            return safenames;
         }
     }
 }

@@ -7,7 +7,7 @@
     <ProjectGuid>{B31EAFCB-D902-4228-BFB8-86BE20A1CC87}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinBoosterDataBase</RootNamespace>
+    <RootNamespace>WinBooster.DataBase</RootNamespace>
     <AssemblyName>WinBoosterDataBase</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

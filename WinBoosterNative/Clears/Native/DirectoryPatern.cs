@@ -7,8 +7,7 @@ namespace WinBooster.Native
 {
     public class DirectoryPatern : WorkingI
     {
-        public string dir;
-        public List<string> dirs = null;
+        public string directory;
         public string patern;
         public DirectoryPatern(string dir, string patern)
         {
@@ -24,7 +23,7 @@ namespace WinBooster.Native
                     dir = dir.Replace("%steam%", steam.FullName);
                 }
             }
-            this.dir = dir;
+            this.directory = dir;
             this.patern = patern;
         }
         private long WorkInSoloDir(string dirpath)
@@ -52,9 +51,9 @@ namespace WinBooster.Native
         public long Work()
         {
             long deleted = 0;
-            if (dir.Contains("%unknowfolder%"))
+            if (directory.Contains("%unknowfolder%"))
             {
-                var reg = Regex.Match(dir, "(.*)%unknowfolder%(.*)");
+                var reg = Regex.Match(directory, "(.*)%unknowfolder%(.*)");
                 if (reg.Success)
                 {
                     string first = reg.Groups[1].Value;
@@ -71,7 +70,7 @@ namespace WinBooster.Native
                 }
                 else
                 {
-                    var reg2 = Regex.Match(dir, "(.*)%unknowfolder%");
+                    var reg2 = Regex.Match(directory, "(.*)%unknowfolder%");
                     if (reg2.Success)
                     {
                         string first = reg2.Groups[1].Value;
@@ -89,9 +88,23 @@ namespace WinBooster.Native
             }
             else
             {
-                deleted += WorkInSoloDir(dir);
+                deleted += WorkInSoloDir(directory);
             }
             return deleted;
+        }
+
+        public string GetDirectory()
+        {
+            return directory;
+        }
+
+        public string GetPattern()
+        {
+            return patern;
+        }
+        public List<string> GetSafeNames()
+        {
+            return new List<string>();
         }
     }
 }

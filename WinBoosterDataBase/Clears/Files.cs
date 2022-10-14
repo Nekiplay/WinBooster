@@ -7,7 +7,7 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
-            #region Epic Game
+            #region Epic Games
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services", "*.html"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services\\sites\\ui-helper", "ThirdPartyNotice.html"),
             #endregion
