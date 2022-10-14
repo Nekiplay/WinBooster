@@ -1,10 +1,26 @@
 ﻿using Microsoft.Win32;
+using System.Collections.Generic;
 using WinBooster.Native;
 
 namespace WinBooster.DataBase
 {
     public class RegUnsafe : WorkingI
     {
+        public string GetDirectory()
+        {
+            return "";
+        }
+
+        public string GetPattern()
+        {
+            return "";
+        }
+
+        public List<string> GetSafeNames()
+        {
+            return new List<string>();
+        }
+
         public long Work()
         {
             long removed = 0;

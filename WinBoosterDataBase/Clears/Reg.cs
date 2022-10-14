@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System.Collections.Generic;
 using System.IO;
 using WinBooster.Native;
 
@@ -6,6 +7,21 @@ namespace WinBooster.DataBase
 {
     public class Reg : WorkingI
     {
+        public string GetDirectory()
+        {
+            return "";
+        }
+
+        public string GetPattern()
+        {
+            return "";
+        }
+
+        public List<string> GetSafeNames()
+        {
+            return new List<string>();
+        }
+
         public long Work()
         {
             long removed = 0;
