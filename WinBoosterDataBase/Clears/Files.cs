@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using WinBooster.Native;
+using WinBoosterNative.Clears.Native;
 
 namespace WinBooster.DataBase
 {
@@ -7,6 +8,43 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Android
+            new DirectoryFullAndroid("MIUI"),
+            #endregion
+
+            #region LogMeIn Hamachi
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\LogMeIn Hamachi", "*.rtf"),
+            #endregion
+
+            #region Python
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Pyton\\%unknowfolder%", "*.txt"),
+            #endregion
+
+            #region AVG
+            new DirectoryPatern("%cycdrive%\\Program Files\\AVG\\Antivirus\\Licenses", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\AVG\\Antivirus\\Cache", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\AVG\\Antivirus\\log", "*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\AVG\\Antivirus\\report", "*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\AVG\\Antivirus\\taskperflogs", "*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\AVG\\Persistent Data\\Antivirus\\Logs", "*"),
+            #endregion
+
+            #region Team Speek 3
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\TeamSpeak 3 Client", "*.txt"),
+            #endregion
+
+            #region Mozila
+            new DirectoryPatern("%cycdrive%\\Program Files\\Mozilla Firefox\\uninstall", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Mozilla Firefox", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Mozilla Maintenance Service\\logs", "*.log"),
+            #endregion
+
+            #region Avast
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Avast Software", "*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Avast Software\\Avast\\log", "*"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Avast Software\\Persistent Data\\Avast\\Logs", "*.logs"),
+            #endregion
+
             #region Epic Games
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services", "*.html"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services\\sites\\ui-helper", "ThirdPartyNotice.html"),
@@ -71,6 +109,7 @@ namespace WinBooster.DataBase
             new DirectoryPatern("D:\\VintageStory", "*.xml"),
             new DirectoryPatern("%cycdrive%\\VintageStory", "*.txt"),
             new DirectoryPatern("D:\\VintageStory", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\VintagestoryData\\Logs", "*.txt"),
             #endregion
 
             #region Counter-Strike 1.6
@@ -122,6 +161,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Opera GX
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Opera GX", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\CertificateRevocation\\%unknowfolder%", "LICENSE"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\Crash Reports\\reports", "*"),
@@ -384,6 +424,9 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\temp", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\temp", "*.json"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\BrowserCache", "*.log"),
             new DirectoryPatern("%cycdrive%\\ProgramData\\Overwolf\\Log", "*.log"),
             /* Achievement Rewards */
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Achievement Rewards", "*.log"),
@@ -488,6 +531,13 @@ namespace WinBooster.DataBase
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Skilling", "*.txt"),
             new DirectoryPatern("%steam%\\steamapps\\common\\Idle Skilling", "*.html"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Idle Skilling", "*.html"),
+
+            /* Crafting Idle Clicker */
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Bling Bling Games GmbH\\Crafting Idle Clicker\\Browser", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Bling Bling Games GmbH\\Crafting Idle Clicker", "*.log"),
+
+            /* Lords Mobile */
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\IGG\\Lords Mobile", "*.txt"),
             #endregion
 
             #region DevExpress
@@ -598,6 +648,13 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\screenshots", "*.png*"),
             new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\screenshots", "*.png"),
             #endregion
+
+            #region Android
+            new DirectoryFullAndroid("Pictures\\VK"),
+            new DirectoryFullAndroid("DCIM\\Camera"),
+            new DirectoryFullAndroid("DCIM\\Screenshots"),
+            new DirectoryFullAndroid("DroidCamX"),
+            #endregion
         };
 
         public static List<WorkingI> media = new List<WorkingI>()
@@ -605,10 +662,19 @@ namespace WinBooster.DataBase
             #region Bandicam
             new DirectoryFull("%cycdrive%\\Users\\%username%\\Documents\\Bandicam"),
             #endregion
+
+            #region Android
+            new DirectoryFullAndroid("Android\\media\\com.whatsapp\\WhatsApp\\Media"),
+            new DirectoryFullAndroid("Android\\media\\org.telegram.messenger\\Telegram"),
+            #endregion
         };
 
         public static List<WorkingI> cache = new List<WorkingI>()
         {
+            #region Lords Mobile
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\IGG\\Lords Mobile\\%unknowfolder%"),
+            #endregion
+
             #region VintageStory
             new DirectoryPatern("%cycdrive%\\VintageStory\\Mods", "*.pdb"),
             new DirectoryPatern("D:\\VintageStory\\Mods", "*.pdb"),
@@ -757,8 +823,26 @@ namespace WinBooster.DataBase
             new DirectoryFull("%cycdrive%\\AkrienAntiLeak"),
             #endregion
 
+            #region Impact
+            new DirectoryFull("cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\Impact"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\Impact"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\Impact"),
+            #endregion
+
             #region Supremacy
             new DirectoryFull("%cycdrive%\\supremacy-csgo"),
+            #endregion
+
+            #region Meteor Client
+            new DirectoryFull("cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\meteor-client"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\meteor-client"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\meteor-client"),
+            #endregion
+
+            #region Baritone
+            new DirectoryPatern("cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\.fabric\\processedMods", "*baritone*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\.fabric\\processedMods", "*baritone*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\.fabric\\processedMods", "*baritone*"),
             #endregion
         };
 
@@ -771,6 +855,11 @@ namespace WinBooster.DataBase
         {
 
             new DirectoryPatern("%cycdrive%\\Windows\\Prefetch", "*.pf")
+        };
+
+        public static List<WorkingI> android = new List<WorkingI>()
+        {
+            new DirectoryFullAndroid("Download")
         };
     }
 }

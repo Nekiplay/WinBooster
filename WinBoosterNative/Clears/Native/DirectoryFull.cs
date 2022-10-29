@@ -21,7 +21,11 @@ namespace WinBooster.Native
                     dir = dir.Replace("%steam%", steam.FullName);
                 }
             }
-            directory = dir;
+
+            if (Directory.Exists(dir))
+            {
+                directory = dir;
+            }
         }
 
         public string GetDirectory()
@@ -43,11 +47,15 @@ namespace WinBooster.Native
             if (Directory.Exists(directory))
             {
                 DirectoryInfo info = new DirectoryInfo(directory);
-                long pre = Utils.DirSize(info);
-                try { Directory.Delete(directory, true); } catch { }
-                DirectoryInfo info2 = new DirectoryInfo(directory);
-                long done = Utils.DirSize(info2);
-                pre -= done;
+                long pre = 0;
+                if (info.Exists)
+                {
+                    pre = Utils.DirSize(info);
+                    try { Directory.Delete(directory, true); } catch { }
+                    DirectoryInfo info2 = new DirectoryInfo(directory);
+                    long done = Utils.DirSize(info2);
+                    pre -= done;
+                }
                 return pre;
             }
             return 0;

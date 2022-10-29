@@ -43,11 +43,16 @@
     <Reference Include="Gameloop.Vdf.JsonConverter, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Gameloop.Vdf.JsonConverter.0.2.1\lib\net45\Gameloop.Vdf.JsonConverter.dll</HintPath>
     </Reference>
+    <Reference Include="MediaDevices, Version=1.9.1.0, Culture=neutral, PublicKeyToken=36ac35b4ea7a1f67, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaDevices.1.9.1\lib\net45\MediaDevices.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clears\Native\DirectoryFull.cs" />
+    <Compile Include="Clears\Native\DirectoryFullAndroid.cs" />
+    <Compile Include="Clears\Native\DirectoryFullIsProgramNotInstalled.cs" />
     <Compile Include="Clears\Native\DirectoryPatern.cs" />
     <Compile Include="Clears\Native\DirectoryUnsafeFileNames.cs" />
     <Compile Include="Clears\WorkInterface.cs" />
@@ -67,8 +74,12 @@
     <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MediaDevices.chm" />
     <None Include="packages.config" />
     <None Include="WinBoosterNative.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MediaDevicesLicense.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

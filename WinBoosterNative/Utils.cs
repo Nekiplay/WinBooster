@@ -1,9 +1,11 @@
 ﻿using Gameloop.Vdf;
 using Gameloop.Vdf.JsonConverter;
 using Gameloop.Vdf.Linq;
+using MediaDevices;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 
@@ -21,13 +23,17 @@ namespace WinBooster.Native
         }
         public static DirectoryInfo FindSteamDirectory()
         {
-            string steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
-            if (string.IsNullOrEmpty(steamdir) || steamdir == "Nothing")
+            try
             {
-                steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
-                return new DirectoryInfo(steamdir);
+                string steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Valve\Steam", "InstallPath", "Nothing");
+                if (string.IsNullOrEmpty(steamdir) || steamdir == "Nothing")
+                {
+                    steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
+                    return new DirectoryInfo(steamdir);
+                }
             }
-            else if (Directory.Exists("C:\\Program Files (x86)\\Steam"))
+            catch { }
+            if (Directory.Exists("C:\\Program Files (x86)\\Steam"))
             {
                 return new DirectoryInfo("C:\\Program Files (x86)\\Steam");
             }
@@ -41,7 +47,27 @@ namespace WinBooster.Native
             }
             return null;
         }
-
+        public static Bitmap ChangeImageColor(Bitmap scrBitmap, Color newColor)
+        {
+            //You can change your new color here. Red,Green,LawnGreen any..
+            Color actualColor;
+            //make an empty bitmap the same size as scrBitmap
+            Bitmap newBitmap = new Bitmap(scrBitmap.Width, scrBitmap.Height);
+            for (int i = 0; i < scrBitmap.Width; i++)
+            {
+                for (int j = 0; j < scrBitmap.Height; j++)
+                {
+                    //get the pixel from the scrBitmap image
+                    actualColor = scrBitmap.GetPixel(i, j);
+                    // > 150 because.. Images edges can be of low pixel colr. if we set all pixel color to new then there will be no smoothness left.
+                    if (actualColor.A > 150)
+                        newBitmap.SetPixel(i, j, newColor);
+                    else
+                        newBitmap.SetPixel(i, j, actualColor);
+                }
+            }
+            return newBitmap;
+        }
         public static string GetStringSize(long lenght)
         {
             string[] sizes = { "B", "KB", "MB", "GB", "TB" };
@@ -73,6 +99,24 @@ namespace WinBooster.Native
                 {
                     size += DirSize(di);
                 }
+            }
+            return size;
+        }
+        public static long DirSize(MediaDevice divece, MediaDirectoryInfo d)
+        {
+            long size = 0;
+
+            var files = divece.GetFiles(d.FullName);
+            foreach (string fi in files)
+            {
+                var i = divece.GetFileInfo(fi);
+                size += (long)i.Length;
+            }
+            var dirs = divece.GetDirectories(d.FullName);
+            foreach (string dir in dirs)
+            {
+                var i = divece.GetDirectoryInfo(dir);
+                size += DirSize(divece, i);
             }
             return size;
         }

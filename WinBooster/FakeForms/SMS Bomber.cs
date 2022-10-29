@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinBooster.Data;
 
 namespace WinBooster.FakeForms
 {
@@ -20,7 +21,7 @@ namespace WinBooster.FakeForms
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (guna2TextBox1.Text == Program.settings.Password)
+            if (guna2TextBox1.Text == SaveAndLoad.settings.Password)
             {
                 this.Hide();
                 Program.form.Show();
@@ -34,7 +35,8 @@ namespace WinBooster.FakeForms
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
         {
-            label2.Text = "SMS Bomber v" + Program.version;
+            label2.Text = "SMS Bomber";
+            label1.Text = " v" + Program.version;
         }
     }
 }

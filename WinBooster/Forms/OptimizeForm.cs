@@ -65,6 +65,15 @@ namespace WinBooster
                 List<Tuple<string, string, bool>> schems = energy.ListSchemes();
                 foreach (var s in schems)
                 {
+                    if (s.Item2 == "Максимальная производительность" && !s.Item3)
+                    {
+                        energy.Delete(s.Item1);
+                    }
+                }
+
+                schems = energy.ListSchemes();
+                foreach (var s in schems)
+                {
                     if (s.Item2 == "Максимальная производительность" && s.Item3)
                     {
                         guna2CheckBox1.Invoke(new MethodInvoker(() =>

@@ -53,8 +53,14 @@ namespace WinBoosterCharpScripts
 
         public virtual void Update() { }
 
-        public virtual void OnClear(bool cheats, bool logs, bool cache, bool lastactivity, bool registry, bool images, bool video) { }
-        public virtual void OnClearDone(bool cheats, bool logs, bool cache, bool lastactivity, bool registry, bool images, bool video) { }
+        public virtual void OnClearStart(bool cheats, bool logs, bool cache, bool lastactivity, bool registry, bool images, bool video) { }
+        public virtual void OnClearDone(bool cheats, bool logs, bool cache, bool lastactivity, bool registry, bool images, bool video, long size) { }
+
+        public virtual void OnErrorFixerStart() { }
+        public virtual void OnErrorFixerDone() { }
+
+        public virtual void OnGameOptimizeStart() { }
+        public virtual void OnGameOptimizeDone() { }
 
         public virtual void ReceivedObject(object s) { }
 

@@ -33,6 +33,11 @@ namespace WinBooster
                 }));
                 if (guna2ComboBox1.SelectedItem != null)
                 {
+                    var scripts = MainMenu.charpManager.plugins;
+                    foreach (var script in scripts)
+                    {
+                        script.OnGameOptimizeStart();
+                    }
                     foreach (GameOptimizeI game in GameList.games)
                     {
                         if (game.GameName() == guna2ComboBox1.SelectedItem.ToString())
@@ -41,6 +46,10 @@ namespace WinBooster
                                 game.Optimize(); 
                             } catch { }
                         }
+                    }
+                    foreach (var script in scripts)
+                    {
+                        script.OnGameOptimizeDone();
                     }
                 }
                 guna2Button1.Invoke(new MethodInvoker(() =>

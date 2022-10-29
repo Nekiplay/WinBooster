@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.Native;
 using WinBooster.DataBase;
+using WinBooster.Data;
 
 namespace WinBooster
 {
@@ -15,14 +16,13 @@ namespace WinBooster
             InitializeComponent();
         }
 
-        private async void guna2Button1_Click(object sender, EventArgs e)
-        {
-            
-        }
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
+            {
+                Program.form.Size = new System.Drawing.Size(206, 31 + 194);
                 guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
+            }
             if (lastactivityCheckbox.Checked)
             {
                 registryCheckbox.Checked = true;
@@ -46,9 +46,13 @@ namespace WinBooster
             if (registryCheckbox.Checked)
             {
                 guna2GroupBox2.Visible = true;
+                Program.form.Size = new System.Drawing.Size(303, 31 + 194);
             }
             if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
+            {
+                Program.form.Size = new System.Drawing.Size(206, 31 + 194);
                 guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
+            }
         }
 
         private void Cleaner_Load(object sender, EventArgs e)
@@ -67,13 +71,14 @@ namespace WinBooster
                 registryCheckbox.Checked = true;
                 photoCheckbox.Checked = true;
                 videoCheckbox.Checked = true;
+                androidCheckbox.Checked = true;
             }
             else if (e.Button == MouseButtons.Left)
             {
                 var scripts = MainMenu.charpManager.plugins;
                 foreach (var script in scripts)
                 {
-                    script.OnClear(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked);
+                    script.OnClearStart(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked);
                 }
                 guna2Button1.Invoke(new MethodInvoker(() =>
                 {
@@ -85,6 +90,7 @@ namespace WinBooster
                     registryCheckbox.Enabled = false;
                     photoCheckbox.Enabled = false;
                     videoCheckbox.Enabled = false;
+                    androidCheckbox.Enabled = false;
                 }));
                 long removed = 0;
                 Task t3 = Task.Factory.StartNew(() =>
@@ -198,6 +204,20 @@ namespace WinBooster
                         }));
                     }
                 });
+                Task t8 = Task.Factory.StartNew(() =>
+                {
+                    if (androidCheckbox.Checked)
+                    {
+                        foreach (WorkingI log in Files.android)
+                        {
+                            try { removed += log.Work(); } catch { }
+                        }
+                        androidCheckbox.Invoke(new MethodInvoker(() =>
+                        {
+                            androidCheckbox.Checked = false;
+                        }));
+                    }
+                });
 
 
                 await t1;
@@ -207,9 +227,10 @@ namespace WinBooster
                 await t5;
                 await t6;
                 await t7;
+                await t8;
                 foreach (var script in scripts)
                 {
-                    script.OnClearDone(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked);
+                    script.OnClearDone(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked, removed);
                 }
                 guna2Button1.Invoke(new MethodInvoker(() =>
                 {
@@ -221,14 +242,19 @@ namespace WinBooster
                     registryCheckbox.Enabled = true;
                     photoCheckbox.Enabled = true;
                     videoCheckbox.Enabled = true;
+                    androidCheckbox.Enabled = true;
                 }));
 
                 if (removed > 0)
                 {
-                    Program.statistic.TotalGodClears++;
+                    SaveAndLoad.statistic.TotalGodClears++;
                 }
-                Program.statistic.TotalSizeClear += removed;
-                Program.statistic.Save(Program.statistic_path);
+                SaveAndLoad.statistic.TotalSizeClear += removed;
+                if (SaveAndLoad.statistic.MaximumSizeClear < removed)
+                {
+                    SaveAndLoad.statistic.MaximumSizeClear = removed;
+                }
+                SaveAndLoad.statistic.Save(SaveAndLoad.statistic_path);
                 Program.form.statistic.UpdateUI();
 
                 var item = toastNotificationsManager1.YieldArray().First();
@@ -237,6 +263,16 @@ namespace WinBooster
                 item2.Body = "Удалено: " + Utils.GetStringSize(removed);
                 toastNotificationsManager1.ShowNotification(item2.ID);
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logsCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

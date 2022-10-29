@@ -23,8 +23,12 @@ namespace WinBooster.Native
                     dir = dir.Replace("%steam%", steam.FullName);
                 }
             }
-            this.directory = dir;
-            this.patern = patern;
+
+            if (Directory.Exists(dir))
+            {
+                this.directory = dir;
+                this.patern = patern;
+            }
         }
         private long WorkInSoloDir(string dirpath)
         {
@@ -53,42 +57,50 @@ namespace WinBooster.Native
             long deleted = 0;
             if (directory.Contains("%unknowfolder%"))
             {
-                var reg = Regex.Match(directory, "(.*)%unknowfolder%(.*)");
-                if (reg.Success)
+                try
                 {
-                    string first = reg.Groups[1].Value;
-                    if (Directory.Exists(first))
+                    var reg = Regex.Match(directory, "(.*)%unknowfolder%(.*)");
+                    if (reg.Success)
                     {
-                        string last = reg.Groups[2].Value;
-                        var dirs = Directory.GetDirectories(first);
-                        foreach (var dir2 in dirs)
-                        {
-                            DirectoryInfo directoryInfo = new DirectoryInfo(dir2);
-                            deleted += WorkInSoloDir(first + directoryInfo.Name + last);
-                        }
-                    }
-                }
-                else
-                {
-                    var reg2 = Regex.Match(directory, "(.*)%unknowfolder%");
-                    if (reg2.Success)
-                    {
-                        string first = reg2.Groups[1].Value;
+                        string first = reg.Groups[1].Value;
                         if (Directory.Exists(first))
                         {
+                            string last = reg.Groups[2].Value;
                             var dirs = Directory.GetDirectories(first);
                             foreach (var dir2 in dirs)
                             {
                                 DirectoryInfo directoryInfo = new DirectoryInfo(dir2);
-                                deleted += WorkInSoloDir(first + directoryInfo.Name);
+                                deleted += WorkInSoloDir(first + directoryInfo.Name + last);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        var reg2 = Regex.Match(directory, "(.*)%unknowfolder%");
+                        if (reg2.Success)
+                        {
+                            string first = reg2.Groups[1].Value;
+                            if (Directory.Exists(first))
+                            {
+                                var dirs = Directory.GetDirectories(first);
+                                foreach (var dir2 in dirs)
+                                {
+                                    DirectoryInfo directoryInfo = new DirectoryInfo(dir2);
+                                    deleted += WorkInSoloDir(first + directoryInfo.Name);
+                                }
                             }
                         }
                     }
                 }
+                catch { }
             }
             else
             {
-                deleted += WorkInSoloDir(directory);
+                try
+                {
+                    deleted += WorkInSoloDir(directory);
+                }
+                catch { }
             }
             return deleted;
         }

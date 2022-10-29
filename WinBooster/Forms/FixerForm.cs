@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using WinBooster.Native;
 using WinBooster.DataBase;
+using WinBooster.Data;
 
 namespace WinBooster
 {
@@ -17,6 +18,11 @@ namespace WinBooster
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             int fixes = 0;
+            var scripts = MainMenu.charpManager.plugins;
+            foreach (var script in scripts)
+            {
+                script.OnErrorFixerStart();
+            }
             foreach (FixerI fixer in FixerData.fixers)
             {
                 if (fixer.NeedFix())
@@ -25,8 +31,12 @@ namespace WinBooster
                     fixes++;
                 }
             }
-            Program.statistic.TotalFixes += fixes;
-            Program.statistic.Save(Program.statistic_path);
+            foreach (var script in scripts)
+            {
+                script.OnErrorFixerDone();
+            }
+            SaveAndLoad.statistic.TotalFixes += fixes;
+            SaveAndLoad.statistic.Save(SaveAndLoad.statistic_path);
 
             var item = toastNotificationsManager1.YieldArray().First();
             var item2 = item.Notifications.First();
