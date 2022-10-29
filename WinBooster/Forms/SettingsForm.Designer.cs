@@ -275,7 +275,7 @@
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
             this.guna2GroupBox3.Size = new System.Drawing.Size(141, 60);
             this.guna2GroupBox3.TabIndex = 12;
-            this.guna2GroupBox3.Text = "About";
+            this.guna2GroupBox3.Text = "Information";
             this.guna2GroupBox3.TextOffset = new System.Drawing.Point(0, -5);
             // 
             // label6

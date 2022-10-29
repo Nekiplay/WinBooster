@@ -26,7 +26,14 @@ namespace WinBooster
                 var result = Program.updateChecker.CheckUpdate();
                 label6.Invoke(new MethodInvoker(() =>
                 {
-                    label6.Text = "Last version: " + result.Item2;
+                    if (result.Item1)
+                    {
+                        label6.Text = "Last version: " + result.Item2;
+                    }
+                    else
+                    {
+                        label6.Text = "Last version: " + Program.version;
+                    }
                 }));
             });
             if (SaveAndLoad.premiumFeatures.MoreFakeMenus)
