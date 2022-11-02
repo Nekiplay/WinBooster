@@ -10,7 +10,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.5.4";
+        public static string version = "1.0.4.4.5.5";
 
         public static Tuple<bool, string> NeedUpdate = new Tuple<bool, string>(false, "");
         public static bool UpdateChecked = false;
