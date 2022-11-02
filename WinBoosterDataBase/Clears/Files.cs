@@ -73,10 +73,6 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Program Files\\Bochs-2.7", "VGABIOS-lgpl-README.txt"),
             #endregion
 
-            #region IDA Pro
-            new DirectoryPatern("%cycdrive%\\Program Files\\IDA 7.7", "license.txt"),
-            #endregion
-
             #region Windows
             new DirectoryFull("%cycdrive%\\Windows\\System32\\config"),
             new DirectoryFull("%cycdrive%\\Windows\\Logs"),
@@ -348,6 +344,8 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\logs", "*.log"),
 
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\logs", "*.log*"),
+
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\logs", "*"),
             #endregion
 
             #region JetBrains
@@ -378,6 +376,7 @@ namespace WinBooster.DataBase
 
             #region Radmin VPN
             new DirectoryPatern("%cycdrive%\\ProgramData\\Famatech\\Radmin VPN", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Radmin VPN", "eula.txt"),
             #endregion
 
             #region Driver Booster
@@ -647,9 +646,12 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\screenshots", "*.png*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\screenshots", "*.png*"),
             new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\screenshots", "*.png"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\screenshots", "*"),
             #endregion
 
             #region Android
+            new DirectoryFullAndroid("Android\\media\\com.whatsapp\\WhatsApp\\Media\\WhatsApp Images"),
+            new DirectoryFullAndroid("Android\\media\\org.telegram.messenger\\Telegram\\Telegram Images"),
             new DirectoryFullAndroid("Pictures\\VK"),
             new DirectoryFullAndroid("DCIM\\Camera"),
             new DirectoryFullAndroid("DCIM\\Screenshots"),
@@ -664,13 +666,19 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Android
-            new DirectoryFullAndroid("Android\\media\\com.whatsapp\\WhatsApp\\Media"),
-            new DirectoryFullAndroid("Android\\media\\org.telegram.messenger\\Telegram"),
+            new DirectoryFullAndroid("Android\\media\\com.whatsapp\\WhatsApp\\Media\\WhatsApp Video"),
+            new DirectoryFullAndroid("Android\\media\\org.telegram.messenger\\Telegram\\Telegram Video"),
             #endregion
         };
 
         public static List<WorkingI> cache = new List<WorkingI>()
         {
+            #region Minecraft
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\squidgame"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\modelCache"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\cache"),
+            #endregion
+
             #region Lords Mobile
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\IGG\\Lords Mobile\\%unknowfolder%"),
             #endregion
@@ -853,13 +861,7 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> lastactivity_full = new List<WorkingI>()
         {
-
             new DirectoryPatern("%cycdrive%\\Windows\\Prefetch", "*.pf")
-        };
-
-        public static List<WorkingI> android = new List<WorkingI>()
-        {
-            new DirectoryFullAndroid("Download")
         };
     }
 }

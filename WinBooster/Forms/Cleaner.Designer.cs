@@ -43,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.androidCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.toastNotificationsManager1)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -134,7 +133,6 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.guna2GroupBox1.Controls.Add(this.androidCheckbox);
             this.guna2GroupBox1.Controls.Add(this.photoCheckbox);
             this.guna2GroupBox1.Controls.Add(this.videoCheckbox);
             this.guna2GroupBox1.Controls.Add(this.registryCheckbox);
@@ -202,7 +200,7 @@
             this.registryCheckbox.CheckedState.BorderRadius = 2;
             this.registryCheckbox.CheckedState.BorderThickness = 0;
             this.registryCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.registryCheckbox.Location = new System.Drawing.Point(114, 114);
+            this.registryCheckbox.Location = new System.Drawing.Point(114, 89);
             this.registryCheckbox.Name = "registryCheckbox";
             this.registryCheckbox.Size = new System.Drawing.Size(68, 19);
             this.registryCheckbox.TabIndex = 9;
@@ -298,25 +296,6 @@
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, -5);
             this.guna2GroupBox2.Visible = false;
             // 
-            // androidCheckbox
-            // 
-            this.androidCheckbox.AutoSize = true;
-            this.androidCheckbox.BackColor = System.Drawing.Color.Transparent;
-            this.androidCheckbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.androidCheckbox.CheckedState.BorderRadius = 2;
-            this.androidCheckbox.CheckedState.BorderThickness = 0;
-            this.androidCheckbox.CheckedState.FillColor = System.Drawing.Color.Black;
-            this.androidCheckbox.Location = new System.Drawing.Point(114, 89);
-            this.androidCheckbox.Name = "androidCheckbox";
-            this.androidCheckbox.Size = new System.Drawing.Size(69, 19);
-            this.androidCheckbox.TabIndex = 12;
-            this.androidCheckbox.Text = "Android";
-            this.androidCheckbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.androidCheckbox.UncheckedState.BorderRadius = 2;
-            this.androidCheckbox.UncheckedState.BorderThickness = 0;
-            this.androidCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.androidCheckbox.UseVisualStyleBackColor = false;
-            // 
             // Cleaner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,6 +332,5 @@
         private Guna.UI2.WinForms.Guna2CheckBox photoCheckbox;
         private Guna.UI2.WinForms.Guna2CheckBox videoCheckbox;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2CheckBox androidCheckbox;
     }
 }

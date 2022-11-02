@@ -71,7 +71,6 @@ namespace WinBooster
                 registryCheckbox.Checked = true;
                 photoCheckbox.Checked = true;
                 videoCheckbox.Checked = true;
-                androidCheckbox.Checked = true;
             }
             else if (e.Button == MouseButtons.Left)
             {
@@ -90,7 +89,6 @@ namespace WinBooster
                     registryCheckbox.Enabled = false;
                     photoCheckbox.Enabled = false;
                     videoCheckbox.Enabled = false;
-                    androidCheckbox.Enabled = false;
                 }));
                 long removed = 0;
                 Task t3 = Task.Factory.StartNew(() =>
@@ -204,21 +202,6 @@ namespace WinBooster
                         }));
                     }
                 });
-                Task t8 = Task.Factory.StartNew(() =>
-                {
-                    if (androidCheckbox.Checked)
-                    {
-                        foreach (WorkingI log in Files.android)
-                        {
-                            try { removed += log.Work(); } catch { }
-                        }
-                        androidCheckbox.Invoke(new MethodInvoker(() =>
-                        {
-                            androidCheckbox.Checked = false;
-                        }));
-                    }
-                });
-
 
                 await t1;
                 await t2;
@@ -227,7 +210,6 @@ namespace WinBooster
                 await t5;
                 await t6;
                 await t7;
-                await t8;
                 foreach (var script in scripts)
                 {
                     script.OnClearDone(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked, removed);
@@ -242,7 +224,6 @@ namespace WinBooster
                     registryCheckbox.Enabled = true;
                     photoCheckbox.Enabled = true;
                     videoCheckbox.Enabled = true;
-                    androidCheckbox.Enabled = true;
                 }));
 
                 if (removed > 0)
