@@ -852,6 +852,10 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\.fabric\\processedMods", "*baritone*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\.fabric\\processedMods", "*baritone*"),
             #endregion
+
+            #region Minecraft (Cristalix MAS)
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\MAS"),
+            #endregion
         };
 
         public static List<WorkingI> lastactivity_safe = new List<WorkingI>()
