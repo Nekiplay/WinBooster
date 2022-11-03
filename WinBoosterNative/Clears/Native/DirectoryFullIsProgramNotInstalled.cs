@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Management;
 using WinBooster.Native;
@@ -25,10 +26,7 @@ namespace WinBoosterNative.Clears.Native
                 }
             }
 
-            if (Directory.Exists(dir))
-            {
-                directory = dir;
-            }
+            directory = dir;
             this.name = name;
         }
 
@@ -46,9 +44,8 @@ namespace WinBoosterNative.Clears.Native
             return new List<string>();
         }
 
-        public long Work()
+        public Tuple<long, long> Work()
         {
-            long pre = 0;
             using (ManagementObjectSearcher mos = new ManagementObjectSearcher("SELECT * FROM Win32_Product"))
             {
                 foreach (ManagementObject mo in mos.Get())
@@ -56,19 +53,23 @@ namespace WinBoosterNative.Clears.Native
                     if (mo["name"] != null && mo["name"].ToString() == name)
                     {
                         DirectoryInfo info = new DirectoryInfo(directory);
+                        long pre = 0;
+                        long size = 0;
                         if (info.Exists)
                         {
                             pre = Utils.DirSize(info);
+                            size = Utils.DirFileCount(info);
                             try { Directory.Delete(directory, true); } catch { }
                             DirectoryInfo info2 = new DirectoryInfo(directory);
                             long done = Utils.DirSize(info2);
+                            size -= Utils.DirFileCount(info2);
                             pre -= done;
-                            return pre;
                         }
+                        return new Tuple<long, long>(size, pre);
                     }
                 }
             }
-            return pre;
+            return new Tuple<long, long>(0, 0);
         }
     }
 }

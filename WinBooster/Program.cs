@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Management;
 using System.Windows.Forms;
@@ -10,7 +11,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.5.5";
+        public static string version = "1.0.4.4.5.6";
 
         public static Tuple<bool, string> NeedUpdate = new Tuple<bool, string>(false, "");
         public static bool UpdateChecked = false;
@@ -32,12 +33,22 @@ namespace WinBooster
         }
 
         public static UpdateChecker updateChecker = new UpdateChecker();
-
         public static MainMenu form;
+
+
+        public static WinBoosterQIWI.QIWI.Donation donation = new WinBoosterQIWI.QIWI.Donation("cc25973f-d2b7-45e2-b1e3-7370c08bc145", onDonation, true);
+
+        public static void onDonation(WinBoosterQIWI.QIWI.Donation.Event donate)
+        {
+            if (donate.attributes.DONATION_SENDER == GetCPUID())
+            {
+                
+            }
+        }
+
         [STAThread]
         static void Main()
         {
-            Console.WriteLine(GetCPUID());
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster"))

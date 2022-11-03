@@ -225,6 +225,10 @@
       <Project>{686c07b1-98f7-4eff-8be5-e8c5e0a5f614}</Project>
       <Name>WinBoosterNative</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WinBoosterQIWI\WinBoosterQIWI.csproj">
+      <Project>{d7b04fd9-3bab-4ead-8e9d-fab8b4fc806d}</Project>
+      <Name>WinBoosterQIWI</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Rocket-256.ico" />

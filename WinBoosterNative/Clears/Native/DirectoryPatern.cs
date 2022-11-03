@@ -24,15 +24,13 @@ namespace WinBooster.Native
                 }
             }
 
-            if (Directory.Exists(dir))
-            {
-                this.directory = dir;
-                this.patern = patern;
-            }
+            this.directory = dir;
+            this.patern = patern;
         }
-        private long WorkInSoloDir(string dirpath)
+        private Tuple<long, long> WorkInSoloDir(string dirpath)
         {
             long deleted = 0;
+            long filesd = 0;
             if (Directory.Exists(dirpath))
             {
                 var files = Directory.GetFiles(dirpath, patern);
@@ -43,6 +41,7 @@ namespace WinBooster.Native
                     {
                         deleted += fi.Length;
                         fi.Delete();
+                        filesd++;
                     }
                     catch
                     {
@@ -50,10 +49,11 @@ namespace WinBooster.Native
                     }
                 }
             }
-            return deleted;
+            return new Tuple<long, long>(filesd, deleted);
         }
-        public long Work()
+        public Tuple<long, long> Work()
         {
+            long files = 0;
             long deleted = 0;
             if (directory.Contains("%unknowfolder%"))
             {
@@ -70,7 +70,9 @@ namespace WinBooster.Native
                             foreach (var dir2 in dirs)
                             {
                                 DirectoryInfo directoryInfo = new DirectoryInfo(dir2);
-                                deleted += WorkInSoloDir(first + directoryInfo.Name + last);
+                                var a = WorkInSoloDir(first + directoryInfo.Name + last);
+                                files += a.Item1;
+                                deleted += a.Item2;
                             }
                         }
                     }
@@ -86,7 +88,9 @@ namespace WinBooster.Native
                                 foreach (var dir2 in dirs)
                                 {
                                     DirectoryInfo directoryInfo = new DirectoryInfo(dir2);
-                                    deleted += WorkInSoloDir(first + directoryInfo.Name);
+                                    var a = WorkInSoloDir(first + directoryInfo.Name);
+                                    files += a.Item1;
+                                    deleted += a.Item2;
                                 }
                             }
                         }
@@ -98,11 +102,13 @@ namespace WinBooster.Native
             {
                 try
                 {
-                    deleted += WorkInSoloDir(directory);
+                    var a = WorkInSoloDir(directory);
+                    files = a.Item1;
+                    deleted += a.Item2;
                 }
                 catch { }
             }
-            return deleted;
+            return new Tuple<long, long>(files, deleted);
         }
 
         public string GetDirectory()

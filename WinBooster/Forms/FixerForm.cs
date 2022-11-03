@@ -40,8 +40,8 @@ namespace WinBooster
 
             var item = toastNotificationsManager1.YieldArray().First();
             var item2 = item.Notifications.First();
-            item2.Header = "Исправления";
-            item2.Body = "Исправлено ошибок: " + fixes;
+            item2.Header = "Error correction";
+            item2.Body = "Fixed errors: " + fixes;
             toastNotificationsManager1.ShowNotification(item2.ID);
             Program.form.statistic.UpdateUI();
         }

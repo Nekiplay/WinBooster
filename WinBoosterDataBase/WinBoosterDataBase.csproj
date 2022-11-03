@@ -59,6 +59,7 @@
     <Compile Include="Fixer\Fixes\X7 Oscar Keyboard Editor.cs" />
     <Compile Include="GameOptimize\GameList.cs" />
     <Compile Include="GameOptimize\Games\Minecraft.cs" />
+    <Compile Include="Internet\DNSList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

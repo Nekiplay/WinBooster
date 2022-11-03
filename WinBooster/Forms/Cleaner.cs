@@ -46,7 +46,7 @@ namespace WinBooster
             if (registryCheckbox.Checked)
             {
                 guna2GroupBox2.Visible = true;
-                Program.form.Size = new System.Drawing.Size(303, 31 + 194);
+                Program.form.Size = new System.Drawing.Size(318, 31 + 194);
             }
             if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
             {
@@ -90,14 +90,19 @@ namespace WinBooster
                     photoCheckbox.Enabled = false;
                     videoCheckbox.Enabled = false;
                 }));
-                long removed = 0;
+                long removed_bytes = 0;
+                long removed_files = 0;
                 Task t3 = Task.Factory.StartNew(() =>
                 {
                     if (cheatsCheckbox.Checked)
                     {
                         foreach (WorkingI log in Files.cheats)
                         {
-                            try { removed += log.Work(); } catch { }
+                            try { 
+                                var removed = log.Work();
+                                removed_files += removed.Item1;
+                                removed_bytes += removed.Item2;
+                            } catch { }
                         }
                         cheatsCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -111,7 +116,13 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in Files.logs)
                         {
-                            try { removed += log.Work(); } catch { }
+                            try
+                            {
+                                var removed = log.Work();
+                                removed_files += removed.Item1;
+                                removed_bytes += removed.Item2;
+                            }
+                            catch { }
                         }
                         logsCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -125,7 +136,13 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in Files.cache)
                         {
-                            try { removed += log.Work(); } catch { }
+                            try
+                            {
+                                var removed = log.Work();
+                                removed_files += removed.Item1;
+                                removed_bytes += removed.Item2;
+                            }
+                            catch { }
                         }
                         cacheCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -141,14 +158,26 @@ namespace WinBooster
                         {
                             foreach (WorkingI log in Files.lastactivity_safe)
                             {
-                                try { removed += log.Work(); } catch { }
+                                try
+                                {
+                                    var removed = log.Work();
+                                    removed_files += removed.Item1;
+                                    removed_bytes += removed.Item2;
+                                }
+                                catch { }
                             }
                         }
                         else if (guna2ComboBox1.SelectedIndex == 1)
                         {
                             foreach (WorkingI log in Files.lastactivity_full)
                             {
-                                try { removed += log.Work(); } catch { }
+                                try
+                                {
+                                    var removed = log.Work();
+                                    removed_files += removed.Item1;
+                                    removed_bytes += removed.Item2;
+                                }
+                                catch { }
                             }
                         }
                         lastactivityCheckbox.Invoke(new MethodInvoker(() =>
@@ -162,11 +191,11 @@ namespace WinBooster
                     if (registryCheckbox.Checked)
                     {
                         Reg reg = new Reg();
-                        removed += reg.Work();
+                        removed_bytes += reg.Work().Item2;
                         if (guna2ComboBox1.SelectedIndex == 1)
                         {
                             RegUnsafe regUnsafe = new RegUnsafe();
-                            removed += regUnsafe.Work();
+                            removed_bytes += regUnsafe.Work().Item2;
                         }
                         registryCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -180,7 +209,13 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in Files.images)
                         {
-                            try { removed += log.Work(); } catch { }
+                            try
+                            {
+                                var removed = log.Work();
+                                removed_files += removed.Item1;
+                                removed_bytes += removed.Item2;
+                            }
+                            catch { }
                         }
                         photoCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -194,7 +229,13 @@ namespace WinBooster
                     {
                         foreach (WorkingI log in Files.media)
                         {
-                            try { removed += log.Work(); } catch { }
+                            try
+                            {
+                                var removed = log.Work();
+                                removed_files += removed.Item1;
+                                removed_bytes += removed.Item2;
+                            }
+                            catch { }
                         }
                         videoCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -212,7 +253,7 @@ namespace WinBooster
                 await t7;
                 foreach (var script in scripts)
                 {
-                    script.OnClearDone(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked, removed);
+                    script.OnClearDone(cheatsCheckbox.Checked, logsCheckbox.Checked, cacheCheckbox.Checked, lastactivityCheckbox.Checked, registryCheckbox.Checked, photoCheckbox.Checked, videoCheckbox.Checked, removed_bytes);
                 }
                 guna2Button1.Invoke(new MethodInvoker(() =>
                 {
@@ -226,23 +267,44 @@ namespace WinBooster
                     videoCheckbox.Enabled = true;
                 }));
 
-                if (removed > 0)
+                if (removed_bytes > 0)
                 {
                     SaveAndLoad.statistic.TotalGodClears++;
+                    SaveAndLoad.statistic.TotalDeletedFiles += removed_files;
                 }
-                SaveAndLoad.statistic.TotalSizeClear += removed;
-                if (SaveAndLoad.statistic.MaximumSizeClear < removed)
+                SaveAndLoad.statistic.TotalSizeClear += removed_bytes;
+                if (SaveAndLoad.statistic.MaximumSizeClear < removed_bytes)
                 {
-                    SaveAndLoad.statistic.MaximumSizeClear = removed;
+                    SaveAndLoad.statistic.MaximumSizeClear = removed_bytes;
+                }
+                if (SaveAndLoad.statistic.MaximumDeletedFiles < removed_files)
+                {
+                    SaveAndLoad.statistic.MaximumDeletedFiles = removed_files;
                 }
                 SaveAndLoad.statistic.Save(SaveAndLoad.statistic_path);
                 Program.form.statistic.UpdateUI();
 
                 var item = toastNotificationsManager1.YieldArray().First();
                 var item2 = item.Notifications.First();
-                item2.Header = "Очистка";
-                item2.Body = "Удалено: " + Utils.GetStringSize(removed);
+                item2.Header = "Clearing";
+                item2.Body = "Deleted files: " + removed_files +"\nDeleted size: " + Utils.GetStringSize(removed_bytes);
                 toastNotificationsManager1.ShowNotification(item2.ID);
+            }
+        }
+
+        public void onShow()
+        {
+            if (registryCheckbox.Checked)
+                lastactivityCheckbox.Checked = true;
+            if (registryCheckbox.Checked)
+            {
+                guna2GroupBox2.Visible = true;
+                Program.form.Size = new System.Drawing.Size(318, 31 + 194);
+            }
+            if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
+            {
+                Program.form.Size = new System.Drawing.Size(206, 31 + 194);
+                guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
             }
         }
 

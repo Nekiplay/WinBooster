@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace WinBooster.Native
 {
@@ -7,6 +8,6 @@ namespace WinBooster.Native
         string GetDirectory();
         string GetPattern();
         List<string> GetSafeNames();
-        long Work();
+        Tuple<long, long> Work();
     }
 }

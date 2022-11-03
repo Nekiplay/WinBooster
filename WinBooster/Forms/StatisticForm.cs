@@ -40,6 +40,14 @@ namespace WinBooster
                 {
                     label4.Text = "Maximum seats allocated: " + Utils.GetStringSize(SaveAndLoad.statistic.MaximumSizeClear);
                 }));
+                label5.Invoke(new MethodInvoker(() =>
+                {
+                    label5.Text = "Total deleted files: " + SaveAndLoad.statistic.TotalDeletedFiles;
+                }));
+                label6.Invoke(new MethodInvoker(() =>
+                {
+                    label6.Text = "Maximum deleted files: " + SaveAndLoad.statistic.MaximumDeletedFiles;
+                }));
             }
             else
             {
@@ -47,6 +55,8 @@ namespace WinBooster
                 label2.Text = "Cleaning done: " + SaveAndLoad.statistic.TotalGodClears;
                 label3.Text = "Fixed bugs: " + SaveAndLoad.statistic.TotalFixes;
                 label4.Text = "Maximum seats allocated: " + Utils.GetStringSize(SaveAndLoad.statistic.MaximumSizeClear);
+                label5.Text = "Total deleted files: " + SaveAndLoad.statistic.TotalDeletedFiles;
+                label6.Text = "Maximum deleted files: " + SaveAndLoad.statistic.MaximumDeletedFiles;
             }
         }
         private void StatisticForm_Load(object sender, EventArgs e)

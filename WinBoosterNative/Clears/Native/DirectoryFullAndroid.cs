@@ -31,7 +31,7 @@ namespace WinBoosterNative.Clears.Native
             return new List<string>();
         }
 
-        public long Work()
+        public Tuple<long, long> Work()
         {
             long pre = 0;
             try
@@ -53,13 +53,11 @@ namespace WinBoosterNative.Clears.Native
                                 {
                                     var info = device.GetDirectoryInfo(dir3 + "\\" + directory);
                                     pre = Utils.DirSize(device, info);
-                                    Console.WriteLine(pre);
                                     device.DeleteDirectory(info.FullName, true);
                                     if (device.DirectoryExists(dir3 + "\\" + directory))
                                     {
                                         info = device.GetDirectoryInfo(dir3 + "\\" + directory);
                                         pre -= Utils.DirSize(device, info);
-                                        Console.WriteLine(pre);
                                     }
                                 }
                             }
@@ -69,7 +67,7 @@ namespace WinBoosterNative.Clears.Native
                 }
             }
             catch { }
-            return pre;
+            return new Tuple<long, long>(0, pre);
         }
     }
 }

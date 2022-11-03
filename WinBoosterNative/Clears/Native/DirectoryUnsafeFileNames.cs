@@ -19,9 +19,10 @@ namespace WinBooster.Native
             this.safenames = safenames;
         }
 
-        public long Work()
+        public Tuple<long, long> Work()
         {
             long deleted = 0;
+            long filesd = 0;
             if (Directory.Exists(directory))
             {
                 var files = Directory.GetFiles(directory);
@@ -36,6 +37,7 @@ namespace WinBooster.Native
                             {
                                 deleted += fi.Length;
                                 fi.Delete();
+                                filesd++;
                             }
                             catch
                             {
@@ -45,7 +47,7 @@ namespace WinBooster.Native
                     }
                 }
             }
-            return deleted;
+            return new Tuple<long, long>(filesd, deleted);
         }
         public string GetDirectory()
         {

@@ -132,7 +132,7 @@
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.guna2GroupBox1.Controls.Add(this.photoCheckbox);
             this.guna2GroupBox1.Controls.Add(this.videoCheckbox);
             this.guna2GroupBox1.Controls.Add(this.registryCheckbox);
@@ -237,15 +237,15 @@
             this.toastNotificationsManager1.ApplicationId = "Win Booster";
             this.toastNotificationsManager1.ApplicationName = "Win Booster";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("78e08045-c6aa-416d-ad53-74ed099145e8", null, "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("78e08045-c6aa-416d-ad53-74ed099145e8", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
-                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text02)});
+                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText02)});
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.label1.Location = new System.Drawing.Point(3, 34);
+            this.label1.Location = new System.Drawing.Point(7, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 15);
             this.label1.TabIndex = 1;
@@ -265,21 +265,21 @@
             this.guna2ComboBox1.FormattingEnabled = true;
             this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
             this.guna2ComboBox1.IntegralHeight = false;
-            this.guna2ComboBox1.ItemHeight = 20;
+            this.guna2ComboBox1.ItemHeight = 15;
             this.guna2ComboBox1.Items.AddRange(new object[] {
             "Safe",
             "Full"});
             this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(10, 54);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(14, 54);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(78, 26);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(78, 21);
             this.guna2ComboBox1.StartIndex = 0;
             this.guna2ComboBox1.TabIndex = 0;
             // 
             // guna2GroupBox2
             // 
-            this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.guna2GroupBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.Controls.Add(this.guna2ComboBox1);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
@@ -290,7 +290,7 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(200, 12);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(95, 88);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(105, 88);
             this.guna2GroupBox2.TabIndex = 9;
             this.guna2GroupBox2.Text = "Settings";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, -5);
@@ -301,7 +301,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(303, 194);
+            this.ClientSize = new System.Drawing.Size(318, 194);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

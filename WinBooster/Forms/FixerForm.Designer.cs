@@ -84,9 +84,9 @@
             this.toastNotificationsManager1.ApplicationId = "Win Booster";
             this.toastNotificationsManager1.ApplicationName = "Win Booster";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("78e08045-c6aa-416d-ad53-74ed099145e8", null, "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("78e08045-c6aa-416d-ad53-74ed099145e8", ((System.Drawing.Image)(resources.GetObject("toastNotificationsManager1.Notifications"))), "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
-                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text02)});
+                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText02)});
             // 
             // FixerForm
             // 

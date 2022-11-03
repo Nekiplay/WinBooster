@@ -92,20 +92,23 @@
             this.panelDesktop.ShadowDecoration.Parent = this.panelDesktop;
             this.panelDesktop.Size = new System.Drawing.Size(305, 209);
             this.panelDesktop.TabIndex = 2;
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint_1);
             // 
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel7.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel7.Controls.Add(this.errorCorrectionPictureBox);
             this.guna2Panel7.Controls.Add(this.label7);
+            this.guna2Panel7.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel7.Location = new System.Drawing.Point(107, 11);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.ShadowDecoration.Parent = this.guna2Panel7;
             this.guna2Panel7.Size = new System.Drawing.Size(89, 90);
             this.guna2Panel7.TabIndex = 7;
             this.guna2Panel7.Click += new System.EventHandler(this.guna2Panel7_Click);
+            this.guna2Panel7.MouseEnter += new System.EventHandler(this.guna2Panel7_MouseEnter);
+            this.guna2Panel7.MouseLeave += new System.EventHandler(this.guna2Panel7_MouseLeave);
             // 
             // errorCorrectionPictureBox
             // 
@@ -117,6 +120,8 @@
             this.errorCorrectionPictureBox.TabIndex = 6;
             this.errorCorrectionPictureBox.TabStop = false;
             this.errorCorrectionPictureBox.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.errorCorrectionPictureBox.MouseEnter += new System.EventHandler(this.errorCorrectionPictureBox_MouseEnter);
+            this.errorCorrectionPictureBox.MouseLeave += new System.EventHandler(this.errorCorrectionPictureBox_MouseLeave);
             // 
             // label7
             // 
@@ -129,19 +134,24 @@
             this.label7.Text = "Error correction";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.label7.MouseEnter += new System.EventHandler(this.label7_MouseEnter);
+            this.label7.MouseLeave += new System.EventHandler(this.label7_MouseLeave);
             // 
             // guna2Panel6
             // 
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel6.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel6.Controls.Add(this.statisticPictureBox);
             this.guna2Panel6.Controls.Add(this.label6);
+            this.guna2Panel6.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel6.Location = new System.Drawing.Point(202, 107);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
             this.guna2Panel6.Size = new System.Drawing.Size(89, 90);
             this.guna2Panel6.TabIndex = 8;
             this.guna2Panel6.Click += new System.EventHandler(this.guna2Panel6_Click);
+            this.guna2Panel6.MouseEnter += new System.EventHandler(this.guna2Panel6_MouseEnter);
+            this.guna2Panel6.MouseLeave += new System.EventHandler(this.guna2Panel6_MouseLeave);
             // 
             // statisticPictureBox
             // 
@@ -153,6 +163,8 @@
             this.statisticPictureBox.TabIndex = 6;
             this.statisticPictureBox.TabStop = false;
             this.statisticPictureBox.Click += new System.EventHandler(this.pictureBox8_Click);
+            this.statisticPictureBox.MouseEnter += new System.EventHandler(this.statisticPictureBox_MouseEnter);
+            this.statisticPictureBox.MouseLeave += new System.EventHandler(this.statisticPictureBox_MouseLeave);
             // 
             // label6
             // 
@@ -165,19 +177,24 @@
             this.label6.Text = "Statistics";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.MouseEnter += new System.EventHandler(this.label6_MouseEnter);
+            this.label6.MouseLeave += new System.EventHandler(this.label6_MouseLeave);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel1.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel1.Controls.Add(this.gameOptimizePictureBox);
             this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel1.Location = new System.Drawing.Point(12, 107);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(89, 90);
             this.guna2Panel1.TabIndex = 8;
             this.guna2Panel1.Click += new System.EventHandler(this.guna2Panel1_Click);
+            this.guna2Panel1.MouseEnter += new System.EventHandler(this.guna2Panel1_MouseEnter);
+            this.guna2Panel1.MouseLeave += new System.EventHandler(this.guna2Panel1_MouseLeave);
             // 
             // gameOptimizePictureBox
             // 
@@ -189,6 +206,8 @@
             this.gameOptimizePictureBox.TabIndex = 6;
             this.gameOptimizePictureBox.TabStop = false;
             this.gameOptimizePictureBox.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.gameOptimizePictureBox.MouseEnter += new System.EventHandler(this.gameOptimizePictureBox_MouseEnter);
+            this.gameOptimizePictureBox.MouseLeave += new System.EventHandler(this.gameOptimizePictureBox_MouseLeave);
             // 
             // label5
             // 
@@ -201,19 +220,24 @@
             this.label5.Text = "Game Optimization";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
             // 
             // guna2Panel5
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel5.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel5.Controls.Add(this.optimizePictureBox);
             this.guna2Panel5.Controls.Add(this.label4);
+            this.guna2Panel5.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel5.Location = new System.Drawing.Point(202, 11);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
             this.guna2Panel5.Size = new System.Drawing.Size(89, 90);
             this.guna2Panel5.TabIndex = 7;
             this.guna2Panel5.Click += new System.EventHandler(this.guna2Panel5_Click);
+            this.guna2Panel5.MouseEnter += new System.EventHandler(this.guna2Panel5_MouseEnter);
+            this.guna2Panel5.MouseLeave += new System.EventHandler(this.guna2Panel5_MouseLeave);
             // 
             // optimizePictureBox
             // 
@@ -225,6 +249,8 @@
             this.optimizePictureBox.TabIndex = 6;
             this.optimizePictureBox.TabStop = false;
             this.optimizePictureBox.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.optimizePictureBox.MouseEnter += new System.EventHandler(this.optimizePictureBox_MouseEnter);
+            this.optimizePictureBox.MouseLeave += new System.EventHandler(this.optimizePictureBox_MouseLeave);
             // 
             // label4
             // 
@@ -237,19 +263,24 @@
             this.label4.Text = "Optimization";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
+            this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
             // 
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel4.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel4.Controls.Add(this.settingsPictureBox);
             this.guna2Panel4.Controls.Add(this.label3);
+            this.guna2Panel4.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel4.Location = new System.Drawing.Point(107, 107);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.Size = new System.Drawing.Size(89, 90);
             this.guna2Panel4.TabIndex = 7;
             this.guna2Panel4.Click += new System.EventHandler(this.guna2Panel4_Click);
+            this.guna2Panel4.MouseEnter += new System.EventHandler(this.guna2Panel4_MouseEnter);
+            this.guna2Panel4.MouseLeave += new System.EventHandler(this.guna2Panel4_MouseLeave);
             // 
             // settingsPictureBox
             // 
@@ -261,6 +292,8 @@
             this.settingsPictureBox.TabIndex = 6;
             this.settingsPictureBox.TabStop = false;
             this.settingsPictureBox.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.settingsPictureBox.MouseEnter += new System.EventHandler(this.settingsPictureBox_MouseEnter);
+            this.settingsPictureBox.MouseLeave += new System.EventHandler(this.settingsPictureBox_MouseLeave);
             // 
             // label3
             // 
@@ -273,19 +306,24 @@
             this.label3.Text = "Settings";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
+            this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.guna2Panel2.BorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel2.Controls.Add(this.clearingPictureBox);
             this.guna2Panel2.Controls.Add(this.label1);
+            this.guna2Panel2.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
             this.guna2Panel2.Location = new System.Drawing.Point(12, 11);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(89, 90);
             this.guna2Panel2.TabIndex = 3;
             this.guna2Panel2.Click += new System.EventHandler(this.guna2Panel2_Click);
+            this.guna2Panel2.MouseEnter += new System.EventHandler(this.guna2Panel2_MouseEnter);
+            this.guna2Panel2.MouseLeave += new System.EventHandler(this.guna2Panel2_MouseLeave);
             // 
             // clearingPictureBox
             // 
@@ -297,6 +335,8 @@
             this.clearingPictureBox.TabIndex = 6;
             this.clearingPictureBox.TabStop = false;
             this.clearingPictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.clearingPictureBox.MouseEnter += new System.EventHandler(this.clearingPictureBox_MouseEnter);
+            this.clearingPictureBox.MouseLeave += new System.EventHandler(this.clearingPictureBox_MouseLeave);
             // 
             // label1
             // 
@@ -309,6 +349,8 @@
             this.label1.Text = "Clearing";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // guna2Panel3
             // 

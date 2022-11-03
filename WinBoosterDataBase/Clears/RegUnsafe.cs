@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using WinBooster.Native;
 
@@ -21,7 +22,7 @@ namespace WinBooster.DataBase
             return new List<string>();
         }
 
-        public long Work()
+        public Tuple<long, long> Work()
         {
             long removed = 0;
 
@@ -56,7 +57,7 @@ namespace WinBooster.DataBase
             catch { }
             #endregion
 
-            return removed;
+            return new Tuple<long, long>(0, removed);
         }
     }
 }

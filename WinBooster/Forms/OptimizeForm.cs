@@ -1,4 +1,6 @@
 ﻿using DevExpress.Utils.About;
+using DevExpress.Utils.Extensions;
+using Guna.UI2.WinForms;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinBooster.DataBase.Internet;
 using WinBooster.Optimize;
+using WinBoosterNative.Internet;
 
 namespace WinBooster
 {
@@ -19,9 +23,14 @@ namespace WinBooster
         {
             InitializeComponent();
         }
+        private DNSInfo bestdns = null;
 
-        private void Optinize_Load(object sender, EventArgs e)
+        public void StartSettingChecker()
         {
+            guna2CheckBox4.Enabled = false;
+            guna2CheckBox1.Enabled = false;
+            guna2CheckBox2.Enabled = false;
+            guna2CheckBox3.Enabled = false;
             #region Проверка алгоритма Nagle
             Task.Factory.StartNew(() =>
             {
@@ -54,6 +63,7 @@ namespace WinBooster
                 guna2CheckBox4.Invoke(new MethodInvoker(() =>
                 {
                     guna2CheckBox4.Checked = enabled;
+                    guna2CheckBox4.Enabled = true;
                 }));
             });
             #endregion
@@ -82,6 +92,10 @@ namespace WinBooster
                         }));
                     }
                 }
+                guna2CheckBox1.Invoke(new MethodInvoker(() =>
+                {
+                    guna2CheckBox1.Enabled = true;
+                }));
             });
             #endregion
             #region Проверка гибернаций
@@ -92,9 +106,43 @@ namespace WinBooster
                 guna2CheckBox2.Invoke(new MethodInvoker(() =>
                 {
                     guna2CheckBox2.Checked = !on;
+                    guna2CheckBox2.Enabled = true;
                 }));
             });
             #endregion
+            #region Проверка отличного DNS
+            Task.Factory.StartNew(async () =>
+            {
+                bestdns = await DNSList.GetDNS();
+                try
+                {
+                    var anctiveNetworks = DNSInfo.GetActiveEthernetOrWifiNetworkInterface().GetIPProperties().DnsAddresses.ToArray();
+
+                    string current1 = anctiveNetworks[0].ToString();
+                    string current2 = anctiveNetworks[1].ToString();
+
+                    string best1 = bestdns.dns.Split('*')[0];
+                    string best2 = bestdns.dns.Split('*')[1];
+                    if ((current1 == best1 || current2 == best2) || (current2 == best1 || current1 == best2))
+                    {
+                        guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                        {
+                            guna2CheckBox3.Checked = true;
+                        }));
+                    }
+                    guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                    {
+                        guna2CheckBox3.Enabled = true;
+                    }));
+                }
+                catch { }
+            });
+            #endregion
+        }
+
+        private void Optinize_Load(object sender, EventArgs e)
+        {
+            StartSettingChecker();
         }
 
         private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
@@ -153,18 +201,21 @@ namespace WinBooster
         private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             #region Изменение электросхемы питания
-            Task.Factory.StartNew(() =>
+            if (guna2CheckBox1.Enabled)
             {
-                EnergyClass energy = new EnergyClass();
-                energy.Enable(guna2CheckBox1.Checked);
-                if (!guna2CheckBox1.Checked)
+                Task.Factory.StartNew(() =>
                 {
-                    guna2CheckBox1.Invoke(new MethodInvoker(() =>
+                    EnergyClass energy = new EnergyClass();
+                    energy.Enable(guna2CheckBox1.Checked);
+                    if (!guna2CheckBox1.Checked)
                     {
-                        guna2CheckBox1.Checked = false;
-                    }));
-                }
-            });
+                        guna2CheckBox1.Invoke(new MethodInvoker(() =>
+                        {
+                            guna2CheckBox1.Checked = false;
+                        }));
+                    }
+                });
+            }
             #endregion
 
         }
@@ -172,12 +223,34 @@ namespace WinBooster
         private void guna2CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             #region Изменение гибернаций
-            Task.Factory.StartNew(() =>
+            if (guna2CheckBox2.Enabled)
             {
-                GybernateClass gybernate = new GybernateClass();
-                gybernate.Enable(!guna2CheckBox2.Checked);
-            });
+                Task.Factory.StartNew(() =>
+                {
+                    GybernateClass gybernate = new GybernateClass();
+                    gybernate.Enable(!guna2CheckBox2.Checked);
+                });
+            }
             #endregion
+        }
+
+        private async void guna2CheckBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2CheckBox3.Checked && guna2CheckBox3.Enabled && bestdns != null)
+            {
+                guna2CheckBox3.Enabled = false;
+                bestdns.Set();
+                var item = toastNotificationsManager1.YieldArray().First();
+                var item2 = item.Notifications.First();
+                item2.Header = "New DNS Settings";
+                item2.Body = "Main: " + bestdns.dns.Split('*')[0] + "\nReserve: " + bestdns.dns.Split('*')[1] + "\nLatency: " + bestdns.latency + "ms";
+                toastNotificationsManager1.ShowNotification(item2.ID);
+                guna2CheckBox3.Enabled = true;
+            }
+            else
+            {
+                DNSInfo.UnsetDNS();
+            }
         }
     }
 }

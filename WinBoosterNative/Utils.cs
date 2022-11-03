@@ -82,6 +82,26 @@ namespace WinBooster.Native
             string result = String.Format("{0:0.##} {1}", len, sizes[order]);
             return result;
         }
+        public static long DirFileCount(DirectoryInfo d)
+        {
+            long size = 0;
+            if (d.Exists)
+            {
+                // Add file sizes.
+                FileInfo[] fis = d.GetFiles();
+                foreach (FileInfo fi in fis)
+                {
+                    size += 1;
+                }
+                // Add subdirectory sizes.
+                DirectoryInfo[] dis = d.GetDirectories();
+                foreach (DirectoryInfo di in dis)
+                {
+                    size += DirFileCount(di);
+                }
+            }
+            return size;
+        }
         public static long DirSize(DirectoryInfo d)
         {
             long size = 0;
@@ -120,6 +140,7 @@ namespace WinBooster.Native
             }
             return size;
         }
+
         /* Steam ID текущего пользователя */
         public static string CurrentUserSteamID
         {

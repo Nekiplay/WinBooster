@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.Data;
@@ -21,27 +22,68 @@ namespace WinBooster
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            Task.Factory.StartNew(() =>
+            Task version_checker = new Task(() =>
             {
+                bool done = false;
+                int i = 0;
+                Task animation = new Task(() =>
+                {
+                    while (!done)
+                    {
+                        linkLabel4.Invoke(new MethodInvoker(() =>
+                        {
+                            if (i == 0)
+                            {
+                                linkLabel4.Text = "Checking.";
+                                i = 1;
+                            }
+                            else if (i == 1)
+                            {
+                                linkLabel4.Text = "Checking..";
+                                i = 2;
+                            }
+                            else if (i == 2)
+                            {
+                                linkLabel4.Text = "Checking...";
+                                i = 0;
+                            }
+                        }));
+                        Thread.Sleep(150);
+                    }
+                });
+                animation.Start();
+                Thread.Sleep(2150);
                 var result = Program.updateChecker.CheckUpdate();
-                label6.Invoke(new MethodInvoker(() =>
+                done = true;
+                linkLabel4.Invoke(new MethodInvoker(() =>
                 {
                     if (result.Item1)
                     {
-                        label6.Text = "Last version: " + result.Item2;
+                        linkLabel4.Text =  result.Item2;
                     }
                     else
                     {
-                        label6.Text = "Last version: " + Program.version;
+                        linkLabel4.Text = Program.version;
                     }
                 }));
             });
-            if (SaveAndLoad.premiumFeatures.MoreFakeMenus)
+            Task setting_loader = new Task(() =>
             {
-                //Program.form.settings.morefakemenusCheckbox.Checked = true;
-            }
-            guna2ComboBox1.SelectedIndex = SaveAndLoad.settings.FakeMenu;
-            guna2TextBox1.Text = SaveAndLoad.settings.Password;
+                guna2TextBox2.Invoke(new MethodInvoker(() =>
+                {
+                    guna2TextBox2.Text = Program.GetCPUID();
+                }));
+                guna2ComboBox1.Invoke(new MethodInvoker(() =>
+                {
+                    guna2ComboBox1.SelectedIndex = SaveAndLoad.settings.FakeMenu;
+                }));
+                guna2TextBox1.Invoke(new MethodInvoker(() =>
+                {
+                    guna2TextBox1.Text = SaveAndLoad.settings.Password;
+                }));
+            });
+            version_checker.Start();
+            setting_loader.Start();
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -81,30 +123,14 @@ namespace WinBooster
             System.Diagnostics.Process.Start("https://t.me/nekiplay");
         }
 
-        private void cheatsCheckbox_CheckedChanged(object sender, EventArgs e)
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //if (SaveAndLoad.premiumFeatures.MoreFakeMenus == false && morefakemenusCheckbox.Checked)
-            //{
-            //    morefakemenusCheckbox.Invoke(new MethodInvoker(() =>
-            //    {
-            //        morefakemenusCheckbox.Checked = false;
-            //        morefakemenusCheckbox.Enabled = false;
-            //    }));
-            //    string link = Program.donation.GetDonateLink("Neki_play1", Program.GetCPUID(), "More fake menu", 25);
-            //    System.Diagnostics.Process.Start(link);
-            //    morefakemenusCheckbox.Invoke(new MethodInvoker(() =>
-            //    {
-            //        morefakemenusCheckbox.Checked = false;
-            //        morefakemenusCheckbox.Enabled = true;
-            //    }));
-            //}
-            //else if (SaveAndLoad.premiumFeatures.MoreFakeMenus)
-            //{
-            //    morefakemenusCheckbox.Invoke(new MethodInvoker(() =>
-            //    {
-            //        morefakemenusCheckbox.Checked = true;
-            //    }));
-            //}
+            System.Diagnostics.Process.Start("https://brokencore.club/resources/4279");
+        }
+
+        private void SettingsForm_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

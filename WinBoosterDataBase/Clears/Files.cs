@@ -8,6 +8,18 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region JetBrains
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Local\\JetBrains\\%unknowfolder%\\log"),
+            #endregion
+
+            #region GameNet
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Vebanaul\\GameNet\\logs", "*"),
+            #endregion
+
+            #region Microsoft Lobe
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\logs"),
+            #endregion
+
             #region Android
             new DirectoryFullAndroid("MIUI"),
             #endregion
@@ -306,6 +318,10 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Nox
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox\\BigNoxInstallPack", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox\\vmInstall", "*.log"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "Nox.log*"),
+            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "Log_multi.log*"),
             new DirectoryPatern("C:\\Users\\%username%\\.BigNox", "*.log*"),
             new DirectoryPatern("C:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryPatern("D:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
@@ -415,6 +431,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region GitHub Desktop
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\SquirrelTemp", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\GitHub Desktop\\logs", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GitHubDesktop", "*.log"),
             #endregion
@@ -549,6 +566,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Unity
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\plastic4\\logs", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\UnityHub\\logs", "*.json"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Unity", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Unity\\Editor", "*.log"),
@@ -673,6 +691,12 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> cache = new List<WorkingI>()
         {
+            #region Microsoft Lobe
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\Cache", "*"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\Code Cache"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\GPUCache"),
+            #endregion
+
             #region Minecraft
             new DirectoryFull("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\squidgame"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\modelCache"),
@@ -738,6 +762,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Discord
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord", "*.tmp"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Cache", "*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js", "*"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\discord\\Code Cache\\js\\index-dir", "*"),
@@ -747,7 +772,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Steam
-            new DirectoryPatern("%steam%\\config\avatarcache", "*.png"),   
+            new DirectoryPatern("%steam%\\config\\avatarcache", "*.png"),   
             new DirectoryPatern("%steam%\\appcache\\stats", "*.bin"),
             new DirectoryPatern("%steam%\\appcache\\librarycache", "*.jpg"),
             new DirectoryPatern("%steam%\\appcache\\librarycache", "*.png"),
@@ -784,10 +809,22 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%steam%\\steamapps\\common\\GarrysMod\\garrysmod\\cache\\workshop\\resource\\fonts\\sincopa", "*.ttf"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\GarrysMod\\garrysmod\\cache\\workshop\\resource\\fonts\\sincopa", "*.ttf"),
             #endregion
+
+            #region Python
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Local\\pip\\cache"),
+            #endregion
         };
 
         public static List<WorkingI> cheats = new List<WorkingI>()
         {
+            #region LegendWare
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Legendware"),
+            #endregion
+
+            #region HPP
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\hpp"),
+            #endregion
+
             #region NeverLose
             new DirectoryPatern("%cycdrive%\\", "NeverBSOD.log"),
             new DirectoryFull("%steam%\\steamapps\\common\\Counter-Strike Global Offensive\\nl"),
