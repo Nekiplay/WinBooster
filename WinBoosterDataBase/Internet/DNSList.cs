@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using WinBoosterNative.Internet;
 
@@ -134,11 +132,11 @@ namespace WinBooster.DataBase.Internet
             new DNSInfo("9.9.9.9", "US", "Quad9 Security"),
         };
         /* Получаем наилучший DNS */
-        public static async Task<DNSInfo> GetDNS()
+        public static async Task<Tuple<DNSInfo, DNSInfo>> GetDNS()
         {
             DNSInfo on1 = await GetBestDNSAsync();
             DNSInfo on2 = await GetBestDNSAsync(on1.dns);
-            return new DNSInfo(on1.dns + "*" + on2.dns, on1.countiry, on1.company_or_name);
+            return new Tuple<DNSInfo, DNSInfo>(on1, on2);
         }
         private static async Task<DNSInfo> GetBestDNSAsync()
         {

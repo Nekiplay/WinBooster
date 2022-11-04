@@ -46,6 +46,16 @@ namespace WinBooster.DataBase
             catch { }
             #endregion
 
+            #region NeverLose
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
+                CurrentUserSoftware.DeleteSubKeyTree("neverlose");
+                CurrentUserSoftware.Close();
+            }
+            catch { }
+            #endregion
+
             #region LastActivity
             try
             {
@@ -263,16 +273,6 @@ namespace WinBooster.DataBase
                     k.DeleteValue(v);
                 }
                 usersReg.Close();
-            }
-            catch { }
-            #endregion
-
-            #region NeverLose
-            try
-            {
-                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
-                CurrentUserSoftware.DeleteSubKeyTree("neverlose");
-                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion

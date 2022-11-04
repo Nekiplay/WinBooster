@@ -42,21 +42,21 @@ namespace WinBooster.Native
         }
         private Tuple<long, long> WorkInSoloDir(string dirpath)
         {
-            Console.WriteLine(dirpath);
             DirectoryInfo info = new DirectoryInfo(dirpath);
-            long pre = 0;
             long size = 0;
+            long files = 0;
             if (info.Exists)
             {
-                pre = Utils.DirSize(info);
-                size = Utils.DirFileCount(info);
+                var info1 = Utils.CustomDirInfo(info);
+                files = info1.files;
+                size = info1.size;
                 try { Directory.Delete(dirpath, true); } catch { }
                 DirectoryInfo info2 = new DirectoryInfo(dirpath);
-                long done = Utils.DirSize(info2);
-                size -= Utils.DirFileCount(info2);
-                pre -= done;
+                info1 = Utils.CustomDirInfo(info);
+                files -= info1.files;
+                size -= info1.size;
             }
-            return new Tuple<long, long>(size, pre);
+            return new Tuple<long, long>(files, size);
         }
         public Tuple<long, long> Work()
         {

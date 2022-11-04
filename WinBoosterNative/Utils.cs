@@ -8,6 +8,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using WinBoosterNative;
 
 namespace WinBooster.Native
 {
@@ -82,63 +83,54 @@ namespace WinBooster.Native
             string result = String.Format("{0:0.##} {1}", len, sizes[order]);
             return result;
         }
-        public static long DirFileCount(DirectoryInfo d)
+        public static CustomDirectoryInfo CustomDirInfo(DirectoryInfo d)
         {
-            long size = 0;
+            CustomDirectoryInfo customDirectoryInfo = new CustomDirectoryInfo();
+            customDirectoryInfo.size = 0;
+            customDirectoryInfo.files = 0;
+
             if (d.Exists)
             {
                 // Add file sizes.
                 FileInfo[] fis = d.GetFiles();
                 foreach (FileInfo fi in fis)
                 {
-                    size += 1;
+                    customDirectoryInfo.size += fi.Length;
+                    customDirectoryInfo.files += 1;
                 }
                 // Add subdirectory sizes.
                 DirectoryInfo[] dis = d.GetDirectories();
                 foreach (DirectoryInfo di in dis)
                 {
-                    size += DirFileCount(di);
+                    var a = CustomDirInfo(di);
+                    customDirectoryInfo.size += a.size;
+                    customDirectoryInfo.files += a.files;
                 }
             }
-            return size;
+            return customDirectoryInfo;
         }
-        public static long DirSize(DirectoryInfo d)
+        public static CustomDirectoryInfo CustomDirInfo(MediaDevice divece, MediaDirectoryInfo d)
         {
-            long size = 0;
-            if (d.Exists)
-            {
-                // Add file sizes.
-                FileInfo[] fis = d.GetFiles();
-                foreach (FileInfo fi in fis)
-                {
-                    size += fi.Length;
-                }
-                // Add subdirectory sizes.
-                DirectoryInfo[] dis = d.GetDirectories();
-                foreach (DirectoryInfo di in dis)
-                {
-                    size += DirSize(di);
-                }
-            }
-            return size;
-        }
-        public static long DirSize(MediaDevice divece, MediaDirectoryInfo d)
-        {
-            long size = 0;
+            CustomDirectoryInfo customDirectoryInfo = new CustomDirectoryInfo();
+            customDirectoryInfo.size = 0;
+            customDirectoryInfo.files = 0;
 
             var files = divece.GetFiles(d.FullName);
             foreach (string fi in files)
             {
                 var i = divece.GetFileInfo(fi);
-                size += (long)i.Length;
+                customDirectoryInfo.size += (long)i.Length;
+                customDirectoryInfo.files += 1;
             }
             var dirs = divece.GetDirectories(d.FullName);
             foreach (string dir in dirs)
             {
                 var i = divece.GetDirectoryInfo(dir);
-                size += DirSize(divece, i);
+                var temp = CustomDirInfo(divece, i);
+                customDirectoryInfo.size += temp.size;
+                customDirectoryInfo.files += temp.files;
             }
-            return size;
+            return customDirectoryInfo;
         }
 
         /* Steam ID текущего пользователя */
@@ -180,6 +172,7 @@ namespace WinBooster.Native
                             }
                         }
                     }
+                    
                 }
                 catch { }
                 return "";

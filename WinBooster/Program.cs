@@ -11,10 +11,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.5.6";
-
-        public static Tuple<bool, string> NeedUpdate = new Tuple<bool, string>(false, "");
-        public static bool UpdateChecked = false;
+        public static string version = "1.0.4.4.5.7";
 
         public static string GetCPUID()
         {

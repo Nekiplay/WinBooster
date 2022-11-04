@@ -57,13 +57,14 @@ namespace WinBoosterNative.Clears.Native
                         long size = 0;
                         if (info.Exists)
                         {
-                            pre = Utils.DirSize(info);
-                            size = Utils.DirFileCount(info);
+                            var dir = Utils.CustomDirInfo(info);
+                            pre = dir.size;
+                            size = dir.files;
                             try { Directory.Delete(directory, true); } catch { }
                             DirectoryInfo info2 = new DirectoryInfo(directory);
-                            long done = Utils.DirSize(info2);
-                            size -= Utils.DirFileCount(info2);
-                            pre -= done;
+                            dir = Utils.CustomDirInfo(info2);
+                            pre -= dir.size;
+                            size -= dir.files;
                         }
                         return new Tuple<long, long>(size, pre);
                     }

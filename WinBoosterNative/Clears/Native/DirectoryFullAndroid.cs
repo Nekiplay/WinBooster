@@ -30,10 +30,10 @@ namespace WinBoosterNative.Clears.Native
         {
             return new List<string>();
         }
-
         public Tuple<long, long> Work()
         {
             long pre = 0;
+            long files = 0;
             try
             {
                 var devices = MediaDevice.GetDevices();
@@ -52,12 +52,16 @@ namespace WinBoosterNative.Clears.Native
                                 if (device.DirectoryExists(dir3 + "\\" + directory))
                                 {
                                     var info = device.GetDirectoryInfo(dir3 + "\\" + directory);
-                                    pre = Utils.DirSize(device, info);
+                                    var customDirInfo = Utils.CustomDirInfo(device, info);
+                                    pre = customDirInfo.size;
+                                    files = customDirInfo.files;
                                     device.DeleteDirectory(info.FullName, true);
                                     if (device.DirectoryExists(dir3 + "\\" + directory))
                                     {
                                         info = device.GetDirectoryInfo(dir3 + "\\" + directory);
-                                        pre -= Utils.DirSize(device, info);
+                                        customDirInfo = Utils.CustomDirInfo(device, info);
+                                        pre -= customDirInfo.size;
+                                        files -= customDirInfo.files;
                                     }
                                 }
                             }
@@ -67,7 +71,7 @@ namespace WinBoosterNative.Clears.Native
                 }
             }
             catch { }
-            return new Tuple<long, long>(0, pre);
+            return new Tuple<long, long>(files, pre);
         }
     }
 }

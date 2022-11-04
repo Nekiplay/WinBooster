@@ -96,10 +96,10 @@ namespace WinBooster
                 {
                     if (cheatsCheckbox.Checked)
                     {
-                        foreach (WorkingI log in Files.cheats)
+                        foreach (WorkingI working in Files.cheats)
                         {
                             try { 
-                                var removed = log.Work();
+                                var removed = working.Work();
                                 removed_files += removed.Item1;
                                 removed_bytes += removed.Item2;
                             } catch { }
@@ -114,11 +114,11 @@ namespace WinBooster
                 {
                     if (logsCheckbox.Checked)
                     {
-                        foreach (WorkingI log in Files.logs)
+                        foreach (WorkingI working in Files.logs)
                         {
                             try
                             {
-                                var removed = log.Work();
+                                var removed = working.Work();
                                 removed_files += removed.Item1;
                                 removed_bytes += removed.Item2;
                             }
@@ -134,11 +134,11 @@ namespace WinBooster
                 {
                     if (cacheCheckbox.Checked)
                     {
-                        foreach (WorkingI log in Files.cache)
+                        foreach (WorkingI working in Files.cache)
                         {
                             try
                             {
-                                var removed = log.Work();
+                                var removed = working.Work();
                                 removed_files += removed.Item1;
                                 removed_bytes += removed.Item2;
                             }
@@ -156,11 +156,11 @@ namespace WinBooster
                     {
                         if (guna2ComboBox1.SelectedIndex == 0)
                         {
-                            foreach (WorkingI log in Files.lastactivity_safe)
+                            foreach (WorkingI working in Files.lastactivity_safe)
                             {
                                 try
                                 {
-                                    var removed = log.Work();
+                                    var removed = working.Work();
                                     removed_files += removed.Item1;
                                     removed_bytes += removed.Item2;
                                 }
@@ -169,11 +169,11 @@ namespace WinBooster
                         }
                         else if (guna2ComboBox1.SelectedIndex == 1)
                         {
-                            foreach (WorkingI log in Files.lastactivity_full)
+                            foreach (WorkingI working in Files.lastactivity_full)
                             {
                                 try
                                 {
-                                    var removed = log.Work();
+                                    var removed = working.Work();
                                     removed_files += removed.Item1;
                                     removed_bytes += removed.Item2;
                                 }
@@ -207,11 +207,11 @@ namespace WinBooster
                 {
                     if (photoCheckbox.Checked)
                     {
-                        foreach (WorkingI log in Files.images)
+                        foreach (WorkingI working in Files.images)
                         {
                             try
                             {
-                                var removed = log.Work();
+                                var removed = working.Work();
                                 removed_files += removed.Item1;
                                 removed_bytes += removed.Item2;
                             }
@@ -227,11 +227,11 @@ namespace WinBooster
                 {
                     if (videoCheckbox.Checked)
                     {
-                        foreach (WorkingI log in Files.media)
+                        foreach (WorkingI working in Files.media)
                         {
                             try
                             {
-                                var removed = log.Work();
+                                var removed = working.Work();
                                 removed_files += removed.Item1;
                                 removed_bytes += removed.Item2;
                             }

@@ -29,7 +29,7 @@ namespace WinBooster.DataBase
                         {
                             registryKeyStartup.DeleteValue(name);
                         }
-                        string parameters = regString.Substring(splitIndex, regString.Length - splitIndex);
+                        //string parameters = regString.Substring(splitIndex, regString.Length - splitIndex);
 
                     }
                 }
@@ -62,7 +62,7 @@ namespace WinBooster.DataBase
                             return true;
                         }
 
-                        string parameters = regString.Substring(splitIndex, regString.Length - splitIndex);
+                        //string parameters = regString.Substring(splitIndex, regString.Length - splitIndex);
 
                     }
                 }

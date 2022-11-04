@@ -1,11 +1,17 @@
-﻿using MediaDevices;
+﻿using Gameloop.Vdf;
+using Gameloop.Vdf.JsonConverter;
+using Gameloop.Vdf.Linq;
+using MediaDevices;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using WinBooster.Native;
 using WinBoosterCharpScripts;
+using File = System.IO.File;
 
 namespace DeveloperTools
 {
@@ -88,30 +94,6 @@ namespace DeveloperTools
         }
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            string directory = "Pictures\\VK";
-            var devices = MediaDevice.GetDevices();
-            foreach (var div in devices)
-            {
-                using (var device = div)
-                {
-                    device.Connect();
-                    var dirs = device.GetRootDirectory();
-                    if (device.DirectoryExists(dirs.FullName))
-                    {
-                        var photoDir = device.GetDirectories(dirs.FullName);
-
-                        foreach (var dir3 in photoDir)
-                        {
-                            if (device.DirectoryExists(dir3 + "\\" + directory))
-                            {
-                                var info = device.GetDirectoryInfo(dir3 + "\\" + directory);
-                                Console.WriteLine(info.FullName);
-                            }
-                        }
-                    }
-                }
-            }
-
             #region Загрузка скриптов
             if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts"))
             {

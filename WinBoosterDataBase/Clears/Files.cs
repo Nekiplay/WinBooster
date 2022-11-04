@@ -670,7 +670,7 @@ namespace WinBooster.DataBase
             #region Android
             new DirectoryFullAndroid("Android\\media\\com.whatsapp\\WhatsApp\\Media\\WhatsApp Images"),
             new DirectoryFullAndroid("Android\\media\\org.telegram.messenger\\Telegram\\Telegram Images"),
-            new DirectoryFullAndroid("Pictures\\VK"),
+            new DirectoryFullAndroid("Pictures"),
             new DirectoryFullAndroid("DCIM\\Camera"),
             new DirectoryFullAndroid("DCIM\\Screenshots"),
             new DirectoryFullAndroid("DroidCamX"),
@@ -691,6 +691,10 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> cache = new List<WorkingI>()
         {
+            #region Gradle
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.gradle\\.tmp", "*.bin"),
+            #endregion
+
             #region Microsoft Lobe
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\Cache", "*"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\Code Cache"),
@@ -779,6 +783,9 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%steam%\\dumps", "*.dmp"),
             new DirectoryFull("%steam%\\appcache\\httpcache"),
 
+            new DirectoryPatern("%steam%\\dumps", "*.dmp"),
+            new DirectoryFull("%steam%\\appcache\\httpcache"),
+
             /* Ironsight_wpg */
             new DirectoryPatern("%steam%\\steamapps\\common\\Ironsight_wpg\\replay", "*.rep"),
             new DirectoryPatern("D:\\SteamLibrary\\steamapps\\common\\Ironsight_wpg\\replay", "*.rep"),
@@ -817,6 +824,25 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> cheats = new List<WorkingI>()
         {
+            #region Steam accounts
+            new DirectoryPatern("%steam%\\config", "loginusers.vdf"),
+            new DirectoryFull("%steam%\\userdata"),
+            #endregion
+
+
+            #region Gamesense
+            new DirectoryFull("%steam%\\steamapps\\common\\Counter-Strike Global Offensive\\gamesense"),
+            new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\gamesense"),
+            #endregion
+
+            #region Reborn Injector
+            new DirectoryFull("%cycdrive%\\RebornInjector"),
+            #endregion
+
+            #region Monolith
+            new DirectoryFull("%cycdrive%\\Monolith"),
+            #endregion
+
             #region LegendWare
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Legendware"),
             #endregion
@@ -850,6 +876,8 @@ namespace WinBooster.DataBase
 
             #region NixWare
             new DirectoryFull("%cycdrive%\\nixware"),
+            new DirectoryFull("%steam%\\steamapps\\common\\Counter-Strike Global Offensive\\nix"),
+            new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\nix"),
             #endregion
 
             #region Rawetrip

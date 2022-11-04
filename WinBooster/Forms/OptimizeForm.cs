@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.DataBase.Internet;
@@ -23,7 +24,7 @@ namespace WinBooster
         {
             InitializeComponent();
         }
-        private DNSInfo bestdns = null;
+        private Tuple<DNSInfo, DNSInfo> bestdns = null;
 
         public void StartSettingChecker()
         {
@@ -113,7 +114,55 @@ namespace WinBooster
             #region Проверка отличного DNS
             Task.Factory.StartNew(async () =>
             {
+                bool checking = true;
+                Thread t1 = new Thread(() =>
+                {
+                    int stage = 0;
+                    while (checking)
+                    {
+                        Console.WriteLine(stage);
+                        if (stage == 0)
+                        {
+                            guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                            {
+                                guna2CheckBox3.Text = "Fast DNS (checking...)";
+                            }));
+                            stage = 1;
+                        }
+                        else if (stage == 1)
+                        {
+                            guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                            {
+                                guna2CheckBox3.Text = "Fast DNS (checking..)";
+                            }));
+                            stage = 2;
+                        }
+                        else if (stage == 2)
+                        {
+                            guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                            {
+                                guna2CheckBox3.Text = "Fast DNS (checking.)";
+                            }));
+                            stage = 3;
+                        }
+                        else if (stage == 3)
+                        {
+                            guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                            {
+                                guna2CheckBox3.Text = "Fast DNS (checking..)";
+                            }));
+                            stage = 0;
+                        }
+                        Thread.Sleep(275);
+                    }
+                });
+                t1.Start();
                 bestdns = await DNSList.GetDNS();
+                guna2CheckBox3.Invoke(new MethodInvoker(() =>
+                {
+                    guna2CheckBox3.Text = "Fast DNS";
+                }));
+                checking = false;
                 try
                 {
                     var anctiveNetworks = DNSInfo.GetActiveEthernetOrWifiNetworkInterface().GetIPProperties().DnsAddresses.ToArray();
@@ -121,8 +170,8 @@ namespace WinBooster
                     string current1 = anctiveNetworks[0].ToString();
                     string current2 = anctiveNetworks[1].ToString();
 
-                    string best1 = bestdns.dns.Split('*')[0];
-                    string best2 = bestdns.dns.Split('*')[1];
+                    string best1 = bestdns.Item1.dns;
+                    string best2 = bestdns.Item2.dns;
                     if ((current1 == best1 || current2 == best2) || (current2 == best1 || current1 == best2))
                     {
                         guna2CheckBox3.Invoke(new MethodInvoker(() =>
@@ -239,11 +288,12 @@ namespace WinBooster
             if (guna2CheckBox3.Checked && guna2CheckBox3.Enabled && bestdns != null)
             {
                 guna2CheckBox3.Enabled = false;
-                bestdns.Set();
+                DNSInfo set = new DNSInfo(bestdns.Item1.dns + "*" + bestdns.Item2.dns, "", "");
+                set.Set();
                 var item = toastNotificationsManager1.YieldArray().First();
                 var item2 = item.Notifications.First();
                 item2.Header = "New DNS Settings";
-                item2.Body = "Main: " + bestdns.dns.Split('*')[0] + "\nReserve: " + bestdns.dns.Split('*')[1] + "\nLatency: " + bestdns.latency + "ms";
+                item2.Body = "Main: " + bestdns.Item1.dns + "\nReserve: " + bestdns.Item2.dns + "\nMain latency: " + bestdns.Item1.latency + "ms\nReserve latency: " + bestdns.Item2.latency + "ms";
                 toastNotificationsManager1.ShowNotification(item2.ID);
                 guna2CheckBox3.Enabled = true;
             }
