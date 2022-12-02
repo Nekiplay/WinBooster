@@ -70,6 +70,7 @@ namespace WinBooster.Forms.PE_Safe
                     item2.Header = "PE Safe";
                     item2.Body = "Added new PE: " + guna2TextBox2.Text;
                     toastNotificationsManager1.ShowNotification(item2.ID);
+                    Program.form.PeSafeForm.UpdateUI();
                     this.Close();
                 });
             }

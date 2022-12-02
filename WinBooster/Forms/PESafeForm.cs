@@ -23,7 +23,7 @@ namespace WinBooster.Forms
         {
             InitializeComponent();
         }
-        private void UpdateUI()
+        public void UpdateUI()
         {
             int files = 0;
             int non_files = 0;
