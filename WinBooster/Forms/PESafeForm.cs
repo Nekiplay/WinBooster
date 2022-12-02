@@ -109,7 +109,10 @@ namespace WinBooster.Forms
                     {
                         if (pe.Name == name)
                         {
-                            WinBoosterNative.Security.AES.SharpAESCrypt.Decrypt(Program.GetCPUID(), pe.FileName, pe.FileName + pe.Extension);
+                            if (!File.Exists(pe.FileName + pe.Extension))
+                            {
+                                WinBoosterNative.Security.AES.SharpAESCrypt.Decrypt(Program.GetCPUID(), pe.FileName, pe.FileName + pe.Extension);
+                            }
                             Process process = new Process();
                             process.StartInfo.FileName = pe.FileName + pe.Extension;
                             process.StartInfo.WorkingDirectory = "C:\\ProgramData\\WinBooster\\PE Safe\\Files";
