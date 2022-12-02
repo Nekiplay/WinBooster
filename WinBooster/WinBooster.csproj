@@ -103,6 +103,7 @@
   <ItemGroup>
     <Compile Include="Data\ColorSettings.cs" />
     <Compile Include="Data\Native\AppSettings.cs" />
+    <Compile Include="Data\PEData.cs" />
     <Compile Include="Data\PremiumFeatures.cs" />
     <Compile Include="Data\SaveAndLoad.cs" />
     <Compile Include="Forms\FixerForm.cs">
@@ -128,6 +129,18 @@
     </Compile>
     <Compile Include="Forms\GameOptimizeForm.Designer.cs">
       <DependentUpon>GameOptimizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PE Safe\AddNewPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PE Safe\AddNewPE.Designer.cs">
+      <DependentUpon>AddNewPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PESafeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PESafeForm.Designer.cs">
+      <DependentUpon>PESafeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -172,6 +185,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GameOptimizeForm.resx">
       <DependentUpon>GameOptimizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PE Safe\AddNewPE.resx">
+      <DependentUpon>AddNewPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PESafeForm.resx">
+      <DependentUpon>PESafeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

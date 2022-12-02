@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panelDesktop = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.errorCorrectionPictureBox = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,6 +61,8 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelDesktop.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorCorrectionPictureBox)).BeginInit();
             this.guna2Panel6.SuspendLayout();
@@ -79,6 +84,7 @@
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panelDesktop.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.panelDesktop.Controls.Add(this.guna2Panel8);
             this.panelDesktop.Controls.Add(this.guna2Panel7);
             this.panelDesktop.Controls.Add(this.guna2Panel6);
             this.panelDesktop.Controls.Add(this.guna2Panel1);
@@ -90,14 +96,58 @@
             this.panelDesktop.Location = new System.Drawing.Point(0, 31);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.ShadowDecoration.Parent = this.panelDesktop;
-            this.panelDesktop.Size = new System.Drawing.Size(305, 209);
+            this.panelDesktop.Size = new System.Drawing.Size(305, 303);
             this.panelDesktop.TabIndex = 2;
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint_1);
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.guna2Panel8.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel8.BorderThickness = 1;
+            this.guna2Panel8.Controls.Add(this.pictureBox1);
+            this.guna2Panel8.Controls.Add(this.label8);
+            this.guna2Panel8.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel8.Location = new System.Drawing.Point(12, 203);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.ShadowDecoration.Parent = this.guna2Panel8;
+            this.guna2Panel8.Size = new System.Drawing.Size(89, 90);
+            this.guna2Panel8.TabIndex = 9;
+            this.guna2Panel8.Click += new System.EventHandler(this.guna2Panel8_Click);
+            this.guna2Panel8.MouseEnter += new System.EventHandler(this.guna2Panel8_MouseEnter);
+            this.guna2Panel8.MouseLeave += new System.EventHandler(this.guna2Panel8_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(1, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 29);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "PE\r\nSafe";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label8.MouseEnter += new System.EventHandler(this.label8_MouseEnter);
+            this.label8.MouseLeave += new System.EventHandler(this.label8_MouseLeave);
             // 
             // guna2Panel7
             // 
             this.guna2Panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel7.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel7.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel7.BorderThickness = 1;
             this.guna2Panel7.Controls.Add(this.errorCorrectionPictureBox);
             this.guna2Panel7.Controls.Add(this.label7);
             this.guna2Panel7.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
@@ -140,7 +190,8 @@
             // guna2Panel6
             // 
             this.guna2Panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel6.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel6.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel6.BorderThickness = 1;
             this.guna2Panel6.Controls.Add(this.statisticPictureBox);
             this.guna2Panel6.Controls.Add(this.label6);
             this.guna2Panel6.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
@@ -183,7 +234,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel1.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.gameOptimizePictureBox);
             this.guna2Panel1.Controls.Add(this.label5);
             this.guna2Panel1.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
@@ -226,7 +278,8 @@
             // guna2Panel5
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel5.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel5.BorderThickness = 1;
             this.guna2Panel5.Controls.Add(this.optimizePictureBox);
             this.guna2Panel5.Controls.Add(this.label4);
             this.guna2Panel5.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
@@ -269,7 +322,8 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel4.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.settingsPictureBox);
             this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
@@ -312,7 +366,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.guna2Panel2.BorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.clearingPictureBox);
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
@@ -429,7 +484,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 240);
+            this.ClientSize = new System.Drawing.Size(305, 334);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.guna2Panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -440,6 +495,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.panelDesktop.ResumeLayout(false);
+            this.guna2Panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorCorrectionPictureBox)).EndInit();
             this.guna2Panel6.ResumeLayout(false);
@@ -487,6 +544,9 @@
         public System.Windows.Forms.PictureBox statisticPictureBox;
         public System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label8;
     }
 }
 

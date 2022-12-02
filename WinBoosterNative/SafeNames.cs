@@ -6,7 +6,6 @@ namespace WinBooster.Native
     {
         public List<string> names = new List<string>()
         {
-            "HL2.EXE",
             "JAVAW.EXE",
             "JAVA.EXE",
             "OPERA_AUTOUPDATE.EXE",
@@ -35,8 +34,14 @@ namespace WinBooster.Native
             "explorer.exe",
             "notepad++.exe",
             "opera.exe",
-            "Discord.exe",
             "git.exe",
+
+            "Discord.exe",
+            "Telegram.exe",
+
+            "PolyMC.exe",
+            "Terraria.exe",
+            "HL2.EXE",
             "csgo.exe",
 
         };

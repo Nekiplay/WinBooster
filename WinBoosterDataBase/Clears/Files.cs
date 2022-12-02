@@ -8,6 +8,23 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Roblox
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Roblox\\Versions\\%unknowfolder%", "COPYRIGHT.txt"),
+            #endregion
+
+            #region DroidCam
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\DroidCam", "*.txt"),
+            #endregion
+
+            #region Crypter
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Crypter", "*.log"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Crypter\\logs"),
+            #endregion
+
+            #region Vulcan
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\VulkanRT\\%unknowfolder%", "LICENSE.txt"),
+            #endregion
+
             #region JetBrains
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Local\\JetBrains\\%unknowfolder%\\log"),
             #endregion
@@ -54,7 +71,7 @@ namespace WinBooster.DataBase
             #region Avast
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Avast Software", "*"),
             new DirectoryPatern("%cycdrive%\\ProgramData\\Avast Software\\Avast\\log", "*"),
-            new DirectoryPatern("%cycdrive%\\ProgramData\\Avast Software\\Persistent Data\\Avast\\Logs", "*.logs"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\Avast Software\\Persistent Data\\Avast\\Logs", "*"),
             #endregion
 
             #region Epic Games
@@ -444,6 +461,8 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\temp", "*.json"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\BrowserCache", "*.log"),
             new DirectoryPatern("%cycdrive%\\ProgramData\\Overwolf\\Log", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Overwolf\\%unknowfolder%", "*.log"),
+            new DirectoryFull("%cycdrive%\\Program Files (x86)\\Overwolf\\%unknowfolder%\\Licenses"),
             /* Achievement Rewards */
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Overwolf\\Log\\Apps\\Achievement Rewards", "*.log"),
             /* CurseForge */
@@ -828,7 +847,6 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%steam%\\config", "loginusers.vdf"),
             new DirectoryFull("%steam%\\userdata"),
             #endregion
-
 
             #region Gamesense
             new DirectoryFull("%steam%\\steamapps\\common\\Counter-Strike Global Offensive\\gamesense"),

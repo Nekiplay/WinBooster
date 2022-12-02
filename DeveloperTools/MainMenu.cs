@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Windows.Forms;
 using WinBooster.Native;
 using WinBoosterCharpScripts;

@@ -36,31 +36,38 @@ namespace WinBooster
             Task.Factory.StartNew(() =>
             {
                 bool enabled = false;
-                RegistryKey reg = Registry.LocalMachine;
-                RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces");
-                string[] names = Interfaces.GetSubKeyNames();
-                foreach (string name in names)
+                try
                 {
-                    RegistryKey kk = Interfaces.OpenSubKey(name);
-                    if (kk.GetValue("TcpAckFrequency") != null && kk.GetValue("TcpNoDelay") != null
-                    && kk.GetValue("TcpAckFrequency").ToString() == "1"
-                    && kk.GetValue("TcpNoDelay").ToString() == "1"
-                    )
+                    RegistryKey reg = Registry.LocalMachine;
+                    RegistryKey Interfaces = reg.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces");
+                    if (Interfaces == null)
                     {
-                        enabled = true;
+                        reg.CreateSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces");
                     }
-                    RegistryKey Software = reg.OpenSubKey(@"Software\Microsoft\MSMQ\Parameters", false);
-                    if (Software == null)
+                    string[] names = Interfaces.GetSubKeyNames();
+                    foreach (string name in names)
                     {
-                        reg.CreateSubKey(@"Software\Microsoft\MSMQ\Parameters");
-                    }
-                    if (Software.GetValue("TcpNoDelay") == null
-                    || Software.GetValue("TcpNoDelay").ToString() != "1"
-                    )
-                    {
-                        enabled = false;
+                        RegistryKey kk = Interfaces.OpenSubKey(name);
+                        if (kk.GetValue("TcpAckFrequency") != null 
+                        && kk.GetValue("TcpNoDelay") != null
+                        && kk.GetValue("TcpAckFrequency").ToString() == "1"
+                        && kk.GetValue("TcpNoDelay").ToString() == "1")
+                        {
+                            enabled = true;
+                        }
+                        RegistryKey Software = reg.OpenSubKey(@"Software\Microsoft\MSMQ\Parameters", false);
+                        if (Software == null)
+                        {
+                            reg.CreateSubKey(@"Software\Microsoft\MSMQ\Parameters");
+                        }
+                        if (Software.GetValue("TcpNoDelay") == null 
+                        || Software.GetValue("TcpNoDelay").ToString() != "1")
+                        {
+                            enabled = false;
+                        }
                     }
                 }
+                catch { }
                 guna2CheckBox4.Invoke(new MethodInvoker(() =>
                 {
                     guna2CheckBox4.Checked = enabled;
@@ -70,9 +77,9 @@ namespace WinBooster
             #endregion
             #region Проверка электросхемы максимальной производительности
             /* Проверка максимальной производительности */
-            EnergyClass energy = new EnergyClass();
             Task.Factory.StartNew(() =>
             {
+                EnergyClass energy = new EnergyClass();
                 List<Tuple<string, string, bool>> schems = energy.ListSchemes();
                 foreach (var s in schems)
                 {
@@ -100,9 +107,9 @@ namespace WinBooster
             });
             #endregion
             #region Проверка гибернаций
-            GybernateClass gybernate = new GybernateClass();
             Task.Factory.StartNew(() =>
             {
+                GybernateClass gybernate = new GybernateClass();
                 bool on = gybernate.Activated();
                 guna2CheckBox2.Invoke(new MethodInvoker(() =>
                 {

@@ -55,6 +55,17 @@ namespace WinBooster.DataBase
                 CurrentUserSoftware.Close();
             }
             catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications", true);
+                string[] names = CurrentUserSoftware.GetSubKeyNames();
+                foreach (var name in names)
+                {
+                    CurrentUserSoftware.DeleteSubKeyTree(name);
+                }
+                CurrentUserSoftware.Close();
+            }
+            catch { }
             #endregion
 
             return new Tuple<long, long>(0, removed);

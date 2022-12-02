@@ -237,6 +237,28 @@ namespace WinBooster.DataBase
                 c1.Close();
             }
             catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications", true);
+                string[] names = CurrentUserSoftware.GetSubKeyNames();
+                foreach (var name in names)
+                {
+                    bool find = false;
+                    foreach (string name2 in new SafeNames().names)
+                    {
+                        if (name.ToLower() == name2.ToLower())
+                        {
+                            find = true;
+                        }
+                    }
+                    if (!find)
+                    {
+                        CurrentUserSoftware.DeleteSubKeyTree(name);
+                    }
+                }
+                CurrentUserSoftware.Close();
+            }
+            catch { }
             #endregion
 
             #region WinRAR
@@ -273,16 +295,6 @@ namespace WinBooster.DataBase
                     k.DeleteValue(v);
                 }
                 usersReg.Close();
-            }
-            catch { }
-            #endregion
-
-            #region Akrien
-            try
-            {
-                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\RADAR\\HeapLeakDetection\\DiagnosedApplications", true);
-                CurrentUserSoftware.DeleteSubKeyTree("AkrienPremiumLoader.exe");
-                CurrentUserSoftware.Close();
             }
             catch { }
             #endregion

@@ -132,5 +132,18 @@ namespace WinBooster
         {
 
         }
+
+        private void registryCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!SaveAndLoad.premiumFeatures.Premium)
+            {
+                registryCheckbox.Checked = false;
+                Program.donation.GetDonateLink("Neki_play1", Program.GetCPUID(), "Premium", 125);
+            }
+            else
+            {
+                registryCheckbox.Checked = true;
+            }
+        }
     }
 }

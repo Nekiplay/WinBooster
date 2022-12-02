@@ -6,6 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.Data;
+using WinBooster.Forms;
 using WinBooster.Native;
 using WinBoosterCharpScripts;
 
@@ -24,6 +25,7 @@ namespace WinBooster
         public SettingsForm settings = new SettingsForm();
         public GameOptimizeForm gameOptimize = new GameOptimizeForm();
         public FixerForm fixer = new FixerForm();
+        public PESafeForm PeSafeForm = new PESafeForm();
 
         public static CharpUpdater charpUpdater = new CharpUpdater();
         public static CharpManager charpManager = new CharpManager(charpUpdater);
@@ -92,7 +94,7 @@ namespace WinBooster
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(305, 240);
+            this.Size = new Size(305, 334);
             if (controlList.Count != 0)
             {
                 panelDesktop.Controls.Clear();
@@ -110,6 +112,8 @@ namespace WinBooster
         private void MainMenu_Load(object sender, EventArgs e)
         {
             label2.Text = "v" + Program.version;
+
+
 
             #region Загрузка скриптов
             if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\Scripts"))
@@ -173,18 +177,18 @@ namespace WinBooster
         #region Открытие настроек
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(280, 31 + 255);
+            this.Size = new Size(342, 31 + 255);
             OpenMenu(settings);
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(280, 31 + 255);
+            this.Size = new Size(342, 31 + 255);
             OpenMenu(settings);
         }
         private void guna2Panel4_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(280, 31 + 255);
+            this.Size = new Size(342, 31 + 255);
             OpenMenu(settings);
         }
         #endregion
@@ -251,35 +255,55 @@ namespace WinBooster
         }
         #endregion
 
+        #region Открытие PE сейфа
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            this.Size = new Size(342, guna2Panel3.Height + 183);
+            OpenMenu(PeSafeForm);
+        }
+
+        private void guna2Panel8_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(342, guna2Panel3.Height + 183);
+            OpenMenu(PeSafeForm);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(342, guna2Panel3.Height + 183);
+            OpenMenu(PeSafeForm);
+        }
+        #endregion
+
         #region Анимация очистки
         private void guna2Panel2_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.BorderColor = Color.LightSeaGreen;
         }
 
         private void guna2Panel2_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel2.BorderThickness = 0;
+            guna2Panel2.BorderColor = Color.Gray;
         }
 
         private void clearingPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.BorderColor = Color.LightSeaGreen;
         }
 
         private void clearingPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel2.BorderThickness = 0;
+            guna2Panel2.BorderColor = Color.Gray;
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel2.BorderThickness = 1;
+            guna2Panel2.BorderColor = Color.LightSeaGreen;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel2.BorderThickness = 0;
+            guna2Panel2.BorderColor = Color.Gray;
         }
         #endregion
 
@@ -287,32 +311,32 @@ namespace WinBooster
 
         private void guna2Panel7_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel7.BorderThickness = 1;
+            guna2Panel7.BorderColor = Color.LightSeaGreen;
         }
 
         private void guna2Panel7_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel7.BorderThickness = 0;
+            guna2Panel7.BorderColor = Color.Gray;
         }
 
         private void errorCorrectionPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel7.BorderThickness = 1;
+            guna2Panel7.BorderColor = Color.LightSeaGreen;
         }
 
         private void errorCorrectionPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel7.BorderThickness = 0;
+            guna2Panel7.BorderColor = Color.Gray;
         }
 
         private void label7_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel7.BorderThickness = 1;
+            guna2Panel7.BorderColor = Color.LightSeaGreen;
         }
 
         private void label7_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel7.BorderThickness = 0;
+            guna2Panel7.BorderColor = Color.Gray;
         }
         #endregion
 
@@ -320,32 +344,32 @@ namespace WinBooster
 
         private void guna2Panel5_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel5.BorderThickness = 1;
+            guna2Panel5.BorderColor = Color.LightSeaGreen;
         }
 
         private void guna2Panel5_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel5.BorderThickness = 0;
+            guna2Panel5.BorderColor = Color.Gray;
         }
 
         private void optimizePictureBox_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel5.BorderThickness = 1;
+            guna2Panel5.BorderColor = Color.LightSeaGreen;
         }
 
         private void optimizePictureBox_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel5.BorderThickness = 0;
+            guna2Panel5.BorderColor = Color.Gray;
         }
 
         private void label4_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel5.BorderThickness = 1;
+            guna2Panel5.BorderColor = Color.LightSeaGreen;
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel5.BorderThickness = 0;
+            guna2Panel5.BorderColor = Color.Gray;
         }
         #endregion
 
@@ -353,32 +377,32 @@ namespace WinBooster
 
         private void guna2Panel1_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.BorderColor = Color.LightSeaGreen;
         }
 
         private void guna2Panel1_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel1.BorderThickness = 0;
+            guna2Panel1.BorderColor = Color.Gray;
         }
 
         private void gameOptimizePictureBox_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.BorderColor = Color.LightSeaGreen;
         }
 
         private void gameOptimizePictureBox_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel1.BorderThickness = 0;
+            guna2Panel1.BorderColor = Color.Gray;
         }
 
         private void label5_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel1.BorderThickness = 1;
+            guna2Panel1.BorderColor = Color.LightSeaGreen;
         }
 
         private void label5_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel1.BorderThickness = 0;
+            guna2Panel1.BorderColor = Color.Gray;
         }
         #endregion
 
@@ -386,75 +410,97 @@ namespace WinBooster
 
         private void guna2Panel4_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel4.BorderThickness = 1;
+            guna2Panel4.BorderColor = Color.LightSeaGreen;
         }
 
         private void guna2Panel4_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel4.BorderThickness = 0;
+            guna2Panel4.BorderColor = Color.Gray;
         }
 
         private void settingsPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel4.BorderThickness = 1;
+            guna2Panel4.BorderColor = Color.LightSeaGreen;
         }
 
         private void settingsPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel4.BorderThickness = 0;
+            guna2Panel4.BorderColor = Color.Gray;
         }
 
         private void label3_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel4.BorderThickness = 1;
+            guna2Panel4.BorderColor = Color.LightSeaGreen;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel4.BorderThickness = 0;
+            guna2Panel4.BorderColor = Color.Gray;
         }
         #endregion
 
         #region Анимация статистики
         private void guna2Panel6_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel6.BorderThickness = 1;
+            guna2Panel6.BorderColor = Color.LightSeaGreen;
         }
 
         private void guna2Panel6_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel6.BorderThickness = 0;
+            guna2Panel6.BorderColor = Color.Gray;
         }
 
         private void statisticPictureBox_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel6.BorderThickness = 1;
+            guna2Panel6.BorderColor = Color.LightSeaGreen;
         }
 
         private void statisticPictureBox_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel6.BorderThickness = 0;
+            guna2Panel6.BorderColor = Color.Gray;
         }
 
         private void label6_MouseEnter(object sender, EventArgs e)
         {
-            guna2Panel6.BorderThickness = 1;
+            guna2Panel6.BorderColor = Color.LightSeaGreen;
         }
 
         private void label6_MouseLeave(object sender, EventArgs e)
         {
-            guna2Panel6.BorderThickness = 0;
+            guna2Panel6.BorderColor = Color.Gray;
         }
         #endregion
 
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        #region Анимация PE сейфа
+        private void guna2Panel8_MouseEnter(object sender, EventArgs e)
         {
-
+            guna2Panel8.BorderColor = Color.LightSeaGreen;
         }
 
-        private void panelDesktop_Paint_1(object sender, PaintEventArgs e)
+        private void guna2Panel8_MouseLeave(object sender, EventArgs e)
         {
-
+            guna2Panel8.BorderColor = Color.Gray;
         }
+
+        private void label8_MouseEnter(object sender, EventArgs e)
+        {
+            guna2Panel8.BorderColor = Color.LightSeaGreen;
+        }
+
+        private void label8_MouseLeave(object sender, EventArgs e)
+        {
+            guna2Panel8.BorderColor = Color.Gray;
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            guna2Panel8.BorderColor = Color.LightSeaGreen;
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            guna2Panel8.BorderColor = Color.Gray;
+        }
+        #endregion
     }
 }

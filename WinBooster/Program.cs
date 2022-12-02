@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Management;
@@ -11,7 +12,9 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.5.7";
+        public static string version = "1.0.4.4.5.9";
+
+        public static PEData PEData = new PEData();
 
         public static string GetCPUID()
         {
@@ -52,6 +55,16 @@ namespace WinBooster
             {
                 Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster");
             }
+            if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe"))
+            {
+                Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe");
+            }
+            if (File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe\\Data.bin"))
+            {
+                string text = File.ReadAllText(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe\\Data.bin");
+                text = new WinBoosterNative.Security.Rijn.StringProtector(GetCPUID()).Decrypt(text);
+                PEData = JsonConvert.DeserializeObject<PEData>(text);
+            }    
             form = new MainMenu();
             SaveAndLoad.settings = Settings.Load(SaveAndLoad.settings_path);
             SaveAndLoad.statistic = Statistic.Load(SaveAndLoad.statistic_path);
