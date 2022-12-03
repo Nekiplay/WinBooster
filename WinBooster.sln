@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeveloperTools", "Developer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinBoosterQIWI", "WinBoosterQIWI\WinBoosterQIWI.csproj", "{D7B04FD9-3BAB-4EAD-8E9D-FAB8B4FC806D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MD5File", "MD5File\MD5File.csproj", "{89BBD35D-F11D-4D6E-887C-BCCB29E3F7F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{D7B04FD9-3BAB-4EAD-8E9D-FAB8B4FC806D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7B04FD9-3BAB-4EAD-8E9D-FAB8B4FC806D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7B04FD9-3BAB-4EAD-8E9D-FAB8B4FC806D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89BBD35D-F11D-4D6E-887C-BCCB29E3F7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BBD35D-F11D-4D6E-887C-BCCB29E3F7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BBD35D-F11D-4D6E-887C-BCCB29E3F7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BBD35D-F11D-4D6E-887C-BCCB29E3F7F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

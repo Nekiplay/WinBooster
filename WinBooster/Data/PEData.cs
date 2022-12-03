@@ -38,5 +38,7 @@ namespace WinBooster.Data
         public string Name;
         public string FileName;
         public string Extension;
+
+        public bool WorkingDirectory;
     }
 }

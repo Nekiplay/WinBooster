@@ -258,19 +258,19 @@ namespace WinBooster
         #region Открытие PE сейфа
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            this.Size = new Size(342, guna2Panel3.Height + 183);
+            this.Size = new Size(421, guna2Panel3.Height + 183);
             OpenMenu(PeSafeForm);
         }
 
         private void guna2Panel8_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(342, guna2Panel3.Height + 183);
+            this.Size = new Size(421, guna2Panel3.Height + 183);
             OpenMenu(PeSafeForm);
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(342, guna2Panel3.Height + 183);
+            this.Size = new Size(421, guna2Panel3.Height + 183);
             OpenMenu(PeSafeForm);
         }
         #endregion

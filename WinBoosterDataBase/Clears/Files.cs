@@ -8,6 +8,21 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Badlion Client
+            new DirectoryPatern("%cycdrive%\\Program Files\\Badlion Client", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Badlion Client", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Badlion Client\\licenses", "*.txt"),
+            #endregion
+
+            #region RUXIM
+            new DirectoryPatern("%cycdrive%\\Program Files\\RUXIM\\Logs", "*.etl"),
+            #endregion
+
+            #region BoxedAppPacker
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\BoxedAppPacker", "changelog.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\BoxedAppPacker", "*.url"),
+            #endregion
+
             #region Roblox
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Roblox\\Versions\\%unknowfolder%", "COPYRIGHT.txt"),
             #endregion

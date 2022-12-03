@@ -166,7 +166,7 @@
             this.guna2GroupBox2.Location = new System.Drawing.Point(152, 12);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(180, 70);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(257, 70);
             this.guna2GroupBox2.TabIndex = 10;
             this.guna2GroupBox2.Text = "PE List";
             this.guna2GroupBox2.TextOffset = new System.Drawing.Point(0, -5);
@@ -190,8 +190,9 @@
             this.guna2ComboBox1.Location = new System.Drawing.Point(8, 36);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(163, 24);
+            this.guna2ComboBox1.Size = new System.Drawing.Size(238, 24);
             this.guna2ComboBox1.TabIndex = 3;
+            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // toastNotificationsManager1
             // 
@@ -214,7 +215,7 @@
             this.guna2GroupBox3.Location = new System.Drawing.Point(152, 95);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(180, 75);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(257, 75);
             this.guna2GroupBox3.TabIndex = 11;
             this.guna2GroupBox3.Text = "PE Storage Info";
             this.guna2GroupBox3.TextOffset = new System.Drawing.Point(0, -5);
@@ -234,7 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(342, 183);
+            this.ClientSize = new System.Drawing.Size(421, 183);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);

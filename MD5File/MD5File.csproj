@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B31EAFCB-D902-4228-BFB8-86BE20A1CC87}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WinBooster.DataBase</RootNamespace>
-    <AssemblyName>WinBoosterDataBase</AssemblyName>
+    <ProjectGuid>{89BBD35D-F11D-4D6E-887C-BCCB29E3F7F3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MD5File</RootNamespace>
+    <AssemblyName>MD5File</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,18 +24,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>WinBoosterDataBase.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,32 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clears\Files.cs" />
-    <Compile Include="Clears\Reg.cs" />
-    <Compile Include="Clears\RegUnsafe.cs" />
-    <Compile Include="FilesHashes\FIleHashesDatabase.cs" />
-    <Compile Include="FilesHashes\FileInfoByMD5.cs" />
-    <Compile Include="Fixer\FixerData.cs" />
-    <Compile Include="Fixer\Fixes\AutoRun.cs" />
-    <Compile Include="Fixer\Fixes\NoClose.cs" />
-    <Compile Include="Fixer\Fixes\Regedit.cs" />
-    <Compile Include="Fixer\Fixes\TaskManager.cs" />
-    <Compile Include="Fixer\Fixes\ViewContextMenu.cs" />
-    <Compile Include="Fixer\Fixes\X7 Oscar Keyboard Editor.cs" />
-    <Compile Include="GameOptimize\GameList.cs" />
-    <Compile Include="GameOptimize\Games\Minecraft.cs" />
-    <Compile Include="Internet\DNSList.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="WinBoosterDataBase.pfx" />
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WinBoosterDataBase\WinBoosterDataBase.csproj">
+      <Project>{b31eafcb-d902-4228-bfb8-86be20a1cc87}</Project>
+      <Name>WinBoosterDataBase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WinBoosterNative\WinBoosterNative.csproj">
       <Project>{686c07b1-98f7-4eff-8be5-e8c5e0a5f614}</Project>
       <Name>WinBoosterNative</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,7 +12,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.5.9";
+        public static string version = "1.0.4.4.6.1";
 
         public static PEData PEData = new PEData();
 

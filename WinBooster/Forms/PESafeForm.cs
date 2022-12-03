@@ -115,7 +115,10 @@ namespace WinBooster.Forms
                             }
                             Process process = new Process();
                             process.StartInfo.FileName = pe.FileName + pe.Extension;
-                            process.StartInfo.WorkingDirectory = "C:\\ProgramData\\WinBooster\\PE Safe\\Files";
+                            if (pe.WorkingDirectory)
+                            {
+                                process.StartInfo.WorkingDirectory = "C:\\ProgramData\\WinBooster\\PE Safe\\Files";
+                            }
                             process.Start();
                             guna2Button3.Invoke(new MethodInvoker(() =>
                             {
@@ -158,6 +161,11 @@ namespace WinBooster.Forms
             var t = Program.PEData.data.ToArray().Count() - non_files;
             item2.Body = "Encrypted: " + t + "/" + Program.PEData.data.ToArray().Count();
             toastNotificationsManager1.ShowNotification(item2.ID);
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
