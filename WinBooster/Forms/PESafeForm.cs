@@ -167,5 +167,10 @@ namespace WinBooster.Forms
         {
 
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

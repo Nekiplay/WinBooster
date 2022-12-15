@@ -61,7 +61,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(134, 158);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(134, 154);
             this.guna2GroupBox1.TabIndex = 9;
             this.guna2GroupBox1.Text = "PE Safe";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, -5);
@@ -212,10 +212,10 @@
             this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox3.Location = new System.Drawing.Point(152, 95);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(152, 102);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(257, 75);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(257, 64);
             this.guna2GroupBox3.TabIndex = 11;
             this.guna2GroupBox3.Text = "PE Storage Info";
             this.guna2GroupBox3.TextOffset = new System.Drawing.Point(0, -5);
@@ -235,7 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(421, 183);
+            this.ClientSize = new System.Drawing.Size(421, 177);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
