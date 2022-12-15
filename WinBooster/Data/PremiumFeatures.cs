@@ -8,6 +8,6 @@ namespace WinBooster.Data
 {
     public class PremiumFeatures : AppSettings<PremiumFeatures>
     {
-        public bool Premium = false;
+        public bool MoreFakeMenu = false;
     }
 }

@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using WinBooster.Native;
 using WinBooster.DataBase;
 using WinBooster.Data;
+using System.Collections.Generic;
+using static DevExpress.Utils.Svg.CommonSvgImages;
 
 namespace WinBooster
 {
@@ -110,19 +112,36 @@ namespace WinBooster
                         }));
                     }
                 });
-                Task t1 = Task.Factory.StartNew(() =>
+                Task t1 = Task.Factory.StartNew(async () =>
                 {
                     if (logsCheckbox.Checked)
                     {
-                        foreach (WorkingI working in Files.logs)
+                        var a1 = Utils.Chunk<WorkingI>(Files.logs.AsEnumerable(), Files.logs.Count() / (Files.logs.Count() / 2));
+                        List<Task> tasks = new List<Task>();
+                        foreach (var a2 in a1)
                         {
-                            try
+                            Task<bool> t1a = new Task<bool>(() =>
                             {
-                                var removed = working.Work();
-                                removed_files += removed.Item1;
-                                removed_bytes += removed.Item2;
-                            }
-                            catch { }
+                                foreach (var a3 in a2)
+                                {
+                                    Console.WriteLine(a3.GetDirectory());
+                                    try
+                                    {
+                                        var removed = a3.Work();
+                                        removed_files += removed.Item1;
+                                        removed_bytes += removed.Item2;
+                                    }
+                                    catch { }
+
+                                }
+                                return true;
+                            });
+                            t1a.Start();
+                            tasks.Add(t1a);
+                        }
+                        foreach (Task t in tasks)
+                        {
+                            t.Wait();
                         }
                         logsCheckbox.Invoke(new MethodInvoker(() =>
                         {
@@ -134,20 +153,54 @@ namespace WinBooster
                 {
                     if (cacheCheckbox.Checked)
                     {
-                        foreach (WorkingI working in Files.cache)
+                        var a1 = Utils.Chunk<WorkingI>(Files.cache.AsEnumerable(), Files.cache.Count() / (Files.cache.Count() / 2));
+                        List<Task> tasks = new List<Task>();
+                        foreach (var a2 in a1)
                         {
-                            try
+                            Task<bool> t1a = new Task<bool>(() =>
                             {
-                                var removed = working.Work();
-                                removed_files += removed.Item1;
-                                removed_bytes += removed.Item2;
-                            }
-                            catch { }
+                                foreach (var a3 in a2)
+                                {
+
+                                    try
+                                    {
+                                        var removed = a3.Work();
+                                        removed_files += removed.Item1;
+                                        removed_bytes += removed.Item2;
+                                    }
+                                    catch { }
+
+                                }
+                                return true;
+                            });
+                            t1a.Start();
+                            tasks.Add(t1a);
+                        }
+                        foreach (Task t in tasks)
+                        {
+                            t.Wait();
                         }
                         cacheCheckbox.Invoke(new MethodInvoker(() =>
                         {
                             cacheCheckbox.Checked = false;
                         }));
+
+
+
+                        //foreach (WorkingI working in Files.cache)
+                        //{
+                        //    try
+                        //    {
+                        //        var removed = working.Work();
+                        //        removed_files += removed.Item1;
+                        //        removed_bytes += removed.Item2;
+                        //    }
+                        //    catch { }
+                        //}
+                        //cacheCheckbox.Invoke(new MethodInvoker(() =>
+                        //{
+                        //    cacheCheckbox.Checked = false;
+                        //}));
                     }
                 });
                 Task t4 = Task.Factory.StartNew(() =>

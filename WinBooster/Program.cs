@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Guna.UI2.WinForms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +13,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.6.1";
+        public static string version = "1.0.4.4.6.2";
 
         public static PEData PEData = new PEData();
 
@@ -42,7 +43,19 @@ namespace WinBooster
         {
             if (donate.attributes.DONATION_SENDER == GetCPUID())
             {
-                
+                if (donate.attributes.DONATION_AMOUNT == 75)
+                {
+                    SaveAndLoad.premiumFeatures.MoreFakeMenu = true;
+                    try
+                    {
+                        form.settings.Invoke(new MethodInvoker(() =>
+                        {
+                            form.settings.photoCheckbox.Checked = SaveAndLoad.premiumFeatures.MoreFakeMenu;
+                        }));
+                    }
+                    catch { }
+                }
+                SaveAndLoad.premiumFeatures.Save(SaveAndLoad.premiumFeatures_path);
             }
         }
 
@@ -69,9 +82,16 @@ namespace WinBooster
             SaveAndLoad.settings = Settings.Load(SaveAndLoad.settings_path);
             SaveAndLoad.statistic = Statistic.Load(SaveAndLoad.statistic_path);
             SaveAndLoad.premiumFeatures = PremiumFeatures.Load(SaveAndLoad.premiumFeatures_path);
+            try
+            {
+                form.settings.Invoke(new MethodInvoker(() =>
+                {
+                    form.settings.photoCheckbox.Checked = SaveAndLoad.premiumFeatures.MoreFakeMenu;
+                }));
+            } catch { }
             if (SaveAndLoad.settings.FakeMenu == 1)
             {
-                Application.Run(new SMS_Bomber());
+                Application.Run(new Auth());
             }
             else
             {

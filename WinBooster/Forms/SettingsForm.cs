@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -135,14 +136,32 @@ namespace WinBooster
 
         private void registryCheckbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (!SaveAndLoad.premiumFeatures.Premium)
+
+        }
+
+        private void photoCheckbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!SaveAndLoad.premiumFeatures.MoreFakeMenu)
             {
-                registryCheckbox.Checked = false;
-                Program.donation.GetDonateLink("Neki_play1", Program.GetCPUID(), "Premium", 125);
+                if (photoCheckbox.Checked)
+                {
+                    photoCheckbox.Checked = false;
+                    photoCheckbox.Enabled = false;
+                    string link = Program.donation.GetDonateLink("Neki_play1", Program.GetCPUID(), "WinBooster - More fake menus", 75);
+                    Process.Start(link);
+                    Task.Factory.StartNew(() =>
+                    {
+                        Task.Delay(2500);
+                        photoCheckbox.Invoke(new MethodInvoker(() =>
+                        {
+                            photoCheckbox.Enabled = true;
+                        }));
+                    });
+                }
             }
             else
             {
-                registryCheckbox.Checked = true;
+                photoCheckbox.Checked = true;
             }
         }
     }

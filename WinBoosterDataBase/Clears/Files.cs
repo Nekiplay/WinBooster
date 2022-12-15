@@ -8,10 +8,119 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Exodus Crypto Wallet
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\exodus", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\exodus\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\exodus\\%unknowfolder%", "LICENSE"),
+            #endregion
+
+            #region FLauncher
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\flauncher", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\flauncher\\%unknowfolder%", "LICENSE.electron.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\flauncher\\%unknowfolder%", "LICENSES.chromium.html"),
+            #endregion
+
+            #region McSkill
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\McSkill\\updates\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\McSkill\\updates\\%unknowfolder%\\logs", "*"),
+            #endregion
+
+            #region Cifrazia
+            new DirectoryFull("%cycdrive%\\Cifrazia\\games\\Minecraft\\1.12.2\\modpacks\\%unknowfolder%\\logs"),
+            new DirectoryPatern("%cycdrive%\\Cifrazia\\games\\Minecraft\\1.12.2\\modpacks\\%unknowfolder%", "*.log"),
+            new DirectoryFull("%cycdrive%\\Cifrazia\\games\\Minecraft\\1.7.10\\modpacks\\%unknowfolder%\\logs"),
+            new DirectoryPatern("%cycdrive%\\Cifrazia\\games\\Minecraft\\1.7.10\\modpacks\\%unknowfolder%", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Cifrazia\\logs", "*.log"),
+            #endregion
+
+            #region VMware ThinApp
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\VMware\\VMware ThinApp", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\VMware\\VMware ThinApp", "*.rtf"),
+            new DirectoryPatern("%cycdrive%\\Program Files (x86)\\VMware\\VMware ThinApp\\Policy", "*.txt"),
+            #endregion
+
+            #region CS 1.6 HPP
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\AltFixHpp", "*.log"),
+            #endregion
+
+            #region Komodo
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Komodo\\VRSC", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Komodo\\VRSC\\notarisations", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Komodo\\VRSC\\notarisations", "LOG"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Komodo\\VRSC\\notarisations", "LOG.old"),
+            #endregion
+
+            #region Green Hell
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Creepy Jar\\Green Hell", "*.log"),
+            #endregion
+
+            #region GTFO
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\10 Chambers Collective\\GTFO", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\10 Chambers Collective\\GTFO", "*.txt"),
+            #endregion
+
+            #region WoW (Sirus)
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Sirus Launcher", "*.log"),
+            #endregion
+
+            #region RustMe
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\RustMe\\updates\\rustmevanilla\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\RustMe\\updates\\rustmevanilla", "*.log"),
+            #endregion
+
+            #region Lunar Client
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.lunarclient\\logs\\launcher", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.lunarclient\\offline\\multiver\\logs", "*"),
+            #endregion
+
+            #region LoliLand
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\loliland\\updates\\clients\\%unknowfolder%\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\loliland\\updates\\clients\\%unknowfolder%\\DivineRPG", "*.log"),
+            #endregion
+
+            #region FourWars
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\fourwars\\guard", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\fourwars\\updates\\%unknowfolder%\\logs", "*"),
+            #endregion
+
+            #region Kaboom 2.0
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Kaboom\\runtime-windows-x64", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Kaboom\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Kaboom\\modpacks\\1.7.10\\modpacks\\%unknowfolder%\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Kaboom\\modpacks\\1.12.2\\modpacks\\%unknowfolder%\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Kaboom\\modpacks\\1.7.10\\modpacks\\%unknowfolder%\\DivineRPG", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Kaboom\\modpacks\\1.12.2\\modpacks\\%unknowfolder%\\DivineRPG", "*.log"),
+            #endregion
+
+            #region Excalibur Craft
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.exlauncher", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.exlauncher\\clients\\%unknowfolder%\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.exlauncher\\clients\\%unknowfolder%\\DivineRPG", "*.log"),
+            #endregion
+
+            #region VimeWorld
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.vimeworld\\.logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.vimeworld\\%unknowfolder%\\logs", "*"),
+            #endregion
+
+            #region Electron programms (Lunar Client, WOW(Sirus))
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\%unknowfolder%", "LICENSE.electron.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\%unknowfolder%", "LICENSES.chromium.html"),
+            #endregion
+
             #region Badlion Client
             new DirectoryPatern("%cycdrive%\\Program Files\\Badlion Client", "*.txt"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Badlion Client", "*.html"),
             new DirectoryPatern("%cycdrive%\\Program Files\\Badlion Client\\licenses", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Badlion Client\\logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Badlion Client\\logs\\launcher", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Badlion Client\\logs\\optifine-debug", "*"),
+
+            new DirectoryPatern("%cycdrive%\\ProgramData\\BadlionClient\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\BadlionClient\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\BadlionClient\\%unknowfolder%", "release"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\BadlionClient\\%unknowfolder%", "COPYRIGHT"),
+            new DirectoryPatern("%cycdrive%\\ProgramData\\BadlionClient\\%unknowfolder%", "LICENSE"),
             #endregion
 
             #region RUXIM
@@ -24,6 +133,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Roblox
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Roblox\\logs", "*.log"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Roblox\\Versions\\%unknowfolder%", "COPYRIGHT.txt"),
             #endregion
 
@@ -50,6 +160,8 @@ namespace WinBooster.DataBase
 
             #region Microsoft Lobe
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Lobe\\logs"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Lobe", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Lobe", "LICENSE"),
             #endregion
 
             #region Android
@@ -92,6 +204,8 @@ namespace WinBooster.DataBase
             #region Epic Games
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services", "*.html"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Epic Games\\Epic Online Services\\sites\\ui-helper", "ThirdPartyNotice.html"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Epic Games\\Epic Online Services\\UserHelper\\Logs", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\EpicGamesLauncher\\Saved\\Logs", "*"),
             #endregion
 
             #region Genshin Impact
@@ -350,15 +464,16 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Nox
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox\\BigNoxInstallPack", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox\\vmInstall", "*.log"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "Nox.log*"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "Log_multi.log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.BigNox", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Nox\\BigNoxInstallPack", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Nox\\vmInstall", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Nox", "Nox.log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Nox", "Log_multi.log*"),
             new DirectoryPatern("C:\\Users\\%username%\\.BigNox", "*.log*"),
-            new DirectoryPatern("C:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
             new DirectoryPatern("D:\\Program Files\\Nox\\bin\\BignoxVMS\\nox\\Logs", "*.log"),
-            new DirectoryFull("C:\\Users\\%username%\\vmlogs"),
-            new DirectoryPatern("C:\\Users\\%username%\\AppData\\Local\\Nox", "*.log"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\vmlogs"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Nox", "*.log"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\Bignox\\BigNoxVM\\vcredist", "*.txt"),
             #endregion
 
@@ -381,7 +496,23 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "LICENSE"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "THIRD_PARTY_README"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "ADDITIONAL_LICENSE_INFO"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%", "release"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%\\legal"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.jdks\\%unknowfolder%\\sample", "README"),
+
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "COPYRIGHT"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "README.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "release"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "THIRDPARTYLICENSEREADME.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "THIRDPARTYLICENSEREADME-JAVAFX.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.loliland\\java", "Welcome.html"),
+
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\exjava\\jvm", "COPYRIGHT"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\exjava\\jvm", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\exjava\\jvm", "release"),
+
             #endregion
 
             #region Minecraft
@@ -466,6 +597,7 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\SquirrelTemp", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\GitHub Desktop\\logs", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GitHubDesktop", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\GitHubDesktop\\%unknowfolder%", "*.log"),
             #endregion
 
             #region Overwolf
@@ -591,6 +723,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region DevExpress
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\DevExpress", "*.log"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\DevExpress 21.2\\Components", "*.log"),
             new DirectoryPatern("%cycdrive%\\Program Files (x86)\\DevExpress 21.2\\Components\\Support", "*.log"),
             #endregion
@@ -725,6 +858,25 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> cache = new List<WorkingI>()
         {
+            #region Cifrazia
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\cache\\%unknowfolder%", "*"),
+            #endregion
+
+            #region Verus Desktop
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Verus-Desktop\\Cache\\Cache_Data", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Verus-Desktop\\GPUCache", "*"),
+            #endregion
+
+            #region WoW (Sirus)
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Sirus Launcher\\Cache", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Sirus Launcher\\GPUCache", "*"),
+            #endregion
+
+            #region Cifrazia
+            new DirectoryFull("%cycdrive%\\Cifrazia\\temp"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Cifrazia\\DesktopApplication\\cache\\qmlcache", "*"),
+            #endregion
+
             #region Gradle
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.gradle\\.tmp", "*.bin"),
             #endregion
@@ -858,6 +1010,14 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> cheats = new List<WorkingI>()
         {
+            #region HPP
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\AltFixHpp"),
+            #endregion
+
+            #region ANGIGNIGHT
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\ANGIGNIGHT Hack"),
+            #endregion
+
             #region Steam accounts
             new DirectoryPatern("%steam%\\config", "loginusers.vdf"),
             new DirectoryFull("%steam%\\userdata"),

@@ -5,6 +5,7 @@ using MediaDevices;
 using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,14 @@ namespace WinBooster.Native
 {
     public class Utils
     {
+        public static IEnumerable<IEnumerable<T>> Chunk<T>(IEnumerable<T> source, int chunksize)
+        {
+            while (source.Any())
+            {
+                yield return source.Take(chunksize);
+                source = source.Skip(chunksize);
+            }
+        }
         public static string GetSysDrive()
         {
             string system = Environment.GetFolderPath(Environment.SpecialFolder.System);
@@ -31,7 +40,8 @@ namespace WinBooster.Native
                 if (string.IsNullOrEmpty(steamdir) || steamdir == "Nothing")
                 {
                     steamdir = (string)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Valve\Steam", "InstallPath", "Nothing");
-                    return new DirectoryInfo(steamdir);
+                    if (!string.IsNullOrEmpty(steamdir) || steamdir != "Nothing")
+                        return new DirectoryInfo(steamdir);
                 }
             }
             catch { }
