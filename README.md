@@ -1,5 +1,4 @@
 # WinBooster
-Latest releases - https://brokencore.club/resources/4279/
 
 Script API - https://skillshop.gitbook.io/winbooster/winbooster.native/directoryfull
 
