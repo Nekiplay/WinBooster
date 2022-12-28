@@ -35,6 +35,7 @@
             this.cacheCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cheatsCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.accountsCheckBox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.photoCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.videoCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.registryCheckbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -66,7 +67,6 @@
             this.logsCheckbox.UncheckedState.BorderThickness = 0;
             this.logsCheckbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.logsCheckbox.UseVisualStyleBackColor = false;
-            this.logsCheckbox.CheckedChanged += new System.EventHandler(this.logsCheckbox_CheckedChanged);
             // 
             // guna2Button1
             // 
@@ -77,7 +77,7 @@
             this.guna2Button1.CheckedState.Parent = this.guna2Button1;
             this.guna2Button1.CustomImages.Parent = this.guna2Button1;
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
             this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
@@ -85,10 +85,9 @@
             this.guna2Button1.Location = new System.Drawing.Point(10, 139);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(162, 23);
+            this.guna2Button1.Size = new System.Drawing.Size(172, 23);
             this.guna2Button1.TabIndex = 4;
             this.guna2Button1.Text = "Clear";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             this.guna2Button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.guna2Button1_MouseClick);
             // 
             // cacheCheckbox
@@ -133,6 +132,7 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.guna2GroupBox1.Controls.Add(this.accountsCheckBox);
             this.guna2GroupBox1.Controls.Add(this.photoCheckbox);
             this.guna2GroupBox1.Controls.Add(this.videoCheckbox);
             this.guna2GroupBox1.Controls.Add(this.registryCheckbox);
@@ -149,10 +149,29 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 12);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(182, 169);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(192, 169);
             this.guna2GroupBox1.TabIndex = 8;
             this.guna2GroupBox1.Text = "Cleaner";
             this.guna2GroupBox1.TextOffset = new System.Drawing.Point(0, -5);
+            // 
+            // accountsCheckBox
+            // 
+            this.accountsCheckBox.AutoSize = true;
+            this.accountsCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.accountsCheckBox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.accountsCheckBox.CheckedState.BorderRadius = 2;
+            this.accountsCheckBox.CheckedState.BorderThickness = 0;
+            this.accountsCheckBox.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.accountsCheckBox.Location = new System.Drawing.Point(114, 114);
+            this.accountsCheckBox.Name = "accountsCheckBox";
+            this.accountsCheckBox.Size = new System.Drawing.Size(76, 19);
+            this.accountsCheckBox.TabIndex = 12;
+            this.accountsCheckBox.Text = "Accounts";
+            this.accountsCheckBox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.accountsCheckBox.UncheckedState.BorderRadius = 2;
+            this.accountsCheckBox.UncheckedState.BorderThickness = 0;
+            this.accountsCheckBox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.accountsCheckBox.UseVisualStyleBackColor = false;
             // 
             // photoCheckbox
             // 
@@ -287,7 +306,7 @@
             this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox2.Location = new System.Drawing.Point(200, 12);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(210, 12);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
             this.guna2GroupBox2.Size = new System.Drawing.Size(105, 88);
@@ -301,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(318, 194);
+            this.ClientSize = new System.Drawing.Size(326, 194);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -332,5 +351,6 @@
         private Guna.UI2.WinForms.Guna2CheckBox photoCheckbox;
         private Guna.UI2.WinForms.Guna2CheckBox videoCheckbox;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
+        private Guna.UI2.WinForms.Guna2CheckBox accountsCheckBox;
     }
 }

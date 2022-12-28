@@ -60,6 +60,9 @@
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl3 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panelDesktop.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,12 +81,15 @@
             this.guna2Panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exitPuctureBix)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPuctureBix)).BeginInit();
+            this.guna2Panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
             this.panelDesktop.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.panelDesktop.Controls.Add(this.guna2Panel9);
             this.panelDesktop.Controls.Add(this.guna2Panel8);
             this.panelDesktop.Controls.Add(this.guna2Panel7);
             this.panelDesktop.Controls.Add(this.guna2Panel6);
@@ -96,7 +102,7 @@
             this.panelDesktop.Location = new System.Drawing.Point(0, 31);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.ShadowDecoration.Parent = this.panelDesktop;
-            this.panelDesktop.Size = new System.Drawing.Size(305, 303);
+            this.panelDesktop.Size = new System.Drawing.Size(301, 303);
             this.panelDesktop.TabIndex = 2;
             // 
             // guna2Panel8
@@ -107,7 +113,7 @@
             this.guna2Panel8.Controls.Add(this.pictureBox1);
             this.guna2Panel8.Controls.Add(this.label8);
             this.guna2Panel8.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Panel8.Location = new System.Drawing.Point(12, 203);
+            this.guna2Panel8.Location = new System.Drawing.Point(107, 107);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.ShadowDecoration.Parent = this.guna2Panel8;
             this.guna2Panel8.Size = new System.Drawing.Size(89, 90);
@@ -195,7 +201,7 @@
             this.guna2Panel6.Controls.Add(this.statisticPictureBox);
             this.guna2Panel6.Controls.Add(this.label6);
             this.guna2Panel6.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Panel6.Location = new System.Drawing.Point(202, 107);
+            this.guna2Panel6.Location = new System.Drawing.Point(12, 203);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
             this.guna2Panel6.Size = new System.Drawing.Size(89, 90);
@@ -327,7 +333,7 @@
             this.guna2Panel4.Controls.Add(this.settingsPictureBox);
             this.guna2Panel4.Controls.Add(this.label3);
             this.guna2Panel4.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
-            this.guna2Panel4.Location = new System.Drawing.Point(107, 107);
+            this.guna2Panel4.Location = new System.Drawing.Point(202, 203);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
             this.guna2Panel4.Size = new System.Drawing.Size(89, 90);
@@ -419,7 +425,7 @@
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(305, 31);
+            this.guna2Panel3.Size = new System.Drawing.Size(301, 31);
             this.guna2Panel3.TabIndex = 5;
             // 
             // label2
@@ -436,7 +442,7 @@
             // 
             this.exitPuctureBix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.exitPuctureBix.Image = ((System.Drawing.Image)(resources.GetObject("exitPuctureBix.Image")));
-            this.exitPuctureBix.Location = new System.Drawing.Point(279, 7);
+            this.exitPuctureBix.Location = new System.Drawing.Point(275, 7);
             this.exitPuctureBix.Name = "exitPuctureBix";
             this.exitPuctureBix.Size = new System.Drawing.Size(16, 16);
             this.exitPuctureBix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -448,7 +454,7 @@
             // 
             this.backPuctureBix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.backPuctureBix.Image = ((System.Drawing.Image)(resources.GetObject("backPuctureBix.Image")));
-            this.backPuctureBix.Location = new System.Drawing.Point(257, 7);
+            this.backPuctureBix.Location = new System.Drawing.Point(253, 7);
             this.backPuctureBix.Name = "backPuctureBix";
             this.backPuctureBix.Size = new System.Drawing.Size(16, 16);
             this.backPuctureBix.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -480,11 +486,55 @@
             // 
             this.guna2DragControl3.TargetControl = this.label2;
             // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.guna2Panel9.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel9.BorderThickness = 1;
+            this.guna2Panel9.Controls.Add(this.pictureBox2);
+            this.guna2Panel9.Controls.Add(this.label9);
+            this.guna2Panel9.CustomBorderColor = System.Drawing.Color.LightSeaGreen;
+            this.guna2Panel9.Location = new System.Drawing.Point(202, 107);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.ShadowDecoration.Parent = this.guna2Panel9;
+            this.guna2Panel9.Size = new System.Drawing.Size(89, 90);
+            this.guna2Panel9.TabIndex = 10;
+            this.guna2Panel9.Click += new System.EventHandler(this.guna2Panel9_Click);
+            this.guna2Panel9.MouseEnter += new System.EventHandler(this.guna2Panel9_MouseEnter);
+            this.guna2Panel9.MouseLeave += new System.EventHandler(this.guna2Panel9_MouseLeave);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(29, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            this.pictureBox2.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
+            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(1, 52);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 29);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Anti\r\nScreenShare\r\n";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.MouseEnter += new System.EventHandler(this.label9_MouseEnter);
+            this.label9.MouseLeave += new System.EventHandler(this.label9_MouseLeave);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 334);
+            this.ClientSize = new System.Drawing.Size(301, 334);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.guna2Panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -512,6 +562,8 @@
             this.guna2Panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.exitPuctureBix)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backPuctureBix)).EndInit();
+            this.guna2Panel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,6 +599,9 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         public System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label9;
     }
 }
 

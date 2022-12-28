@@ -1,5 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using Guna.UI2.WinForms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using WinBooster.Data;
 using WinBooster.DataBase;
+using WinBooster.Native;
 
 namespace WinBooster.Forms
 {
@@ -29,7 +31,9 @@ namespace WinBooster.Forms
             int non_files = 0;
             foreach (var pe in Program.PEData.data.ToArray())
             {
-                if (!File.Exists(pe.FileName + pe.Extension))
+                FileInfo ii = new FileInfo(pe.FileName);
+                string filename = ii.Name.Replace(".bin", "");
+                if (!Directory.Exists("C:\\ProgramData\\WinBooster\\PE Safe\\Runners\\" + filename))
                 {
                     files++;
                 }
@@ -46,6 +50,12 @@ namespace WinBooster.Forms
         }
         private void PESafeForm_Load(object sender, EventArgs e)
         {
+            if (File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe\\Data.bin"))
+            {
+                string text = File.ReadAllText(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe\\Data.bin");
+                text = new WinBoosterNative.Security.Rijn.StringProtector(Program.GetCPUID()).Decrypt(text);
+                Program.PEData = JsonConvert.DeserializeObject<PEData>(text);
+            }
             foreach (var pe in Program.PEData.data)
             {
                 Program.form.PeSafeForm.guna2ComboBox1.Items.Add(pe.Name);
@@ -96,7 +106,7 @@ namespace WinBooster.Forms
 
         private async void guna2Button3_Click(object sender, EventArgs e)
         {
-            await Task.Factory.StartNew(() =>
+            await Task.Factory.StartNew(async () =>
             {
                 guna2Button3.Invoke(new MethodInvoker(() =>
                 {
@@ -109,22 +119,27 @@ namespace WinBooster.Forms
                     {
                         if (pe.Name == name)
                         {
-                            if (!File.Exists(pe.FileName + pe.Extension))
+                            FileInfo ii = new FileInfo(pe.FileName);
+                            string filename = ii.Name.Replace(".bin", "");
+                            string directory = "C:\\ProgramData\\WinBooster\\PE Safe\\Runners\\" + ii.Name.Replace(".bin", "");
+                            Directory.CreateDirectory(directory);
+                            if (!File.Exists(directory + "\\" + filename + pe.Extension))
                             {
-                                WinBoosterNative.Security.AES.SharpAESCrypt.Decrypt(Program.GetCPUID(), pe.FileName, pe.FileName + pe.Extension);
+                                WinBoosterNative.Security.AES.SharpAESCrypt.Decrypt(Program.GetCPUID(), pe.FileName, directory + "\\" + filename + pe.Extension);
                             }
-                            Process process = new Process();
-                            process.StartInfo.FileName = pe.FileName + pe.Extension;
+                            await Task.Delay(500);
+                            Process p = new Process();
+                            p.StartInfo.FileName = directory + "\\" + filename + pe.Extension;
                             if (pe.WorkingDirectory)
                             {
-                                process.StartInfo.WorkingDirectory = "C:\\ProgramData\\WinBooster\\PE Safe\\Files";
+                                p.StartInfo.WorkingDirectory = directory;
                             }
-                            process.Start();
+                            p.Start();
+                            UpdateUI();
                             guna2Button3.Invoke(new MethodInvoker(() =>
                             {
                                 guna2Button3.Enabled = true;
                             }));
-                            UpdateUI();
                             break;
                         }
                     }
@@ -138,14 +153,18 @@ namespace WinBooster.Forms
             int non_files = 0;
             foreach (var pe in Program.PEData.data.ToArray())
             {
-                if (File.Exists(pe.FileName + pe.Extension))
+                FileInfo ii = new FileInfo(pe.FileName);
+                string filename = ii.Name.Replace(".bin", "");
+                if (Directory.Exists("C:\\ProgramData\\WinBooster\\PE Safe\\Runners\\" + filename))
                 {
-                    try { File.Delete(pe.FileName + pe.Extension); } catch { }
+                    try { Directory.Delete("C:\\ProgramData\\WinBooster\\PE Safe\\Runners\\" + filename, true); } catch { }
                 }
             }
             foreach (var pe in Program.PEData.data.ToArray())
             {
-                if (!File.Exists(pe.FileName + pe.Extension))
+                FileInfo ii = new FileInfo(pe.FileName);
+                string filename = ii.Name.Replace(".bin", "");
+                if (!Directory.Exists("C:\\ProgramData\\WinBooster\\PE Safe\\Runners\\" + filename))
                 {
                     files++;
                 }

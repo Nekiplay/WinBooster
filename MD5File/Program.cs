@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WinBooster.DataBase.FilesHashes;
 using WinBooster.Native;
@@ -12,17 +13,24 @@ namespace MD5File
     {
         static void Main(string[] args)
         {
-            string md5 = Utils.CalculateMD5(@"C:\Users\NekiPlay\Desktop\MAS v2.exe");
+            start:
+            Console.Write("File path: ");
+            string path = Console.ReadLine();
+            path = path.Replace("\"", "");
+            string md5 = Utils.CalculateMD5(path);
+            var info = FIleHashesDatabase.GetInfo(md5);
             Console.WriteLine("MD5: " + md5);
-            foreach (var info in FIleHashesDatabase.database)
+            if (info != null)
             {
-                if (info.MD5 == md5)
-                {
-                    Console.WriteLine("Detected: " + info.FileName);
-                    break;
-                }
+                Console.Clear();
+                Console.WriteLine("MD5: " + md5);
+                Console.WriteLine("Detected: " + info.name);
+                Console.WriteLine("Version: " + info.version);
+                Console.WriteLine("Platform: " + info.platform);
             }
-            Console.ReadLine();
+            Console.ReadKey();
+            Console.Clear();
+            goto start;
         }
     }
 }

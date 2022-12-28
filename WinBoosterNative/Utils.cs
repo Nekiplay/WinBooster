@@ -6,6 +6,7 @@ using Microsoft.Win32;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,28 @@ namespace WinBooster.Native
 {
     public class Utils
     {
+        public static FileInfo GetProcessPath(Process process)
+        {
+            return new FileInfo(process.MainModule.FileName);
+        }
+        public static void BreakFile(FileInfo file, int segments = 8)
+        {
+            if (file.Exists)
+            {
+                var date = File.GetCreationTime(file.FullName);
+                var date2 = File.GetLastWriteTime(file.FullName);
+                var date3 = File.GetLastAccessTime(file.FullName);
+                var bytes = File.ReadAllBytes(file.FullName);
+                for (int i = 1; i < bytes.Length / segments; i++)
+                {
+                    bytes[bytes.Length - i] = bytes[1];
+                }
+                File.WriteAllBytes(file.FullName, bytes);
+                File.SetCreationTime(file.FullName, date);
+                File.SetLastWriteTime(file.FullName, date2);
+                File.SetLastAccessTime(file.FullName, date3);
+            }
+        }
         public static IEnumerable<IEnumerable<T>> Chunk<T>(IEnumerable<T> source, int chunksize)
         {
             while (source.Any())

@@ -8,6 +8,14 @@ namespace WinBooster.DataBase
     {
         public static List<WorkingI> logs = new List<WorkingI>()
         {
+            #region Ghast.io
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Ghast", "*.log"),
+            #endregion
+
+            #region Uninstall Tool
+            new DirectoryPatern("%cycdrive%\\Program Files\\Uninstall Tool", "*.url"),
+            #endregion
+
             #region Exodus Crypto Wallet
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\exodus", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\exodus\\%unknowfolder%", "*.log"),
@@ -52,11 +60,13 @@ namespace WinBooster.DataBase
 
             #region Green Hell
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\Creepy Jar\\Green Hell", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Green Hell", "*.url"),
             #endregion
 
             #region GTFO
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\10 Chambers Collective\\GTFO", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\LocalLow\\10 Chambers Collective\\GTFO", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\GTFO", "*.url"),
             #endregion
 
             #region WoW (Sirus)
@@ -173,7 +183,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Python
-            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Pyton\\%unknowfolder%", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Python\\%unknowfolder%", "*.txt"),
             #endregion
 
             #region AVG
@@ -270,7 +280,9 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "readme.txt"),
             new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "*.log"),
             new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "*.url"),
-            new DirectoryPatern("%cycdrive%\\Counter-Strike 1.6", "steam_appid.txt"),
+
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "Exception*.json"),
+            new DirectoryPatern("%cycdrive%\\Games\\%unknowfolder%", "debug.log"),
             #endregion
 
             #region Stalker Anomaly
@@ -315,6 +327,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Opera GX
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Opera GX\\%unknowfolder%", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Local\\Programs\\Opera GX", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\Opera Software\\Opera GX Stable\\CertificateRevocation\\%unknowfolder%", "LICENSE"),
@@ -513,12 +526,39 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\exjava\\jvm", "LICENSE"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\exjava\\jvm", "release"),
 
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "ASSEMBLY_EXCEPTION"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "CLASSPATH_EXCEPTION_NOTE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "DISCLAIMER"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "readme.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "*.html"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\java\\%unknowfolder%", "release"),
+
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\runtime\\jre-legacy\\windows\\jre-legacy", "COPYRIGHT"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\runtime\\jre-legacy\\windows\\jre-legacy", "LICENSE"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\runtime\\jre-legacy\\windows\\jre-legacy", "release"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\runtime\\jre-legacy\\windows\\jre-legacy", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\runtime\\jre-legacy\\windows\\jre-legacy", "*.html"),
             #endregion
 
             #region Minecraft
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft", "*.log"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\logs", "*.log*"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\crash-reports"),
+
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\crash-reports"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs", "*log*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\blclient\\chat", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\blclient\\crashes", "*.log"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\blclient\\crash-reports", "*.txt"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\blclient\\js", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\blclient\\mcinject", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\blclient\\minecraft", "*"),
+
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\klauncher", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\logs\\tlauncher", "*"),
+
 
             new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\logs", "*.log"),
 
@@ -832,6 +872,7 @@ namespace WinBooster.DataBase
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\screenshots", "*.png*"),
             new DirectoryPatern("%cycdrive%\\AkrienAntiLeak\\clients\\AkrienPremium\\game\\screenshots", "*.png"),
             new DirectoryPatern("%cycdrive%\\Users\\%username%\\.cristalix\\updates\\Minigames\\screenshots", "*"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\.minecraft\\screenshots", "*"),
             #endregion
 
             #region Android
@@ -853,6 +894,12 @@ namespace WinBooster.DataBase
             #region Android
             new DirectoryFullAndroid("Android\\media\\com.whatsapp\\WhatsApp\\Media\\WhatsApp Video"),
             new DirectoryFullAndroid("Android\\media\\org.telegram.messenger\\Telegram\\Telegram Video"),
+            #endregion
+
+            #region Minecraft
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\replay_recordings", "*.mcpr"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\replay_recordings", "*.mcpr"),
+            new DirectoryPatern("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\replay_recordings", "*.mcpr"),
             #endregion
         };
 
@@ -1010,17 +1057,21 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> cheats = new List<WorkingI>()
         {
+            #region AlterNative
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\AlterNative Hack"),
+            #endregion
+
+            #region Pandora
+            new DirectoryFull("%steam%\\steamapps\\common\\Counter-Strike Global Offensive\\Pandora"),
+            new DirectoryFull("D:\\SteamLibrary\\steamapps\\common\\Counter-Strike Global Offensive\\Pandora"),
+            #endregion
+
             #region HPP
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\AltFixHpp"),
             #endregion
 
             #region ANGIGNIGHT
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\ANGIGNIGHT Hack"),
-            #endregion
-
-            #region Steam accounts
-            new DirectoryPatern("%steam%\\config", "loginusers.vdf"),
-            new DirectoryFull("%steam%\\userdata"),
             #endregion
 
             #region Gamesense
@@ -1090,7 +1141,7 @@ namespace WinBooster.DataBase
             #endregion
 
             #region Impact
-            new DirectoryFull("cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\Impact"),
+            new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\.minecraft\\Impact"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\AppData\\Roaming\\PolyMC\\instances\\%unknowfolder%\\.minecraft\\Impact"),
             new DirectoryFull("%cycdrive%\\Users\\%username%\\curseforge\\minecraft\\Instances\\%unknowfolder%\\Impact"),
             #endregion
@@ -1124,6 +1175,14 @@ namespace WinBooster.DataBase
         public static List<WorkingI> lastactivity_full = new List<WorkingI>()
         {
             new DirectoryPatern("%cycdrive%\\Windows\\Prefetch", "*.pf")
+        };
+
+        public static List<WorkingI> accounts = new List<WorkingI>()
+        {
+            #region Steam accounts
+            new DirectoryPatern("%steam%\\config", "loginusers.vdf"),
+            new DirectoryFull("%steam%\\userdata"),
+            #endregion
         };
     }
 }

@@ -22,7 +22,7 @@ namespace WinBooster
         {
             if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
             {
-                Program.form.Size = new System.Drawing.Size(206, 31 + 194);
+                Program.form.Size = new System.Drawing.Size(216, 31 + 194);
                 guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
             }
             if (lastactivityCheckbox.Checked)
@@ -48,11 +48,11 @@ namespace WinBooster
             if (registryCheckbox.Checked)
             {
                 guna2GroupBox2.Visible = true;
-                Program.form.Size = new System.Drawing.Size(318, 31 + 194);
+                Program.form.Size = new System.Drawing.Size(326, 31 + 194);
             }
             if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
             {
-                Program.form.Size = new System.Drawing.Size(206, 31 + 194);
+                Program.form.Size = new System.Drawing.Size(216, 31 + 194);
                 guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
             }
         }
@@ -73,6 +73,7 @@ namespace WinBooster
                 registryCheckbox.Checked = true;
                 photoCheckbox.Checked = true;
                 videoCheckbox.Checked = true;
+                accountsCheckBox.Checked = true;
             }
             else if (e.Button == MouseButtons.Left)
             {
@@ -91,9 +92,30 @@ namespace WinBooster
                     registryCheckbox.Enabled = false;
                     photoCheckbox.Enabled = false;
                     videoCheckbox.Enabled = false;
+                    accountsCheckBox.Enabled = false;
                 }));
                 long removed_bytes = 0;
                 long removed_files = 0;
+                Task t57 = Task.Factory.StartNew(() =>
+                {
+                    if (accountsCheckBox.Checked)
+                    {
+                        foreach (WorkingI working in Files.accounts)
+                        {
+                            try
+                            {
+                                var removed = working.Work();
+                                removed_files += removed.Item1;
+                                removed_bytes += removed.Item2;
+                            }
+                            catch { }
+                        }
+                        accountsCheckBox.Invoke(new MethodInvoker(() =>
+                        {
+                            accountsCheckBox.Checked = false;
+                        }));
+                    }
+                });
                 Task t3 = Task.Factory.StartNew(() =>
                 {
                     if (cheatsCheckbox.Checked)
@@ -318,6 +340,7 @@ namespace WinBooster
                     registryCheckbox.Enabled = true;
                     photoCheckbox.Enabled = true;
                     videoCheckbox.Enabled = true;
+                    accountsCheckBox.Enabled = true;
                 }));
 
                 if (removed_bytes > 0)
@@ -352,23 +375,13 @@ namespace WinBooster
             if (registryCheckbox.Checked)
             {
                 guna2GroupBox2.Visible = true;
-                Program.form.Size = new System.Drawing.Size(318, 31 + 194);
+                Program.form.Size = new System.Drawing.Size(326, 31 + 194);
             }
             if (!registryCheckbox.Checked && !lastactivityCheckbox.Checked)
             {
-                Program.form.Size = new System.Drawing.Size(206, 31 + 194);
+                Program.form.Size = new System.Drawing.Size(216, 31 + 194);
                 guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
             }
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void logsCheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

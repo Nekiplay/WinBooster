@@ -62,20 +62,18 @@ namespace WinBooster.Forms.PE_Safe
                     }));
                     bool find = false;
                     string md5 = Utils.CalculateMD5(fileName);
-                    foreach (var info in FIleHashesDatabase.database)
+                    var info = FIleHashesDatabase.GetInfo(md5);
+                    if (info != null)
                     {
-                        if (info.MD5 == md5)
+                        guna2Button2.Invoke(new MethodInvoker(() =>
                         {
-                            guna2Button2.Invoke(new MethodInvoker(() =>
-                            {
-                                guna2TextBox2.Text = info.FileName;
-                            }));
-                            cacheCheckbox.Invoke(new MethodInvoker(() =>
-                            {
-                                cacheCheckbox.Checked = info.WorkingDirectory;
-                            }));
-                            find = true;
-                        }
+                            guna2TextBox2.Text = info.name;
+                        }));
+                        cacheCheckbox.Invoke(new MethodInvoker(() =>
+                        {
+                            cacheCheckbox.Checked = info.bypass;
+                        }));
+                        find = true;
                     }
                     if (!find)
                     {

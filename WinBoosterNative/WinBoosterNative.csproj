@@ -66,7 +66,12 @@
     <Compile Include="Clears\Native\DirectoryPatern.cs" />
     <Compile Include="Clears\Native\DirectoryUnsafeFileNames.cs" />
     <Compile Include="Clears\WorkInterface.cs" />
-    <Compile Include="CustomDirectoryInfo.cs" />
+    <Compile Include="Clears\CustomDirectoryInfo.cs" />
+    <Compile Include="Enums\FileType.cs" />
+    <Compile Include="Enums\Platform.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Events\ProcessRunning.cs" />
+    <Compile Include="FilesHashes\FileInfoByMD5.cs" />
     <Compile Include="Fixer\FixerI.cs" />
     <Compile Include="GameOptimize\GameOptimizeI.cs" />
     <Compile Include="Internet\FastDNS.cs" />

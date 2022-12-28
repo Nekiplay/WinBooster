@@ -51,7 +51,6 @@
     <Compile Include="Clears\Reg.cs" />
     <Compile Include="Clears\RegUnsafe.cs" />
     <Compile Include="FilesHashes\FIleHashesDatabase.cs" />
-    <Compile Include="FilesHashes\FileInfoByMD5.cs" />
     <Compile Include="Fixer\FixerData.cs" />
     <Compile Include="Fixer\Fixes\AutoRun.cs" />
     <Compile Include="Fixer\Fixes\NoClose.cs" />

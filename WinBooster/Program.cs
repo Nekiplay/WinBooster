@@ -1,9 +1,13 @@
-﻿using Guna.UI2.WinForms;
+﻿using DevExpress.XtraWaitForm;
+using Guna.UI2.WinForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Management;
+using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 using WinBooster.Data;
 using WinBooster.FakeForms;
@@ -13,7 +17,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.6.2";
+        public static string version = "1.0.4.4.6.3";
 
         public static PEData PEData = new PEData();
 
@@ -59,44 +63,102 @@ namespace WinBooster
             }
         }
 
+        public static Process checker;
+        static Process main;
+        static int mainProcessID;
+
+        public static bool bdos = false;
+
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster"))
+            if (args.Length == 0)
             {
-                Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster");
-            }
-            if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe"))
-            {
-                Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe");
-            }
-            if (File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe\\Data.bin"))
-            {
-                string text = File.ReadAllText(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe\\Data.bin");
-                text = new WinBoosterNative.Security.Rijn.StringProtector(GetCPUID()).Decrypt(text);
-                PEData = JsonConvert.DeserializeObject<PEData>(text);
-            }    
-            form = new MainMenu();
-            SaveAndLoad.settings = Settings.Load(SaveAndLoad.settings_path);
-            SaveAndLoad.statistic = Statistic.Load(SaveAndLoad.statistic_path);
-            SaveAndLoad.premiumFeatures = PremiumFeatures.Load(SaveAndLoad.premiumFeatures_path);
-            try
-            {
-                form.settings.Invoke(new MethodInvoker(() =>
+                #region Process Checker
+                main = Process.GetCurrentProcess();
+                mainProcessID = main.Id;
+
+                //Initializes the helper process
+                checker = new Process();
+                checker.StartInfo.FileName = main.MainModule.FileName;
+                checker.StartInfo.Arguments = mainProcessID.ToString();
+
+                checker.EnableRaisingEvents = true;
+                checker.Exited += new EventHandler(checker_Exited);
+
+                checker.Start();
+                #endregion
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster"))
                 {
-                    form.settings.photoCheckbox.Checked = SaveAndLoad.premiumFeatures.MoreFakeMenu;
-                }));
-            } catch { }
-            if (SaveAndLoad.settings.FakeMenu == 1)
-            {
-                Application.Run(new Auth());
+                    Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster");
+                }
+                if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe"))
+                {
+                    Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe");
+                }
+                form = new MainMenu();
+                SaveAndLoad.settings = Settings.Load(SaveAndLoad.settings_path);
+                SaveAndLoad.statistic = Statistic.Load(SaveAndLoad.statistic_path);
+                SaveAndLoad.premiumFeatures = PremiumFeatures.Load(SaveAndLoad.premiumFeatures_path);
+                try
+                {
+                    form.settings.Invoke(new MethodInvoker(() =>
+                    {
+                        form.settings.photoCheckbox.Checked = SaveAndLoad.premiumFeatures.MoreFakeMenu;
+                    }));
+                }
+                catch { }
+                if (SaveAndLoad.settings.FakeMenu == 1)
+                {
+                    Application.Run(new Auth());
+                }
+                else
+                {
+                    Application.Run(form);
+                }
             }
             else
             {
-                Application.Run(form);
+                main = Process.GetProcessById(int.Parse(args[0]));
+
+                main.EnableRaisingEvents = true;
+                main.Exited += new EventHandler(main_Exited);
+
+                while (!main.HasExited)
+                {
+                    Thread.Sleep(1); //Wait 1 second. 
+                }
+
+                //Provide some time to process the main_Exited event. 
+                Thread.Sleep(200);
             }
+        }
+        [DllImport("ntdll.dll", SetLastError = true)]
+        private static extern void RtlSetProcessIsCritical(UInt32 v1, UInt32 v2, UInt32 v3);
+        static void checker_Exited(object sender, EventArgs e)
+        {
+            if (bdos)
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.Arguments = "/c taskkill /F /IM svchost.exe\"";
+                p.Start();
+            }
+            main.Kill();
+        }
+        static void main_Exited(object sender, EventArgs e)
+        {
+            if (bdos)
+            {
+                Process p = new Process();
+                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.Arguments = "/c taskkill /F /IM svchost.exe\"";
+                p.Start();
+            }
+            main.Kill();
         }
     }
 }

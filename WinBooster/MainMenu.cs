@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -9,6 +10,7 @@ using WinBooster.Data;
 using WinBooster.Forms;
 using WinBooster.Native;
 using WinBoosterCharpScripts;
+using File = System.IO.File;
 
 namespace WinBooster
 {
@@ -26,6 +28,7 @@ namespace WinBooster
         public GameOptimizeForm gameOptimize = new GameOptimizeForm();
         public FixerForm fixer = new FixerForm();
         public PESafeForm PeSafeForm = new PESafeForm();
+        public AntiScreenShare antiScreenShare = new AntiScreenShare();
 
         public static CharpUpdater charpUpdater = new CharpUpdater();
         public static CharpManager charpManager = new CharpManager(charpUpdater);
@@ -64,19 +67,14 @@ namespace WinBooster
             OpenChildForm(cleaner, false);
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-            Process.GetCurrentProcess().Kill();
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Process.GetCurrentProcess().Kill();
+            //Process.GetCurrentProcess().Kill();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Process.GetCurrentProcess().Kill();
+            //Process.GetCurrentProcess().Kill();
         }
         List<Control> controlList = new List<Control>();
         public void OpenMenu(Form form)
@@ -106,6 +104,7 @@ namespace WinBooster
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            Program.checker.Kill();
             Process.GetCurrentProcess().Kill();
         }
 
@@ -136,20 +135,20 @@ namespace WinBooster
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(206, 31 + 194);
+            this.Size = new System.Drawing.Size(325, 31 + 194);
             OpenMenu(cleaner);
             cleaner.onShow();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(206, 31 + 194);
+            this.Size = new System.Drawing.Size(325, 31 + 194);
             OpenMenu(cleaner);
             cleaner.onShow();
         }
         private void guna2Panel2_Click(object sender, EventArgs e)
         {
-            this.Size = new System.Drawing.Size(206, 31 + 194);
+            this.Size = new System.Drawing.Size(325, 31 + 194);
             OpenMenu(cleaner);
             cleaner.onShow();
         }
@@ -272,6 +271,26 @@ namespace WinBooster
         {
             this.Size = new Size(421, guna2Panel3.Height + 183);
             OpenMenu(PeSafeForm);
+        }
+        #endregion
+
+        #region Открытие Anti ScreenShare
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            this.Size = new Size(216, guna2Panel3.Height + 237);
+            OpenMenu(antiScreenShare);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(216, guna2Panel3.Height + 237);
+            OpenMenu(antiScreenShare);
+        }
+
+        private void guna2Panel9_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(216, guna2Panel3.Height + 237);
+            OpenMenu(antiScreenShare);
         }
         #endregion
 
@@ -502,5 +521,38 @@ namespace WinBooster
             guna2Panel8.BorderColor = Color.Gray;
         }
         #endregion
+
+        #region Анимация Anti ScreenShare
+        private void pictureBox2_MouseEnter(object sender, EventArgs e)
+        {
+            guna2Panel9.BorderColor = Color.LightSeaGreen;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            guna2Panel9.BorderColor = Color.Gray;
+        }
+
+        private void label9_MouseEnter(object sender, EventArgs e)
+        {
+            guna2Panel9.BorderColor = Color.LightSeaGreen;
+        }
+
+        private void label9_MouseLeave(object sender, EventArgs e)
+        {
+            guna2Panel9.BorderColor = Color.Gray;
+        }
+
+        private void guna2Panel9_MouseEnter(object sender, EventArgs e)
+        {
+            guna2Panel9.BorderColor = Color.LightSeaGreen;
+        }
+
+        private void guna2Panel9_MouseLeave(object sender, EventArgs e)
+        {
+            guna2Panel9.BorderColor = Color.Gray;
+        }
+        #endregion
+
     }
 }
