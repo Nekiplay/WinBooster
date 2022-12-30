@@ -179,7 +179,8 @@
             this.guna2ComboBox1.ItemHeight = 18;
             this.guna2ComboBox1.Items.AddRange(new object[] {
             "Disabled",
-            "Auth"});
+            "Auth",
+            "Keypad"});
             this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
             this.guna2ComboBox1.Location = new System.Drawing.Point(80, 33);
             this.guna2ComboBox1.Name = "guna2ComboBox1";

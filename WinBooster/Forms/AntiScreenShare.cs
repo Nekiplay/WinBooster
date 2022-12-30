@@ -1,20 +1,13 @@
-﻿using DevExpress.Utils.Extensions;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WinBooster.Native;
-using WinBooster.DataBase;
-using WinBooster.Data;
-using System.Collections.Generic;
-using static DevExpress.Utils.Svg.CommonSvgImages;
-using System.IO;
-using WinBoosterNative.Events;
-using WinBooster.DataBase.FilesHashes;
-using System.Threading;
-using DevExpress.DocumentServices.ServiceModel.DataContracts;
+﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WinBooster.DataBase.FilesHashes;
+using WinBooster.Native;
+using WinBoosterNative.Events;
+using WinBoosterNative.Memory;
 
 namespace WinBooster
 {
@@ -118,7 +111,8 @@ namespace WinBooster
             Program.form.Hide();
             hided = true;
         }
-
+        [DllImport("User32.dll", CharSet = CharSet.Unicode)]
+        public static extern int MessageBox(IntPtr h, string message, string title, long type);
         private void EventManager_OnProcessStarted(ProcessRunning process)
         {
             string md5 = Utils.CalculateMD5(process.file.FullName);
@@ -127,25 +121,30 @@ namespace WinBooster
             {
                 if (file_info.name == "Process Hacker" && registryCheckbox.Checked)
                 {
+                    MemoryManager memoryManager = new MemoryManager(process.process);
+                    if (guna2ComboBox1.SelectedIndex == 1)
+                    {
+                        memoryManager.user32.MessageBox("Your Windows version does not support this application", "Process Hacker", 0x00000030);
+                    }
                     process.process.Kill();
-                    Thread.Sleep(50);
+                    Thread.Sleep(25);
                     Utils.BreakFile(process.file, 7);
                 }
                 else if (file_info.name == "LastActivityView" && guna2CheckBox1.Checked)
                 {
+                    MemoryManager memoryManager = new MemoryManager(process.process);
+                    if (guna2ComboBox1.SelectedIndex == 1)
+                    {
+                        memoryManager.user32.MessageBox("Your Windows version does not support this application", "LastActivityView", 0x00000030);
+                    }
                     process.process.Kill();
-                    Thread.Sleep(50);
+                    Thread.Sleep(25);
                     Utils.BreakFile(process.file, 6);
                 }
             }
         }
 
         private void AntiScreenShare_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CheckBox5_CheckedChanged(object sender, EventArgs e)
         {
 
         }

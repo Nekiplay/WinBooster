@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Management;
+using System.Net;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace WinBooster
 {
     internal static class Program
     {
-        public static string version = "1.0.4.4.6.3";
+        public static string version = "1.0.4.4.7";
 
         public static PEData PEData = new PEData();
 
@@ -70,57 +71,114 @@ namespace WinBooster
         public static bool bdos = false;
 
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster"))
+            {
+                Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster");
+            }
+            if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe"))
+            {
+                Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe");
+            }
             if (args.Length == 0)
             {
-                #region Process Checker
-                main = Process.GetCurrentProcess();
-                mainProcessID = main.Id;
-
-                //Initializes the helper process
-                checker = new Process();
-                checker.StartInfo.FileName = main.MainModule.FileName;
-                checker.StartInfo.Arguments = mainProcessID.ToString();
-
-                checker.EnableRaisingEvents = true;
-                checker.Exited += new EventHandler(checker_Exited);
-
-                checker.Start();
-                #endregion
-
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster"))
+                #region Downloading "Run As TrustedInstaller"
+                if (!File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunAsTI.exe"))
                 {
-                    Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster");
-                }
-                if (!Directory.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe"))
-                {
-                    Directory.CreateDirectory(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\PE Safe");
-                }
-                form = new MainMenu();
-                SaveAndLoad.settings = Settings.Load(SaveAndLoad.settings_path);
-                SaveAndLoad.statistic = Statistic.Load(SaveAndLoad.statistic_path);
-                SaveAndLoad.premiumFeatures = PremiumFeatures.Load(SaveAndLoad.premiumFeatures_path);
-                try
-                {
-                    form.settings.Invoke(new MethodInvoker(() =>
+                    try
                     {
-                        form.settings.photoCheckbox.Checked = SaveAndLoad.premiumFeatures.MoreFakeMenu;
-                    }));
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadFile("https://github.com/Nekiplay/Temp/raw/main/RunAsTI.exe", Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunAsTI.exe");
+                        }
+                    }
+                    catch
+                    {
+                        try { File.Delete(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunAsTI.exe"); } catch { }
+                    }
                 }
-                catch { }
-                if (SaveAndLoad.settings.FakeMenu == 1)
+                if (!File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\WinBoosterLauncher.exe"))
                 {
-                    Application.Run(new Auth());
+                    try
+                    {
+                        using (WebClient wc = new WebClient())
+                        {
+                            wc.DownloadFile("https://github.com/Nekiplay/Temp/raw/main/WinBoosterLauncher.exe", Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\WinBoosterLauncher.exe");
+                        }
+                    }
+                    catch
+                    {
+                        try { File.Delete(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\WinBoosterLauncher.exe"); } catch { }
+                    }
+                }
+                #endregion
+                if (!File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt")) // Checking if need Run as TrustedInstaller
+                {
+                    #region Running by "TrustedInsyaller"
+                    File.Create(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt").Close();
+                    File.WriteAllText(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt", Application.ExecutablePath);
+
+                    Process p = new Process();
+                    p.StartInfo.FileName = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\WinBoosterLauncher.exe";
+                    p.StartInfo.CreateNoWindow = true;
+                    p.StartInfo.UseShellExecute = false;
+                    p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    p.Start();
+                    Process.GetCurrentProcess().Kill();
+                    #endregion
                 }
                 else
                 {
-                    Application.Run(form);
+                    File.Delete(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt");  // Remove Run as TrustedInstaller
+
+                    #region Process Checker
+                    main = Process.GetCurrentProcess();
+                    mainProcessID = main.Id;
+
+                    //Initializes the helper process
+                    checker = new Process();
+                    checker.StartInfo.FileName = main.MainModule.FileName;
+                    checker.StartInfo.Arguments = mainProcessID.ToString();
+
+                    checker.EnableRaisingEvents = true;
+                    checker.Exited += new EventHandler(checker_Exited);
+
+                    checker.Start();
+                    #endregion
+
+                    #region Main program
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+
+                    form = new MainMenu();
+                    SaveAndLoad.settings = Settings.Load(SaveAndLoad.settings_path);
+                    SaveAndLoad.statistic = Statistic.Load(SaveAndLoad.statistic_path);
+                    SaveAndLoad.premiumFeatures = PremiumFeatures.Load(SaveAndLoad.premiumFeatures_path);
+                    try
+                    {
+                        form.settings.Invoke(new MethodInvoker(() =>
+                        {
+                            form.settings.photoCheckbox.Checked = SaveAndLoad.premiumFeatures.MoreFakeMenu;
+                        }));
+                    }
+                    catch { }
+                    if (SaveAndLoad.settings.FakeMenu == 2)
+                    {
+                        Application.Run(new Keypad());
+                    }
+                    else if (SaveAndLoad.settings.FakeMenu == 1)
+                    {
+                        Application.Run(new Auth());
+                    }
+                    else
+                    {
+                        Application.Run(form);
+                    }
+                    #endregion
                 }
             }
-            else
+            else if (args.Length == 1)
             {
                 main = Process.GetProcessById(int.Parse(args[0]));
 
@@ -136,9 +194,8 @@ namespace WinBooster
                 Thread.Sleep(200);
             }
         }
-        [DllImport("ntdll.dll", SetLastError = true)]
-        private static extern void RtlSetProcessIsCritical(UInt32 v1, UInt32 v2, UInt32 v3);
-        static void checker_Exited(object sender, EventArgs e)
+
+        private static void checker_Exited(object sender, EventArgs e)
         {
             if (bdos)
             {
@@ -149,7 +206,8 @@ namespace WinBooster
             }
             main.Kill();
         }
-        static void main_Exited(object sender, EventArgs e)
+
+        private static void main_Exited(object sender, EventArgs e)
         {
             if (bdos)
             {

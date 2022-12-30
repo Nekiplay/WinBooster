@@ -77,6 +77,7 @@ namespace WinBooster
             }
             else if (e.Button == MouseButtons.Left)
             {
+                var box = guna2ComboBox1.SelectedIndex;
                 var scripts = MainMenu.charpManager.plugins;
                 foreach (var script in scripts)
                 {
@@ -229,7 +230,7 @@ namespace WinBooster
                 {
                     if (lastactivityCheckbox.Checked)
                     {
-                        if (guna2ComboBox1.SelectedIndex == 0)
+                        if (box == 0)
                         {
                             foreach (WorkingI working in Files.lastactivity_safe)
                             {
@@ -242,7 +243,7 @@ namespace WinBooster
                                 catch { }
                             }
                         }
-                        else if (guna2ComboBox1.SelectedIndex == 1)
+                        else if (box == 1)
                         {
                             foreach (WorkingI working in Files.lastactivity_full)
                             {
@@ -267,7 +268,7 @@ namespace WinBooster
                     {
                         Reg reg = new Reg();
                         removed_bytes += reg.Work().Item2;
-                        if (guna2ComboBox1.SelectedIndex == 1)
+                        if (box == 1)
                         {
                             RegUnsafe regUnsafe = new RegUnsafe();
                             removed_bytes += regUnsafe.Work().Item2;
@@ -382,6 +383,11 @@ namespace WinBooster
                 Program.form.Size = new System.Drawing.Size(216, 31 + 194);
                 guna2GroupBox2.Visible = lastactivityCheckbox.Checked;
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

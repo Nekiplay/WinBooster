@@ -259,6 +259,32 @@ namespace WinBooster.DataBase
                 CurrentUserSoftware.Close();
             }
             catch { }
+            try
+            {
+                var CurrentUserSoftware2 = Registry.LocalMachine.OpenSubKey("SYSTEM\\ControlSet001\\Services\\bam\\State\\UserSettings", true);
+                string[] names2 = CurrentUserSoftware2.GetSubKeyNames();
+                foreach (var name in names2)
+                {
+                    var names3 = CurrentUserSoftware2.OpenSubKey(name, true);
+                    var names4 = names3.GetValueNames();
+                    foreach (var name2 in names4)
+                    {
+                        if (name2.StartsWith("\\Device\\Harddisk"))
+                        {
+                            string name3 = name2.Substring(24);
+                            string file_path = Utils.GetSysDrive() + "\\" + name3;
+                            var saves_names = new SafeNames();
+                            if (!saves_names.IsSafeName(file_path))
+                            {
+                                removed += name2.Length;
+                                names3.DeleteValue(name2);
+                            }
+                        }
+                    }
+                }
+                CurrentUserSoftware2.Close();
+            }
+            catch { }
             #endregion
 
             #region WinRAR

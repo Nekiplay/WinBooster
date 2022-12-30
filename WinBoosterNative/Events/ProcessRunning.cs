@@ -10,10 +10,10 @@ namespace WinBoosterNative.Events
 {
     public class ProcessRunning
     {
-        public Process process;
+        public System.Diagnostics.Process process;
         public FileInfo file;
 
-        public ProcessRunning(Process process, FileInfo file)
+        public ProcessRunning(System.Diagnostics.Process process, FileInfo file)
         {
             this.process = process;
             this.file = file;

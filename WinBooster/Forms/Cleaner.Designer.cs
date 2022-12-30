@@ -88,6 +88,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(172, 23);
             this.guna2Button1.TabIndex = 4;
             this.guna2Button1.Text = "Clear";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             this.guna2Button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.guna2Button1_MouseClick);
             // 
             // cacheCheckbox

@@ -10,6 +10,7 @@ using WinBooster.Data;
 using WinBooster.Forms;
 using WinBooster.Native;
 using WinBoosterCharpScripts;
+using WinBoosterNative.Memory;
 using File = System.IO.File;
 
 namespace WinBooster
@@ -69,12 +70,12 @@ namespace WinBooster
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Process.GetCurrentProcess().Kill();
+            Process.GetCurrentProcess().Kill();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Process.GetCurrentProcess().Kill();
+            Process.GetCurrentProcess().Kill();
         }
         List<Control> controlList = new List<Control>();
         public void OpenMenu(Form form)
@@ -104,8 +105,8 @@ namespace WinBooster
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Program.checker.Kill();
             Process.GetCurrentProcess().Kill();
+            try { Program.checker.Kill(); } catch { }
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -277,19 +278,19 @@ namespace WinBooster
         #region Открытие Anti ScreenShare
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            this.Size = new Size(216, guna2Panel3.Height + 237);
+            this.Size = new Size(371, guna2Panel3.Height + 235);
             OpenMenu(antiScreenShare);
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(216, guna2Panel3.Height + 237);
+            this.Size = new Size(371, guna2Panel3.Height + 235);
             OpenMenu(antiScreenShare);
         }
 
         private void guna2Panel9_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(216, guna2Panel3.Height + 237);
+            this.Size = new Size(371, guna2Panel3.Height + 235);
             OpenMenu(antiScreenShare);
         }
         #endregion

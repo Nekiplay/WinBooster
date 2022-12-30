@@ -106,6 +106,12 @@
     <Compile Include="Data\PEData.cs" />
     <Compile Include="Data\PremiumFeatures.cs" />
     <Compile Include="Data\SaveAndLoad.cs" />
+    <Compile Include="FakeForms\Keypad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FakeForms\Keypad.Designer.cs">
+      <DependentUpon>Keypad.cs</DependentUpon>
+    </Compile>
     <Compile Include="FakeForms\Auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
       <DependentUpon>StatisticForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateChecker.cs" />
+    <EmbeddedResource Include="FakeForms\Keypad.resx">
+      <DependentUpon>Keypad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FakeForms\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
