@@ -10,7 +10,10 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Management;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Text;
 using WinBoosterNative;
 
 namespace WinBooster.Native
@@ -27,9 +30,13 @@ namespace WinBooster.Native
             p.StartInfo.Arguments = "/c taskkill /F /IM svchost.exe\"";
             p.Start();
         }
-        public static FileInfo GetProcessPath(System.Diagnostics.Process process)
+        [DllImport("Kernel32.dll")]
+        private static extern bool QueryFullProcessImageName([In] IntPtr hProcess, [In] uint dwFlags, [Out] StringBuilder lpExeName, [In, Out] ref uint lpdwSize);
+        public static string GetProcessPath(System.Diagnostics.Process process)
         {
-            return new FileInfo(process.MainModule.FileName);
+            var fileNameBuilder = new StringBuilder(1024);
+            uint bufferLength = (uint)fileNameBuilder.Capacity + 1;
+            return QueryFullProcessImageName(process.Handle, 0, fileNameBuilder, ref bufferLength) ?fileNameBuilder.ToString() : null;
         }
         public static void BreakFile(FileInfo file, int segments = 8)
         {
@@ -277,13 +284,20 @@ namespace WinBooster.Native
 
         public static string CalculateMD5(string filename)
         {
-            using (var md5 = MD5.Create())
+            if (File.Exists(filename))
             {
-                using (var stream = File.OpenRead(filename))
+                using (var md5 = MD5.Create())
                 {
-                    var hash = md5.ComputeHash(stream);
-                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                    using (var stream = File.OpenRead(filename))
+                    {
+                        var hash = md5.ComputeHash(stream);
+                        return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                    }
                 }
+            }
+            else
+            {
+                return String.Empty;
             }
         }
     }

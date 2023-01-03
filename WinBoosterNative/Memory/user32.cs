@@ -29,9 +29,9 @@ namespace WinBoosterNative.Memory
         }
         public int MessageBox(string message, string title, uint type)
         {
-            var processFunction = process.ModuleFactory["user32"]["MessageBoxExA"];
-            var @delegate = processFunction.GetDelegate<MessageBoxA>();
-            return @delegate.Invoke(process.WindowFactory.MainWindow.Handle, message, title, type);
+                var processFunction = process.ModuleFactory["user32"]["MessageBoxA"];
+                var @delegate = processFunction.GetDelegate<MessageBoxA>();
+                return @delegate.Invoke(IntPtr.Zero, message, title, type);
         }
         public void ChangeMainWindowSize(int height, int width)
         {

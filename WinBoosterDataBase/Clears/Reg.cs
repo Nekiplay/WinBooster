@@ -1,7 +1,12 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 using WinBooster.Native;
 
 namespace WinBooster.DataBase
@@ -26,22 +31,24 @@ namespace WinBooster.DataBase
         public Tuple<long, long> Work()
         {
             long removed = 0;
-
             #region Enigma Virtual Box
             try
             {
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE", true);
                 var enigma_virtual_box = CurrentUserSoftware.OpenSubKey("Enigma Virtual Box", true);
-                try
+                if (enigma_virtual_box != null)
                 {
-                    var enigma_virtual_box2 = enigma_virtual_box.OpenSubKey("History");
-                    var val = enigma_virtual_box2.GetValue("History0").ToString();
-                    removed += val.Length;
+                    try
+                    {
+                        var enigma_virtual_box2 = enigma_virtual_box.OpenSubKey("History");
+                        var val = enigma_virtual_box2.GetValue("History0").ToString();
+                        removed += val.Length;
+                    }
+                    catch { }
+                    CurrentUserSoftware.DeleteSubKeyTree("Enigma Virtual Box");
+                    CurrentUserSoftware.Close();
+                    enigma_virtual_box.Close();
                 }
-                catch { }
-                CurrentUserSoftware.DeleteSubKeyTree("Enigma Virtual Box");
-                CurrentUserSoftware.Close();
-                enigma_virtual_box.Close();
             }
             catch { }
             #endregion
@@ -57,6 +64,66 @@ namespace WinBooster.DataBase
             #endregion
 
             #region LastActivity
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths", true);
+                var values = CurrentUserSoftware.GetValueNames();
+                SafeNames safeNames = new SafeNames();
+                foreach (var value in values)
+                {
+                    CurrentUserSoftware.DeleteValue(value);
+                }
+                CurrentUserSoftware.Close();
+            }
+            catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage\\ShowJumpView", true);
+                var values = CurrentUserSoftware.GetValueNames();
+                SafeNames safeNames = new SafeNames();
+                foreach (var value in values)
+                {
+                    if (!value.StartsWith("*PID"))
+                    {
+                        if (!safeNames.IsSafeName(value))
+                        {
+                            CurrentUserSoftware.DeleteValue(value);
+                        }
+                    }
+                }
+                CurrentUserSoftware.Close();
+            }
+            catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Compatibility Assistant\\Store", true);
+                var values = CurrentUserSoftware.GetValueNames();
+                SafeNames safeNames = new SafeNames();
+                foreach (var value in values)
+                {
+                    if (!safeNames.IsSafeName(value))
+                    {
+                        CurrentUserSoftware.DeleteValue(value);
+                    }
+                }
+                CurrentUserSoftware.Close();
+            }
+            catch { }
+            try
+            {
+                var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Classes\\Local Settings\\Software\\Microsoft\\Windows\\Shell\\MuiCache", true);
+                var values = CurrentUserSoftware.GetValueNames();
+                SafeNames safeNames = new SafeNames();
+                foreach (var value in values)
+                {
+                    if (!safeNames.IsSafeName(value))
+                    {
+                        CurrentUserSoftware.DeleteValue(value);
+                    }
+                }
+                CurrentUserSoftware.Close();
+            }
+            catch { }
             try
             {
                 var CurrentUserSoftware = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32", true);
@@ -205,36 +272,42 @@ namespace WinBooster.DataBase
             try
             {
                 var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
-                var values = c1.GetSubKeyNames();
-                foreach (var value in values)
+                if (c1 != null)
                 {
-                    var c2 = c1.OpenSubKey(value, true);
-                    foreach (var value2 in c2.GetValueNames())
+                    var values = c1.GetSubKeyNames();
+                    foreach (var value in values)
                     {
-                        if (int.TryParse(value2, out int i))
+                        var c2 = c1.OpenSubKey(value, true);
+                        foreach (var value2 in c2.GetValueNames())
                         {
-                            var b = (byte[])c2.GetValue(value2);
-                            removed += b.Length;
-                            c2.DeleteValue(value2);
+                            if (int.TryParse(value2, out int i))
+                            {
+                                var b = (byte[])c2.GetValue(value2);
+                                removed += b.Length;
+                                c2.DeleteValue(value2);
+                            }
                         }
                     }
+                    c1.Close();
                 }
-                c1.Close();
             }
             catch { }
             try
             {
                 var c1 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs", true);
-                foreach (var value2 in c1.GetValueNames())
+                if (c1 != null)
                 {
-                    if (int.TryParse(value2, out int i))
+                    foreach (var value2 in c1.GetValueNames())
                     {
-                        var b = (byte[])c1.GetValue(value2);
-                        removed += b.Length;
-                        c1.DeleteValue(value2);
+                        if (int.TryParse(value2, out int i))
+                        {
+                            var b = (byte[])c1.GetValue(value2);
+                            removed += b.Length;
+                            c1.DeleteValue(value2);
+                        }
                     }
+                    c1.Close();
                 }
-                c1.Close();
             }
             catch { }
             try
@@ -259,6 +332,31 @@ namespace WinBooster.DataBase
                 CurrentUserSoftware.Close();
             }
             catch { }
+            try
+            {
+                var CurrentUserSoftware2 = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32\\OpenSavePidlMRU", true); ;
+                string[] names2 = CurrentUserSoftware2.GetSubKeyNames();
+                foreach (var name in names2)
+                {
+                    var newkey = CurrentUserSoftware2.OpenSubKey(name, true);
+                    var values = newkey.GetValueNames();
+                    foreach (var value_name in values)
+                    {
+                        if (value_name != "MRUListEx")
+                        {
+                            object value = newkey.GetValue(value_name);
+                            if (value.GetType() == typeof(byte[]))
+                            {
+                                removed += ((byte[])value).LongLength;
+                                newkey.DeleteValue(value_name);
+                            }
+                        }
+                    }
+                }
+                CurrentUserSoftware2.Close();
+            }
+            catch { }
+
             try
             {
                 var CurrentUserSoftware2 = Registry.LocalMachine.OpenSubKey("SYSTEM\\ControlSet001\\Services\\bam\\State\\UserSettings", true);
@@ -297,11 +395,14 @@ namespace WinBooster.DataBase
                     try
                     {
                         var k = usersReg.OpenSubKey(user + "\\SOFTWARE\\WinRAR\\DialogEditHistory\\ArcName", true);
-                        foreach (string value in k.GetValueNames())
+                        if (k != null)
                         {
-                            k.DeleteValue(value);
+                            foreach (string value in k.GetValueNames())
+                            {
+                                k.DeleteValue(value);
+                            }
+                            k.Close();
                         }
-                        k.Close();
                     }
                     catch
                     {

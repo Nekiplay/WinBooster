@@ -71,6 +71,14 @@ namespace WinBooster.Native
             "msiexec.exe",
             "OpenWith.exe",
             "readedWaitDialog.exe",
+            "Everything.exe",
+            "memreduct.exe",
+            "Exodus.exe",
+            "Steam.exe",
+            "Counter-Strike Global Offensive.exe",
+            "hl.exe",
+            "hl2.exe",
+
         };
         public List<string> files = new List<string>()
         {

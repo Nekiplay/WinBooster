@@ -13,7 +13,7 @@ namespace MD5File
     {
         static void Main(string[] args)
         {
-            start:
+        start:
             Console.Write("File path: ");
             string path = Console.ReadLine();
             path = path.Replace("\"", "");

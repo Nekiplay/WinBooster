@@ -2,11 +2,11 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace WinBooster
+namespace WinBooster.Native
 {
     public class ProcessUtils
     {
-        private Process process(string command, bool redirect = false)
+        private System.Diagnostics.Process process(string command, bool redirect = false)
         {
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo = info(command, redirect);
@@ -28,7 +28,7 @@ namespace WinBooster
             List<string> read = new List<string>();
             if (!string.IsNullOrEmpty(command))
             {
-                Process started = process(command, true);
+                System.Diagnostics.Process started = process(command, true);
                 started.Start();
                 using (StreamReader sr = started.StandardOutput)
                 {

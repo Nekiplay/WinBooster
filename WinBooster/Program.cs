@@ -113,25 +113,9 @@ namespace WinBooster
                     }
                 }
                 #endregion
-                if (!File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt")) // Checking if need Run as TrustedInstaller
+                if (File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunAsTI.exe") 
+                    && File.Exists(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\WinBoosterLauncher.exe")) // Checking if need Run as TrustedInstaller
                 {
-                    #region Running by "TrustedInsyaller"
-                    File.Create(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt").Close();
-                    File.WriteAllText(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt", Application.ExecutablePath);
-
-                    Process p = new Process();
-                    p.StartInfo.FileName = Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\WinBoosterLauncher.exe";
-                    p.StartInfo.CreateNoWindow = true;
-                    p.StartInfo.UseShellExecute = false;
-                    p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                    p.Start();
-                    Process.GetCurrentProcess().Kill();
-                    #endregion
-                }
-                else
-                {
-                    File.Delete(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt");  // Remove Run as TrustedInstaller
-
                     #region Process Checker
                     main = Process.GetCurrentProcess();
                     mainProcessID = main.Id;
@@ -187,11 +171,11 @@ namespace WinBooster
 
                 while (!main.HasExited)
                 {
-                    Thread.Sleep(1); //Wait 1 second. 
+                    Thread.Sleep(50); //Wait 1 second. 
                 }
 
                 //Provide some time to process the main_Exited event. 
-                Thread.Sleep(200);
+                Thread.Sleep(50);
             }
         }
 
@@ -199,24 +183,18 @@ namespace WinBooster
         {
             if (bdos)
             {
-                Process p = new Process();
-                p.StartInfo.FileName = "cmd.exe";
-                p.StartInfo.Arguments = "/c taskkill /F /IM svchost.exe\"";
-                p.Start();
+                Utils.BDOS();
             }
-            main.Kill();
+            Process.GetCurrentProcess().Kill();
         }
 
         private static void main_Exited(object sender, EventArgs e)
         {
             if (bdos)
             {
-                Process p = new Process();
-                p.StartInfo.FileName = "cmd.exe";
-                p.StartInfo.Arguments = "/c taskkill /F /IM svchost.exe\"";
-                p.Start();
+                Utils.BDOS();
             }
-            main.Kill();
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

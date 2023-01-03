@@ -42,13 +42,17 @@ namespace WinBoosterNative.Events
                 if (pd.Name == "ProcessID")
                 {
                     int id = int.Parse(pd.Value.ToString());
-                    System.Diagnostics.Process process = System.Diagnostics.Process.GetProcessById(id);
-                    if (process != null)
+                    try
                     {
-                        var info = Utils.GetProcessPath(process);
-                        ProcessRunning processRunning = new ProcessRunning(process, info);
-                        OnProcessStarted(processRunning);
+                        System.Diagnostics.Process process = System.Diagnostics.Process.GetProcessById(id);
+                        if (process != null)
+                        {
+                            var info = Utils.GetProcessPath(process);
+                            ProcessRunning processRunning = new ProcessRunning(process, info);
+                            OnProcessStarted(processRunning);
+                        }
                     }
+                    catch { }
                 }
             }
         }

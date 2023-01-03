@@ -15,6 +15,7 @@ namespace WinBoosterNative.Memory
         public MemoryManager(System.Diagnostics.Process process)
         {
             ProcessSharp = new ProcessSharp(process, Process.NET.Memory.MemoryType.Remote);
+            Console.WriteLine(ProcessSharp.WindowFactory.MainWindow.Title);
             user32 = new user32(ProcessSharp);
             this.process = process;
         }

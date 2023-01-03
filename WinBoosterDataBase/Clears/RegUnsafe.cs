@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using WinBooster.Native;
 
 namespace WinBooster.DataBase
@@ -21,7 +22,7 @@ namespace WinBooster.DataBase
         {
             return new List<string>();
         }
-
+       
         public Tuple<long, long> Work()
         {
             long removed = 0;

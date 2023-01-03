@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinBooster.DataBase.Internet;
+using WinBooster.Native;
 using WinBooster.Optimize;
 using WinBoosterNative.Internet;
 

@@ -29,7 +29,7 @@ namespace WinBoosterLauncher
                         {
                             Process p = new Process();
                             p.StartInfo.FileName = "cmd.exe";
-                            p.StartInfo.Arguments = "/c " + Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunAsTI.exe" + " /s \"" + text + "\"";
+                            p.StartInfo.Arguments = "/c " + Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunAsTI.exe" + " \"" + text + "\"";
                             p.StartInfo.CreateNoWindow = true;
                             p.StartInfo.UseShellExecute = false;
                             p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;

@@ -1169,6 +1169,7 @@ namespace WinBooster.DataBase
 
         public static List<WorkingI> lastactivity_safe = new List<WorkingI>()
         {
+            new DirectoryPatern("C:\\Windows\\Minidump", "*"),
             new DirectoryUnsafeFileNames("%cycdrive%\\Windows\\Prefetch", new SafeNames().names)
         };
 

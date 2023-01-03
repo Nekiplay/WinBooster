@@ -1,17 +1,12 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinBooster.Data;
 using WinBooster.Forms;
 using WinBooster.Native;
 using WinBoosterCharpScripts;
-using WinBoosterNative.Memory;
-using File = System.IO.File;
 
 namespace WinBooster
 {
@@ -278,19 +273,19 @@ namespace WinBooster
         #region Открытие Anti ScreenShare
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
-            this.Size = new Size(371, guna2Panel3.Height + 235);
+            this.Size = new Size(213, guna2Panel3.Height + 235);
             OpenMenu(antiScreenShare);
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(371, guna2Panel3.Height + 235);
+            this.Size = new Size(213, guna2Panel3.Height + 235);
             OpenMenu(antiScreenShare);
         }
 
         private void guna2Panel9_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(371, guna2Panel3.Height + 235);
+            this.Size = new Size(213, guna2Panel3.Height + 235);
             OpenMenu(antiScreenShare);
         }
         #endregion

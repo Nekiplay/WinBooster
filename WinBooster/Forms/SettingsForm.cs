@@ -23,39 +23,9 @@ namespace WinBooster
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
-            Task version_checker = new Task(() =>
+            Task version_checker = Task.Factory.StartNew(() =>
             {
-                bool done = false;
-                int i = 0;
-                Task animation = new Task(() =>
-                {
-                    while (!done)
-                    {
-                        linkLabel4.Invoke(new MethodInvoker(() =>
-                        {
-                            if (i == 0)
-                            {
-                                linkLabel4.Text = "Checking.";
-                                i = 1;
-                            }
-                            else if (i == 1)
-                            {
-                                linkLabel4.Text = "Checking..";
-                                i = 2;
-                            }
-                            else if (i == 2)
-                            {
-                                linkLabel4.Text = "Checking...";
-                                i = 0;
-                            }
-                        }));
-                        Thread.Sleep(150);
-                    }
-                });
-                animation.Start();
-                Thread.Sleep(2150);
                 var result = Program.updateChecker.CheckUpdate();
-                done = true;
                 linkLabel4.Invoke(new MethodInvoker(() =>
                 {
                     if (result.Item1)
@@ -68,7 +38,7 @@ namespace WinBooster
                     }
                 }));
             });
-            Task setting_loader = new Task(() =>
+            Task setting_loader = Task.Factory.StartNew(() =>
             {
                 guna2TextBox2.Invoke(new MethodInvoker(() =>
                 {
@@ -83,8 +53,6 @@ namespace WinBooster
                     guna2TextBox1.Text = SaveAndLoad.settings.Password;
                 }));
             });
-            version_checker.Start();
-            setting_loader.Start();
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)

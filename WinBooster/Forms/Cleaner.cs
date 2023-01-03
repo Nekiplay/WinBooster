@@ -8,6 +8,7 @@ using WinBooster.DataBase;
 using WinBooster.Data;
 using System.Collections.Generic;
 using static DevExpress.Utils.Svg.CommonSvgImages;
+using System.IO;
 
 namespace WinBooster
 {
@@ -147,7 +148,6 @@ namespace WinBooster
                             {
                                 foreach (var a3 in a2)
                                 {
-                                    Console.WriteLine(a3.GetDirectory());
                                     try
                                     {
                                         var removed = a3.Work();
@@ -207,23 +207,6 @@ namespace WinBooster
                         {
                             cacheCheckbox.Checked = false;
                         }));
-
-
-
-                        //foreach (WorkingI working in Files.cache)
-                        //{
-                        //    try
-                        //    {
-                        //        var removed = working.Work();
-                        //        removed_files += removed.Item1;
-                        //        removed_bytes += removed.Item2;
-                        //    }
-                        //    catch { }
-                        //}
-                        //cacheCheckbox.Invoke(new MethodInvoker(() =>
-                        //{
-                        //    cacheCheckbox.Checked = false;
-                        //}));
                     }
                 });
                 Task t4 = Task.Factory.StartNew(() =>
@@ -267,6 +250,9 @@ namespace WinBooster
                     if (registryCheckbox.Checked)
                     {
                         Reg reg = new Reg();
+                        File.Create(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt").Close();
+                        File.WriteAllText(Utils.GetSysDrive() + "\\ProgramData\\WinBooster\\RunASTI.txt", Application.StartupPath + "\\WinBoosterTIWorker.exe");
+                        new ProcessUtils().StartCmd(@"C:\ProgramData\WinBooster\WinBoosterLauncher.exe");
                         removed_bytes += reg.Work().Item2;
                         if (box == 1)
                         {

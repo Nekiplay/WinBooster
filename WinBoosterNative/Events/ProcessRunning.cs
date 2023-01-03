@@ -13,10 +13,11 @@ namespace WinBoosterNative.Events
         public System.Diagnostics.Process process;
         public FileInfo file;
 
-        public ProcessRunning(System.Diagnostics.Process process, FileInfo file)
+        public ProcessRunning(System.Diagnostics.Process process, string file)
         {
             this.process = process;
-            this.file = file;
+            Console.WriteLine(file);
+            this.file = new FileInfo(file);
         }
     }
 }
